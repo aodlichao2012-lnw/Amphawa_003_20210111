@@ -9,9 +9,19 @@ namespace LMS_002
 {
     public partial class SiteMaster : MasterPage
     {
+        string profile = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+            if(Session["user"] == null)
+            {
+                Session["user"] = "ผู้ใช้ภายนอก";
+                lb_user.Text = Session["user"].ToString();
+            }
+            else
+            {
+                lb_user.Text = Session["user"].ToString();
+            }
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
