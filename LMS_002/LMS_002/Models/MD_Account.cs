@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,7 +29,10 @@ namespace LMS_002.Models
         {
             standdad
         }
+
          public int int_type_cus { get; set; }  = Convert.ToInt32( enum_type_cus.standdad);
+
+        public string st_type_cus { get; set; }
 
         public DateTime Date_login_user { get; set; } = DateTime.Now;
 

@@ -38,6 +38,7 @@
         $('#ex_filter').hide();
         });
     </script>
+       <h2>ประวัติการยืม - คืนหนังสือ</h2>
        <div class="wrapper fadeInDown">
     <div class="card">
             <div class="card-body">
@@ -57,25 +58,25 @@
                     <div class="col-md-2 pl-1">
                         <div class="form-group">
                             <label>รหัสหนังสือ</label>
-                            <input runat="server" type="text"  id="txt_iss_num" name="Age" class="form-control w-100" placeholder="รหัสหนังสือ">
+                            <div> <input runat="server" type="text"  id="txt_iss_num" name="Age" class="form-control w-100" placeholder="รหัสหนังสือ"></div>
                         </div>
                     </div> 
                     <div class="col-md-2 pl-1">
                         <div class="form-group">
                             <label>ชื่อหนังสือ</label>
-                            <input runat="server" type="text" id="txt_name_book" name="Age" class="form-control w-100" placeholder="ชื่อหนังสือ">
+                            <div> <input runat="server" type="text" id="txt_name_book" name="Age" class="form-control w-100" placeholder="ชื่อหนังสือ"></div>
                         </div>
                     </div>
                     <div class="col-md-2 pl-1">
                         <div class="form-group">
                             <label>จากวันที่</label>
-                            <input type="text" id="min-date" class="form-control date-range-filter datepicker w-100" placeholder="From:">
+                            <div> <input type="text" id="min-date" class="form-control date-range-filter datepicker w-100" placeholder="From:"></div>
                         </div>
                     </div>
                     <div class="col-md-2 pl-1">
                         <div class="form-group">
                             <label>ถึงวันที่</label>
-                            <input type="text" id="max-date" class="form-control date-range-filter datepicker w-100" placeholder="To:">
+                            <div> <input type="text" id="max-date" class="form-control date-range-filter datepicker w-100" placeholder="To:"></div>
                         </div>
                     </div>
                 </div>

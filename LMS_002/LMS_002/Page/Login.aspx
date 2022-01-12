@@ -296,13 +296,15 @@ input[type=text]:placeholder {
             </div>
         </div>
     </div>--%>
+       <h2>เข้าสู่ระบบ</h2>
     <div class="wrapper fadeInDown">
-  <div id="formContent">
-           <input type="text" runat="server" id="txt_login" class="fadeIn second" name="login" placeholder="ชื่อผู้ใช้">
-      <input type="password" runat="server" id="txt_password" class="fadeIn third" name="login" placeholder="รหัสผ่าน">
-      <input type="submit" id="btn_save" runat="server" onserverclick="btn_save_ServerClick1" class="fadeIn fourth" value="เข้าสู่ระบบ">
+  <div id="formContent" runat="server" >
+      <div><input type="text" runat="server" id="txt_login" class="fadeIn second" name="login" placeholder="ชื่อผู้ใช้"></div>
+           
+      <div><input type="password" runat="server" id="txt_password" class="fadeIn third" name="login" placeholder="รหัสผ่าน"></div>
+      <div><input type="submit" id="btn_save" runat="server" onserverclick="btn_save_ServerClick1" class="fadeIn fourth" value="เข้าสู่ระบบ"></div>
      <div id="formFooter">
-      <a class="underlineHover" href="Register.aspx">ลงทะเบียนสิ</a>
+      <a class="underlineHover" href="Register.aspx?res=1">ลงทะเบียนสิ</a>
     </div>
       </div>
         </div>

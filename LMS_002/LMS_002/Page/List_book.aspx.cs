@@ -16,12 +16,55 @@ namespace LMS_002.Page
 
         protected void searchCatalog_ServerClick(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch
+            {
+
+            }
         }
 
         protected void clear_ServerClick(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch
+            {
+
+            }
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void sendto_lend_ServerClick(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        protected void clear_list_ServerClick(object sender, EventArgs e)
+        {
+            try
+            {
+                GridView1.SelectedIndex = -1;
+            }
+            catch
+            {
+
+            }
         }
     }
 }

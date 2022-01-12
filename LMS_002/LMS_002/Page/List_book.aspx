@@ -6,8 +6,7 @@
     <script>
 
     </script>
-
-        <div class="wrapper fadeInDown">
+       <h2>ค้นหาหนังสือ</h2>
     <div class="card text-center">
             <div class="card-body">
                 <div class="row">
@@ -23,16 +22,16 @@
                             </select>
                             </div>
                     </div>
-                    <div class="col-md-2 pl-1 text-center" style="display:inline-block;">
+                    <div class="form-group w-100 text-center" >
                         <div class="form-group w-100">
                             <label>รหัสหนังสือ</label>
                             <input runat="server" type="text" id="txt_iss_num" name="Age" class="w-100" placeholder="รหัสหนังสือ">
                         </div>
-                    </div> 
-                    <div class="col-md-2 pl-1 text-center" style="display:inline-block;">
+                        </div>
+                    <div class="form-group w-100 text-center">
                         <div class="form-group w-100">
-                            <label>ชื่อหนังสือ</label>
-                            <input runat="server" type="text" id="txt_name_book" name="Age" class="w-100" placeholder="ชื่อหนังสือ">
+                           <label>ชื่อหนังสือ</label>
+                           <input runat="server" type="text" id="txt_name_book" name="Age" class="w-100" placeholder="ชื่อหนังสือ">
                         </div>
                     </div>
            <%--         <div class="col-md-2 pl-1">
@@ -47,7 +46,6 @@
                             <input type="text" id="max-date" class="form-control date-range-filter datepicker" placeholder="To:">
                         </div>
                     </div>--%>
-                </div>
                 <div class="text-center">
                 <a class="btn btn-success btn-lg " runat="server" onserverclick="searchCatalog_ServerClick" id="searchCatalog" data-id="1" href="#"><i class="fa fa-filter "></i> ค้นหา </a>
                 <a class="btn btn-secondary btn-lg " runat="server" onserverclick="clear_ServerClick" id="clear" href="#"><i class="fa fa-eraser "></i> ล้างค่า</a>
@@ -55,4 +53,23 @@
             </div>
         </div>
     </div>
+    <div>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="int_id_catalog_book" DataSourceID="SqlDataSource1" OnRowCommand="GridView1_RowCommand" >
+            <Columns>
+                <asp:CheckBoxField DataField="id_key" HeaderText="เลือก" Text="เลือก" />
+                <asp:BoundField DataField="int_id_catalog_book" HeaderText="ลำดับหนังสือ" InsertVisible="False" ReadOnly="True" SortExpression="int_id_catalog_book" />
+                <asp:BoundField DataField="st_name_book" HeaderText="ชื่อหนังสือ" SortExpression="st_name_book" />
+                <asp:BoundField DataField="st_ISBN_ISSN" HeaderText="ISBN_ISSN" SortExpression="st_ISBN_ISSN" />
+                <asp:BoundField DataField="st_detail_book" HeaderText="รายละเอียด หนังสือ" SortExpression="st_detail_book" />
+                <asp:BoundField DataField="dt_DATE_modify" HeaderText="วันที่มีหนังสือเล่มนี้" SortExpression="dt_DATE_modify" />
+                <asp:BoundField DataField="st_type_book_name" HeaderText="ประเภทหนังสือ" SortExpression="st_type_book_name" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Amphawan_LMS_db_2ConnectionString2 %>" SelectCommand="SELECT DISTINCT([st_ISBN_ISSN]) , [int_id_catalog_book],[st_name_book],[st_detail_book],[dt_DATE_modify] ,[MD_Account_int_id],[st_type_book],[st_type_book_name] FROM [dbo].[MD_catralog_book]"></asp:SqlDataSource>
+    </div>
+     <div class="text-center">
+                <a class="btn btn-success btn-lg " runat="server" onserverclick="sendto_lend_ServerClick" id="sendto_lend" data-id="1" href="#"><i class="fa fa-filter "></i> ส่งไปหน้ายืม </a>
+                <a class="btn btn-secondary btn-lg " runat="server" onserverclick="clear_list_ServerClick" id="clear_list" href="#"><i class="fa fa-eraser "></i> ล้างที่เลือก</a>
+                </div>
 </asp:Content>
+

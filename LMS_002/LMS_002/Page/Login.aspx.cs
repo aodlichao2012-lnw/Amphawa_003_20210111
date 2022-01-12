@@ -13,11 +13,22 @@ namespace LMS_002.Page
     public partial class Login : System.Web.UI.Page
     {
           MD_Account  md_account = new MD_Account();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             using (var db = new Dbcon_wan())
             {
                 var cs = db.tb_account.ToList();
+            }
+
+                if (Session["user"] == null   )
+            {
+                  formContent.Visible = true;
+              
+            }
+           else
+            {
+                formContent.Visible = false;
             }
        }
 
@@ -32,7 +43,13 @@ namespace LMS_002.Page
                     if(result)
                     {
                         Session["user"] = txt_login.Value;
+                        Session["roleid"] = db.tb_account.Where( c => c.st_user == txt_login.Value).Select(a => a.int_type_cus).FirstOrDefault();
                         Response.Redirect(@"~/Page/List_book.aspx");
+                    }
+                    else
+                    {
+                          Session["role"] = 3;
+                        Response.Redirect(@"~/Page/Login.aspx");
                     }
                     
 
