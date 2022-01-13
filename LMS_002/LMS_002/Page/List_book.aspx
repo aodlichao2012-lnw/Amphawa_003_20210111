@@ -74,7 +74,7 @@
         </asp:GridView>
                </div>
               </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Amphawan_LMS_db_2ConnectionString2 %>" SelectCommand="SELECT st_ISBN_ISSN , [int_id_catalog_book],[st_name_book],[st_detail_book],[dt_DATE_modify] ,[MD_Account_int_id],[st_type_book],[st_type_book_name] , bool_current FROM [dbo].[MD_catralog_book]  order by dt_DATE_modify DESC"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Amphawan_LMS_db_2ConnectionString2 %>" SelectCommand="SELECT st_ISBN_ISSN , [int_id_catalog_book],[st_name_book],[st_detail_book],get [dt_DATE_modify] ,[MD_Account_int_id],[st_type_book],[st_type_book_name] , bool_current FROM [dbo].[MD_catralog_book]  order by dt_DATE_modify DESC"></asp:SqlDataSource>
     </div>
      <div class="text-center">
                 <a class="btn btn-success btn-lg " runat="server" onserverclick="sendto_lend_ServerClick" id="sendto_lend" data-id="1" href="#"><i class="fa fa-filter "></i> ส่งไปหน้ายืม </a>

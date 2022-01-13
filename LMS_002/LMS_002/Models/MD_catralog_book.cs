@@ -20,13 +20,22 @@ namespace LMS_002.Models
         public string st_name_book { get; set; }
         public string st_ISBN_ISSN { get; set; }
         public string st_detail_book { get; set; }
-        public string dt_DATE_modify { get; set; }
+        public DateTime dt_DATE_modify { get; set; } = DateTime.Now;
 
         public int st_type_book { get; set; }
         public string st_type_book_name { get; set; }
         public bool bool_current { get; set; }
 
+        //เพิ่มทีหลัง
 
+        public int int_cheeckin_out { get; set; }
+        public string st_cheeckin_out { get; set; }
+
+
+        public DateTime dt_checkout_date { get; set; }
+        public DateTime dt_checkin_date { get; set; }
+        public DateTime dt_checkin_due { get; set; } = DateTime.Now.AddMonths(1);
+        public Byte[] img_book { get; set; } 
 
 
 

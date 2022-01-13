@@ -33,15 +33,15 @@ namespace LMS_002.Page
                     {
                         if (txt_iss_num.Value != "")
                         {
-                            cs = db.tb_cattalog.Where(s => s.st_name_book.Contains(txt_iss_num.Value) && s.st_type_book == tx).ToList();
+                            cs = db.tb_cattalog.Where(s => s.st_ISBN_ISSN.Contains(txt_iss_num.Value) && s.st_type_book == Type.SelectedIndex).ToList();
                         }
                         else if (txt_name_book.Value != "")
                         {
-                            cs = db.tb_cattalog.Where(s => s.st_name_book.Contains(txt_name_book.Value)).ToList();
+                            cs = db.tb_cattalog.Where(s => s.st_name_book.Contains(txt_name_book.Value) && s.st_type_book == Type.SelectedIndex).ToList();
                         }
                         else
                         {
-
+                            cs =  db.tb_cattalog.Where(s => s.st_type_book == Type.SelectedIndex).ToList();
                         }
                     }
                     
