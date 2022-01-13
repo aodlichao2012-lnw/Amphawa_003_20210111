@@ -337,6 +337,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ErrorViewModel.cs" />
+    <Compile Include="Models\Make_criteria.cs" />
     <Compile Include="Models\MD_Account.cs" />
     <Compile Include="Models\MD_catralog_book.cs" />
     <Compile Include="Models\MD_customer.cs" />

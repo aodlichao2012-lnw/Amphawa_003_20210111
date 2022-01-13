@@ -24,6 +24,7 @@ namespace LMS_002.Models
 
         public int st_type_book { get; set; }
         public string st_type_book_name { get; set; }
+        public bool bool_current { get; set; }
 
 
 
