@@ -332,6 +332,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="DbContext_db\Conncetions_db.cs" />
     <Compile Include="DbContext_db\Dbcon_wan.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -345,6 +346,7 @@
     <Compile Include="Models\MD_GMDGeneral_Material_Designation.cs" />
     <Compile Include="Models\MD_history.cs" />
     <Compile Include="Models\MD_search.cs" />
+    <Compile Include="Models\MD_statusbook.cs" />
     <Compile Include="Models\MD_type_Laguage.cs" />
     <Compile Include="Page\Add_book_Admin.aspx.cs">
       <DependentUpon>Add_book_Admin.aspx</DependentUpon>

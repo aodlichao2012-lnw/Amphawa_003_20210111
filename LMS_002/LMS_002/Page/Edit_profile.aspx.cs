@@ -47,9 +47,9 @@ namespace LMS_002.Page
                     string st_password = txt_password.Value;
                     string st_email = txt_Email.Value;
                     Session["user"] = user;
-                    var cs = db.tb_account.SqlQuery(@" UPDATE [dbo].[MD_Account] SET st_user = '" + user + "' , " +
+                    var cs = Conncetions_db.Connection_command(@" UPDATE [dbo].[MD_Account] SET st_user = '" + user + "' , " +
                           "st_password = '" + st_password + "' , st_email = '" + st_email + "' , st_cus_name = '"+st_cus_name+"' , st_post_address" +
-                          " = '"+st_post_address+"'   where int_id = " + Session["id_Accont"].ToString() + " ").ToList();
+                          " = '"+st_post_address+"'   where int_id = " + Session["id_Accont"].ToString() + " ");
                     Response.Write(@"<script>alert('บันทึกเรียบร้อย')</script>");
                     Response.Redirect(@"~/Page/Role_Admin.aspx");
                 }

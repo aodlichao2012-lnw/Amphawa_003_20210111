@@ -72,6 +72,7 @@ E:\Suparat\Amphawan_002_LMS\LMS_002\LMS_002\bin\Microsoft.CodeDom.Providers.DotN
 E:\Suparat\Amphawan_002_LMS\LMS_002\LMS_002\obj\Debug\LMS_002.csproj.CopyComplete
 E:\Suparat\Amphawan_002_LMS\LMS_002\LMS_002\obj\Debug\LMS_002.dll
 E:\Suparat\Amphawan_002_LMS\LMS_002\LMS_002\obj\Debug\LMS_002.pdb
+E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.csproj.CoreCompileInputs.cache
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\LMS_002.dll.config
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\LMS_002.dll
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\LMS_002.pdb
@@ -127,6 +128,8 @@ E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\roslyn\VBCSCompiler.exe.conf
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\Antlr3.Runtime.dll
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\AspNet.ScriptManager.bootstrap.dll
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\AspNet.ScriptManager.jQuery.dll
+E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.dll
+E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.SqlServer.dll
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.AspNet.FriendlyUrls.dll
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
@@ -136,17 +139,14 @@ E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.Web.Infrastructure
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\Newtonsoft.Json.dll
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Optimization.dll
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\WebGrease.dll
+E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.xml
+E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.SqlServer.xml
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Optimization.xml
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\Newtonsoft.Json.xml
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\Antlr3.Runtime.pdb
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.AspNet.FriendlyUrls.xml
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.csprojAssemblyReference.cache
-E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.csproj.CoreCompileInputs.cache
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.csproj.CopyComplete
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.dll
 E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.pdb
-E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.dll
-E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.SqlServer.dll
-E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.xml
-E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.SqlServer.xml

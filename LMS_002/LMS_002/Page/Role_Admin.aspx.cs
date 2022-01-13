@@ -97,8 +97,8 @@ namespace LMS_002.Page
                         }
                         
                         int int_type_cus = ddl_role.SelectedValue.ToString().Equals("") ? 3 : Convert.ToInt32(ddl_role.SelectedValue.ToString());
-                      var cs =   db.tb_account.SqlQuery(@" UPDATE [dbo].[MD_Account] SET st_user = '"+user+"' , " +
-                            "st_password = '"+st_password+"' , st_email = '"+st_email+"' ,int_type_cus = "+int_type_cus+" , st_type_cus = '"+st_type_cus+"' where int_id = "+Session["id_Accont"].ToString()+" ").ToList();
+                      var cs =   Conncetions_db.Connection_command(@" UPDATE [dbo].[MD_Account] SET st_user = '"+user+"' , " +
+                            "st_password = '"+st_password+"' , st_email = '"+st_email+"' ,int_type_cus = "+int_type_cus+" , st_type_cus = '"+st_type_cus+"' where int_id = "+Session["id_Accont"].ToString()+" ");
                         Response.Write(@"<script>alert('บันทึกเรียบร้อย')</script>");
                         Response.Redirect(@"~/Page/Role_Admin.aspx");
                     }

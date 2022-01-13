@@ -20,6 +20,7 @@ namespace LMS_002.Models
         public string st_name_book { get; set; }
         public string st_ISBN_ISSN { get; set; }
         public string st_detail_book { get; set; }
+
         public DateTime dt_DATE_modify { get; set; } = DateTime.Now;
 
         public int st_type_book { get; set; }
@@ -32,13 +33,12 @@ namespace LMS_002.Models
         public string st_cheeckin_out { get; set; }
 
 
-        public DateTime dt_checkout_date { get; set; }
-        public DateTime dt_checkin_date { get; set; }
+        public DateTime dt_checkout_date { get; set; } = DateTime.Now;
+        public DateTime dt_checkin_date { get; set; }  = DateTime.Now;
         public DateTime dt_checkin_due { get; set; } = DateTime.Now.AddMonths(1);
-        public Byte[] img_book { get; set; } 
+        public Byte[] img_book { get; set; }
 
-
-
+        public string st_process_name_user { get; set; }
         //ไฟล์เสียง
 
         //ไฟล์วิดีโอ

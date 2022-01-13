@@ -15,13 +15,13 @@ namespace LMS_002.Page
     {
 
         /// <summary>
-        /// Type control.
+        /// Types control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect Type;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Types;
 
         /// <summary>
         /// txt_iss_num control.
@@ -69,13 +69,22 @@ namespace LMS_002.Page
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// ld_profile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label ld_profile;
+
+        /// <summary>
+        /// ld_count control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ld_count;
 
         /// <summary>
         /// sendto_lend control.

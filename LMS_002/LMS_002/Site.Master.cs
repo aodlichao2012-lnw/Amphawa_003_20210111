@@ -79,6 +79,7 @@ namespace LMS_002
                             Session["user"] = null;
                             lb_user.Text = null;
                             Session["role"] = 3;
+                        Session["user"] = "ผู้ใช้ภายนอก โปรด Login เพื่อเข้าสู่ระบบ";
                             menu_role.Visible = false;
                             menu_lend.Visible = false;
                             menu_throw.Visible = false;
@@ -115,6 +116,7 @@ namespace LMS_002
                 Session["user"] = null;
                 lb_user.Text = "ผู้ใช้ภายนอก โปรดLogin เพื่อเข้าสู่ระบบ";
                 Session["role"] = null;
+                Session["roleid"] = null;
                 menu_role.Visible = false;
                 menu_lend.Visible = false;
                 menu_throw.Visible = false;

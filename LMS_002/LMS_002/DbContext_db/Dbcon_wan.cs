@@ -17,5 +17,6 @@ namespace LMS_002.DbContext_db
         public DbSet<MD_customer> tb_customer { get; set; }
         public DbSet<MD_history> tb_his { get; set; }
         public DbSet<MD_search> tb_search { get; set; }
+        public DbSet<MD_statusbook> tb_statusbooks { get; set; }
     }
 }
