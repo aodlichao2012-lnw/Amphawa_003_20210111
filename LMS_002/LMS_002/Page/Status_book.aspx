@@ -59,7 +59,7 @@
                         <%--   <asp:CheckBoxField DataField="bool_current" HeaderText="เลือก"  />--%>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:CheckBox  ID="chkrows" AutoPostBack="true" runat="server" />
+                               <%-- <asp:CheckBox  ID="chkrows" AutoPostBack="true" runat="server" />--%>
                             </ItemTemplate>
                         </asp:TemplateField>
 

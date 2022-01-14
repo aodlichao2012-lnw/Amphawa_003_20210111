@@ -47,6 +47,7 @@ namespace LMS_002
                                 logout_edit.Visible = true;
                               logout_login.Visible = true;
                              login_other_people.Visible = false;
+                                import_book.Visible = false;
                             lb_status.Text = "สถานะ โปรไฟล์ : เจ้าหน้าที่";
                             }
                             else if (Session["role"].ToString() == "2")
@@ -60,6 +61,7 @@ namespace LMS_002
                               logout_login.Visible = true;
                               login_other_people.Visible = false;
                             lb_status.Text = "สถานะ โปรไฟล์ : ผู้ดูแล";
+                            import_book.Visible = true;
                             }
                             else if (Session["role"].ToString() == "3")
                             {
@@ -71,6 +73,7 @@ namespace LMS_002
                              logout_edit.Visible = true;
                               logout_login.Visible = true;
                              login_other_people.Visible = false;
+                                import_book.Visible = false;
                                lb_status.Text = "สถานะ โปรไฟล์ : บุคคลทั่วไป";
                             }
                         }
@@ -86,6 +89,7 @@ namespace LMS_002
                             menu_status.Visible = false;
                          logout_edit.Visible = false;
                           logout_login.Visible = false;
+                            import_book.Visible = false;
                          login_other_people.Visible = true;
                         }
 
@@ -124,6 +128,7 @@ namespace LMS_002
                  logout_edit.Visible = false;
                    logout_login.Visible = false;
                  login_other_people.Visible = true;
+                    import_book.Visible = false;
                   Response.Redirect(@"~/Page/Login.aspx");
 
             }

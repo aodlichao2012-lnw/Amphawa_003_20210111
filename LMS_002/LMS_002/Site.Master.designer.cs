@@ -96,6 +96,15 @@ namespace LMS_002
         protected global::System.Web.UI.HtmlControls.HtmlAnchor menu_role;
 
         /// <summary>
+        /// import_book control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor import_book;
+
+        /// <summary>
         /// logout_login control.
         /// </summary>
         /// <remarks>

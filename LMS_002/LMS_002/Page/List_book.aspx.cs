@@ -46,7 +46,10 @@ namespace LMS_002.Page
                                                 db_.st_detail_book,
                                                 db_.st_type_book_name,
                                                 db_.int_id_catalog_book,
-                                                db_.st_type_book
+                                                db_.st_type_book,
+                                                db_.img_book,
+                                                db_.img_path
+                                               
                                             }).ToList();
                     GridView1.DataBind();
 
@@ -127,7 +130,9 @@ namespace LMS_002.Page
                                                         db_.st_detail_book,
                                                         db_.st_type_book_name,
                                                         db_.int_id_catalog_book,
-                                                        db_.st_type_book
+                                                        db_.st_type_book,
+                                                        db_.img_book,
+                                                        db_.img_path
                                                     }
                                                   ).ToList();
                             GridView1.DataBind();
@@ -152,7 +157,9 @@ namespace LMS_002.Page
                                                         db_.st_detail_book,
                                                         db_.st_type_book_name,
                                                         db_.int_id_catalog_book,
-                                                        db_.st_type_book
+                                                        db_.st_type_book,
+                                                        db_.img_book,
+                                                        db_.img_path
                                                     }
                                                 ).ToList();
                             GridView1.DataBind();
@@ -175,7 +182,9 @@ namespace LMS_002.Page
                                                         db_.st_detail_book,
                                                         db_.st_type_book_name,
                                                         db_.int_id_catalog_book,
-                                                        db_.st_type_book
+                                                        db_.st_type_book,
+                                                        db_.img_book,
+                                                        db_.img_path
                                                     }
                                                    ).ToList();
                             GridView1.DataBind();
@@ -333,7 +342,9 @@ namespace LMS_002.Page
                                                 db_.st_detail_book,
                                                 db_.st_type_book_name,
                                                 db_.int_id_catalog_book,
-                                                db_.st_type_book
+                                                db_.st_type_book,
+                                                db_.img_book,
+                                                db_.img_path
                                             }).ToList();
                     GridView1.DataBind();
                 }
