@@ -39,6 +39,8 @@ namespace LMS_002.Models
         public Byte[] img_book { get; set; }
 
         public string st_process_name_user { get; set; }
+        public int int_status_yet { get; set; }
+        public string st_status_yet { get; set; }
         //ไฟล์เสียง
 
         //ไฟล์วิดีโอ

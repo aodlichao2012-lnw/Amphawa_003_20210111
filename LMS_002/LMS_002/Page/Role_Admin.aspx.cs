@@ -18,12 +18,14 @@ namespace LMS_002.Page
         string user_  = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+  
+            if (!Page.IsPostBack)
             {
-               
+                gdv_Role_admin.DataSource = Conncetions_db.Connection_command("SELECT [int_id], [st_user], [st_email], [st_type_cus] FROM [MD_Account] where st_user != 'suparat004' ");
+                gdv_Role_admin.DataBind();
             }
-          
-        }
+
+            }
 
         protected void gdv_Role_admin_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -46,6 +48,7 @@ namespace LMS_002.Page
                     txt_Email.Value = md_account.st_email;
                     ddl_role.SelectedValue = md_account.int_type_cus.ToString();
                 }
+                 Response.Redirect("~/Page/Role_Admin.aspx");
             }
             else if(e.CommandName =="delete")
             {
@@ -53,8 +56,12 @@ namespace LMS_002.Page
                 {
                     using (var db_ = new Dbcon_wan())
                     {
-                        var ids = db_.tb_account.Where(a => a.int_id == id).Select(a => a.int_id).FirstOrDefault();
-                        db_.tb_account.SqlQuery("delete from [dbo].[MD_Account] where int_id = " + id + "").ToList();
+                        var ids = db_.tb_account.Where(a => a.int_id == id).Select(a => a.st_user).FirstOrDefault();
+                        var update = Conncetions_db.Connection_command(@"UPDATE [dbo].[MD_catralog_book] SET  [int_cheeckin_out] = 0 ,[st_cheeckin_out] = 'พร้อมยืม' , st_process_name_user
+                           = '' WHERE st_process_name_user = '" + ids + "'");
+                        var result = Conncetions_db.Connection_command("delete from [dbo].[MD_Account] where int_id = " + id + "");
+                         Response.Redirect("~/Page/Role_Admin.aspx");
+             
                     }
                 }
                 catch
@@ -117,6 +124,18 @@ namespace LMS_002.Page
             {
                 Response.Write(@"<script>alert('กรุณากรอกข้อมูลให้ครบ')</script>");
             }
+        }
+
+        protected void gdv_Role_admin_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gdv_Role_admin.EditIndex = e.NewEditIndex;
+            this.DataBind();
+        }
+
+        protected void gdv_Role_admin_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            gdv_Role_admin.EditIndex = e.RowIndex;
+            this.DataBind();
         }
 
         //protected void btn_edit_Click(object sender, EventArgs e)

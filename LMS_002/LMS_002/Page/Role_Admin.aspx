@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Role_Admin.aspx.cs" Inherits="LMS_002.Page.Role_Admin" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Role_Admin.aspx.cs" Inherits="LMS_002.Page.Role_Admin"  EnableEventValidation="false"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script>
 
@@ -8,7 +7,7 @@
     <div class="wrapper fadeInDown">
 
 
-            <asp:GridView ID="gdv_Role_admin" runat="server" OnRowCommand="gdv_Role_admin_RowCommand" AutoGenerateColumns="False"  DataKeyNames="int_id" DataSourceID="SqlDataSource1">
+            <asp:GridView ID="gdv_Role_admin" runat="server" OnRowCommand="gdv_Role_admin_RowCommand" OnRowEditing="gdv_Role_admin_RowEditing" AutoGenerateColumns="False" OnRowDeleting="gdv_Role_admin_RowDeleting"   DataKeyNames="int_id" >
                
                 <Columns >
                  <asp:TemplateField>
@@ -16,7 +15,7 @@
               <%--  <div>  <button id="btn_edit" CssClass="btn btn-success btn-lg " onserverclick="btn_edit_Click" runat="server" value="แก้ไข" >แก้ไข</button>
                 <button id="btn_delete" CssClass="btn btn-danger btn-lg " onserverclick="btn_delete_Click" runat="server" value="ลบ" >ลบ</button></div>--%>
                 <asp:ImageButton  runat="server" ID="btn_edit" CommandName="edit"  ImageAlign="Middle" CommandArgument='<%#((GridViewRow)Container).RowIndex%>' ImageUrl="~/Image/icons/24pixel/edit_24.png"/>
-                <asp:ImageButton runat="server" ID="btn_delete" CommandName="delete"  ImageAlign="Middle" CommandArgument='<%#((GridViewRow)Container).RowIndex%>' ImageUrl="~/Image/icons/24pixel/delete_24.png" />
+                <asp:ImageButton runat="server" ID="btn_delete" CommandName="delete"   ImageAlign="Middle" CommandArgument='<%#((GridViewRow)Container).RowIndex%>' ImageUrl="~/Image/icons/24pixel/delete_24.png" />
               
             </ItemTemplate>
         </asp:TemplateField >

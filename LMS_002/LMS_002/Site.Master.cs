@@ -77,9 +77,8 @@ namespace LMS_002
                         else
                         {
                             Session["user"] = null;
-                            lb_user.Text = null;
+                            lb_user.Text = "ผู้ใช้ภายนอก โปรด Login เพื่อเข้าสู่ระบบ";
                             Session["role"] = 3;
-                        Session["user"] = "ผู้ใช้ภายนอก โปรด Login เพื่อเข้าสู่ระบบ";
                             menu_role.Visible = false;
                             menu_lend.Visible = false;
                             menu_throw.Visible = false;

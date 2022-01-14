@@ -20,20 +20,7 @@ namespace LMS_002.Page
         string count_book = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["user"] != null)
-            {
-                 ld_profile.Text = Session["user"].ToString();
-                profile = Session["user"].ToString();
-            }
-            else
-            {
-                Session["user"] = "ผู้ใช้ภายนอก โปรด Login เพื่อเข้าสู่ระบบ";
-                ld_profile.Text = "ผู้ใช้ภายนอก";
-            }
-           var  result = Conncetions_db.Connection_command("select count(*) as total from [dbo].[MD_catralog_book] where  int_cheeckin_out = 3 AND st_process_name_user = '"+profile+"' ");
-            ld_count.Text  = result.Rows[0]["total"].ToString();
-           
-            if(!Page.IsPostBack)
+            if (!Page.IsPostBack)
             {
                 using (var db = new Dbcon_wan())
                 {
@@ -65,7 +52,46 @@ namespace LMS_002.Page
 
                 }
             }
+
+            if (Session["user"] != null)
+            {
+                 ld_profile.Text = Session["user"].ToString();
+                profile = Session["user"].ToString();
+            }
+            else
+            {
+                Session["user"] = "ผู้ใช้ภายนอก โปรด Login เพื่อเข้าสู่ระบบ";
+                ld_profile.Text = "ผู้ใช้ภายนอก";
+            }
+              var  result = Conncetions_db.Connection_command("select count(*) as total from [dbo].[MD_catralog_book] where  int_cheeckin_out = 3 AND st_process_name_user = '"+profile+"' ");
+            if(Session["roleid"] == null)
+            {
+                sendto_lend.Visible = false;
+                foreach (GridViewRow gvrow in GridView1.Rows)
+                {
+
+                    CheckBox chk = (CheckBox)gvrow.FindControl("chkrows");
+                    chk.Visible = false;
+                }
+                clear_list.Visible = false;
+            }
+            else if (Session["roleid"].ToString() == "3")
+            {
+                sendto_lend.Visible = false;
+                foreach (GridViewRow gvrow in GridView1.Rows)
+                {
+
+                    CheckBox chk = (CheckBox)gvrow.FindControl("chkrows");
+                     chk.Visible = false;
+                }
+                clear_list.Visible =false;
+               
+
+            }
+         
+            ld_count.Text  = result.Rows[0]["total"].ToString();
            
+          
         }
 
         protected void searchCatalog_ServerClick(object sender, EventArgs e)
@@ -177,7 +203,7 @@ namespace LMS_002.Page
         {
             try
             {
-
+              Response.Redirect(@"~/Page/List_book.aspx");
             }
             catch
             {
@@ -235,26 +261,27 @@ namespace LMS_002.Page
                             }
                            
                             
-                            GridView1.DataBind();
-                            Response.Redirect(@"~/Page/List_book.aspx");
+                          
                         }
                     }
                 }
-                        //foreach (GridViewRow row in GridView1.Rows)
-                        //{
-                        //    //CheckBox chk = row.Cells[0].Controls[0] as CheckBox;
-                        //    //if (chk != null && chk.Checked)
-                        //    //{
-                        //    //    // ...
-                        //    //}
-                        //    CheckBox chkbox = (CheckBox)row.FindControl("chk_select");
-                        //    if (chkbox.Checked == true)
-                        //    {
-                        //        // Your Code
-                        //    }
-                        //}
+                GridView1.DataBind();
+                Response.Redirect(@"~/Page/List_book.aspx");
+                //foreach (GridViewRow row in GridView1.Rows)
+                //{
+                //    //CheckBox chk = row.Cells[0].Controls[0] as CheckBox;
+                //    //if (chk != null && chk.Checked)
+                //    //{
+                //    //    // ...
+                //    //}
+                //    CheckBox chkbox = (CheckBox)row.FindControl("chk_select");
+                //    if (chkbox.Checked == true)
+                //    {
+                //        // Your Code
+                //    }
+                //}
 
-                    }
+            }
             catch
             {
 

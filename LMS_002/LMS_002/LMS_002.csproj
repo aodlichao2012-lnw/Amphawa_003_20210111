@@ -295,6 +295,7 @@
     <Content Include="Page\Login.aspx" />
     <Content Include="Page\Register.aspx" />
     <Content Include="Page\Role_Admin.aspx" />
+    <Content Include="Page\Status_book.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -345,6 +346,7 @@
     <Compile Include="Models\MD_Ebook.cs" />
     <Compile Include="Models\MD_GMDGeneral_Material_Designation.cs" />
     <Compile Include="Models\MD_history.cs" />
+    <Compile Include="Models\MD_Role.cs" />
     <Compile Include="Models\MD_search.cs" />
     <Compile Include="Models\MD_statusbook.cs" />
     <Compile Include="Models\MD_type_Laguage.cs" />
@@ -410,6 +412,13 @@
     </Compile>
     <Compile Include="Page\Role_Admin.aspx.designer.cs">
       <DependentUpon>Role_Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Status_book.aspx.cs">
+      <DependentUpon>Status_book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Status_book.aspx.designer.cs">
+      <DependentUpon>Status_book.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

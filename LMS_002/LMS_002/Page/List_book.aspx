@@ -87,7 +87,7 @@
     </div>
     <div class="text-center">
         <a class="btn btn-success btn-lg " runat="server" onserverclick="sendto_lend_ServerClick" id="sendto_lend" data-id="1" href="#"><i class="fa fa-filter "></i>ส่งไปหน้ายืม </a>
-        <a class="btn btn-secondary btn-lg " runat="server" onserverclick="clear_list_ServerClick" id="clear_list" href="#"><i class="fa fa-eraser "></i>ล้างที่เลือก</a>
+        <a class="btn btn-secondary btn-lg " runat="server" onserverclick="clear_list_ServerClick"  id="clear_list" href="#"><i class="fa fa-eraser "></i>ล้างที่เลือก</a>
     </div>
 </asp:Content>
 

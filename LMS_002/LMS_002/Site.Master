@@ -21,8 +21,9 @@
     <link href="Content/Site.css" rel="stylesheet" />
     <style>
         li {
-            font-size:20px;
+            font-size: 20px;
         }
+
         .auto-style1 {
             display: block;
             font-size: 1rem;
@@ -64,7 +65,7 @@
             width: 234px;
         }
 
- /*       .wrapper {
+        /*       .wrapper {
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -114,7 +115,7 @@
 
         /* FORM TYPOGRAPHY*/
 
-         input[type=submit], input[type=reset] {
+        input[type=submit], input[type=reset] {
             background-color: #56baed;
             border: none;
             color: white;
@@ -403,9 +404,8 @@
 
         a:hover {
             background-color: rgba(95,186,233,0.4);
-              font-size: 20px;
+            font-size: 20px;
         }
-
     </style>
 </head>
 
@@ -542,8 +542,10 @@
                 </div>
                       <div class="nav navbar-nav bg-light">
                     <a class="nav-link " data-toggle="dropdown" href="~/Page/Login.aspx" runat="server" id="login"  onserverclick="login_ServerClick">
-                                <asp:Label runat="server" ID="lb_user" Text="ผู้ใช้ภายนอก โปรดคลิ้กที่นี่ เพื่อเข้าสู่ระบบ">ผู้ใช้ภายนอก โปรดคลิ้กที่นี่ เพื่อเข้าสู่ระบบ</asp:Label>
-
+                                <asp:Label runat="server" ID="lb_user" Text="ผู้ใช้ภายนอก โปรดคลิ้กที่นี่ เพื่อเข้าสู่ระบบ">ผู้ใช้ภายนอก โปรดคลิ้กที่นี่ เพื่อเข้าสู่ระบบ    </asp:Label>
+                        <a href="#" class="notification  w-50 h-50">
+                            <span class="badge bg-danger w-50 h-100">3</span>
+                        </a>
                         </a>
                     <ul class="dropdown-menu">
             
@@ -568,7 +570,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link " href="#" runat="server" id="menu_status">สถานะการยืม - คืน
+                            <a class="nav-link " href="~/Page/Status_book.aspx" runat="server" id="menu_status">สถานะการยืม - คืน
                             </a>
                         </li>
                         <li>

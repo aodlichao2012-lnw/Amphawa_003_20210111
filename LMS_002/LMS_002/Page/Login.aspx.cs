@@ -26,7 +26,7 @@ namespace LMS_002.Page
                   formContent.Visible = true;
               
             }
-           else
+           else if(Session["roleid"] != null)
             {
                 formContent.Visible = false;
             }

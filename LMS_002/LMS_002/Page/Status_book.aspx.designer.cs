@@ -11,7 +11,7 @@ namespace LMS_002.Page
 {
 
 
-    public partial class History_lean_book
+    public partial class Status_book
     {
 
         /// <summary>
