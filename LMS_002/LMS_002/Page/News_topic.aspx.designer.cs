@@ -10,7 +10,7 @@
 
 namespace LMS_002.Page
 {
-    public partial class Detail_book
+    public partial class News_topic
     {
     }
 }

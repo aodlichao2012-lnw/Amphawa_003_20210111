@@ -21,7 +21,7 @@ namespace LMS_002.Page
   
             if (!Page.IsPostBack)
             {
-                gdv_Role_admin.DataSource = Conncetions_db.Connection_command("SELECT [int_id], [st_user], [st_email], [st_type_cus] FROM [MD_Account] where st_user != 'suparat004' ");
+                gdv_Role_admin.DataSource = Conncetions_db.Instance.Connection_command("SELECT [int_id], [st_user], [st_email], [st_type_cus] FROM [MD_Account] where st_user != 'suparat004' ");
                 gdv_Role_admin.DataBind();
             }
 
@@ -57,9 +57,9 @@ namespace LMS_002.Page
                     using (var db_ = new Dbcon_wan())
                     {
                         var ids = db_.tb_account.Where(a => a.int_id == id).Select(a => a.st_user).FirstOrDefault();
-                        var update = Conncetions_db.Connection_command(@"UPDATE [dbo].[MD_catralog_book] SET  [int_cheeckin_out] = 0 ,[st_cheeckin_out] = 'พร้อมยืม' , st_process_name_user
+                        var update = Conncetions_db.Instance.Connection_command(@"UPDATE [dbo].[MD_catralog_book] SET  [int_cheeckin_out] = 0 ,[st_cheeckin_out] = 'พร้อมยืม' , st_process_name_user
                            = '' WHERE st_process_name_user = '" + ids + "'");
-                        var result = Conncetions_db.Connection_command("delete from [dbo].[MD_Account] where int_id = " + id + "");
+                        var result = Conncetions_db.Instance.Connection_command("delete from [dbo].[MD_Account] where int_id = " + id + "");
                          Response.Redirect("~/Page/Role_Admin.aspx");
              
                     }
@@ -104,7 +104,7 @@ namespace LMS_002.Page
                         }
                         
                         int int_type_cus = ddl_role.SelectedValue.ToString().Equals("") ? 3 : Convert.ToInt32(ddl_role.SelectedValue.ToString());
-                      var cs =   Conncetions_db.Connection_command(@" UPDATE [dbo].[MD_Account] SET st_user = '"+user+"' , " +
+                      var cs =   Conncetions_db.Instance.Connection_command(@" UPDATE [dbo].[MD_Account] SET st_user = '"+user+"' , " +
                             "st_password = '"+st_password+"' , st_email = '"+st_email+"' ,int_type_cus = "+int_type_cus+" , st_type_cus = '"+st_type_cus+"' where int_id = "+Session["id_Accont"].ToString()+" ");
                         Response.Write(@"<script>alert('บันทึกเรียบร้อย')</script>");
                         Response.Redirect(@"~/Page/Role_Admin.aspx");

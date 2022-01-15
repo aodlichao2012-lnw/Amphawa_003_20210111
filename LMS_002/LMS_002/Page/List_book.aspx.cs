@@ -32,26 +32,28 @@ namespace LMS_002.Page
                     //    "  ,[MD_Account_int_id],[st_type_book],[st_type_book_name] " +
                     //    ", bool_current FROM [dbo].[MD_catralog_book]  order by dt_DATE_modify DESC";
 
-                    GridView1.DataSource = (from db_ in db.tb_cattalog
-                                            where db_.int_cheeckin_out != 3
-                                            join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
-                                            select new
-                                            {
-                                                status.status_book,
-                                                db_.bool_current
-,
-                                                db_.dt_DATE_modify,
-                                                db_.st_ISBN_ISSN,
-                                                db_.st_name_book,
-                                                db_.st_detail_book,
-                                                db_.st_type_book_name,
-                                                db_.int_id_catalog_book,
-                                                db_.st_type_book,
-                                                db_.img_book,
-                                                db_.img_path
-                                               
-                                            }).ToList();
+                    GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from  [dbo].[MD_catralog_book] Left join dbo.MD_statusbook on MD_catralog_book.int_cheeckin_out = MD_statusbook.self_id where  int_cheeckin_out != 3");
                     GridView1.DataBind();
+//                    GridView1.DataBind();  GridView1.DataSource = (from db_ in db.tb_cattalog
+//                                            where db_.int_cheeckin_out != 3
+//                                            join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
+//                                            select new
+//                                            {
+//                                                status.status_book,
+//                                                db_.bool_current
+//,
+//                                                db_.dt_DATE_modify,
+//                                                db_.st_ISBN_ISSN,
+//                                                db_.st_name_book,
+//                                                db_.st_detail_book,
+//                                                db_.st_type_book_name,
+//                                                db_.int_id_catalog_book,
+//                                                db_.st_type_book,
+//                                                db_.img_book,
+//                                                db_.img_path
+
+                    //                                            }).ToList();
+                    //                    GridView1.DataBind();
 
                 }
             }
@@ -66,7 +68,7 @@ namespace LMS_002.Page
                 Session["user"] = "ผู้ใช้ภายนอก โปรด Login เพื่อเข้าสู่ระบบ";
                 ld_profile.Text = "ผู้ใช้ภายนอก";
             }
-              var  result = Conncetions_db.Connection_command("select count(*) as total from [dbo].[MD_catralog_book] where  int_cheeckin_out = 3 AND st_process_name_user = '"+profile+"' ");
+              var  result = Conncetions_db.Instance.Connection_command("select count(*) as total from [dbo].[MD_catralog_book] where  int_cheeckin_out = 3 AND st_process_name_user = '"+profile+"' ");
             if(Session["roleid"] == null)
             {
                 sendto_lend.Visible = false;
@@ -261,7 +263,7 @@ namespace LMS_002.Page
                             //   ).FirstOrDefault();
                             try
                             {
-                                var update = Conncetions_db.Connection_command(  @"UPDATE [dbo].[MD_catralog_book] SET  [int_cheeckin_out] = 3 ,[st_cheeckin_out] = 'เตรียมพร้อมเพื่อยืม' , st_process_name_user
+                                var update = Conncetions_db.Instance.Connection_command(  @"UPDATE [dbo].[MD_catralog_book] SET  [int_cheeckin_out] = 3 ,[st_cheeckin_out] = 'เตรียมพร้อมเพื่อยืม' , st_process_name_user
                            = '"+profile+"' WHERE int_id_catalog_book = " + id + "");
                             }
                             catch

@@ -159,7 +159,7 @@
             <TextRuns>
               <TextRun>
                 <Label>0</Label>
-                <Value>=First(Fields!st_count.Value, "DataSet2")</Value>
+                <Value>=First(Fields!st_count.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -407,11 +407,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
+        <DataSetName>DataSet2</DataSetName>
         <Top>2.85433cm</Top>
         <Left>1.02542cm</Left>
         <Height>2.5cm</Height>
-        <Width>11.82563cm</Width>
+        <Width>11.82562cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -426,7 +426,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!st_cus_name.Value, "DataSet2")</Value>
+                <Value>=First(Fields!st_process_name_user.Value, "DataSet2")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -500,114 +500,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>138086a0-d4b4-4d32-91a4-369d071baf5c</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="Amphawan_LMS_db_2DataSeeee">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>280c0ecc-0c70-4fdc-be42-0e1d0c7f110f</rd:DataSourceID>
+      <rd:DataSourceID>3a8aea12-0ed2-4fd3-8e5e-5e5b79375fcc</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>Amphawan_LMS_db_2DataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="int_id_catalog_book">
-          <DataField>int_id_catalog_book</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="st_name_book">
-          <DataField>st_name_book</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="st_ISBN_ISSN">
-          <DataField>st_ISBN_ISSN</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="st_detail_book">
-          <DataField>st_detail_book</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="dt_DATE_modify">
-          <DataField>dt_DATE_modify</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="img_book">
-          <DataField>img_book</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-        <Field Name="MD_Account_int_id">
-          <DataField>MD_Account_int_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="st_type_book">
-          <DataField>st_type_book</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="st_type_book_name">
-          <DataField>st_type_book_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="bool_current">
-          <DataField>bool_current</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="int_cheeckin_out">
-          <DataField>int_cheeckin_out</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="st_cheeckin_out">
-          <DataField>st_cheeckin_out</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="dt_checkout_date">
-          <DataField>dt_checkout_date</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="dt_checkin_date">
-          <DataField>dt_checkin_date</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="dt_checkin_due">
-          <DataField>dt_checkin_due</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="st_process_name_user">
-          <DataField>st_process_name_user</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="int_status_yet">
-          <DataField>int_status_yet</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="st_status_yet">
-          <DataField>st_status_yet</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="img_path">
-          <DataField>img_path</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="st_lend_name">
-          <DataField>st_lend_name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>Amphawan_LMS_db_2DataSet</rd:DataSetName>
-        <rd:SchemaPath>E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet.xsd</rd:SchemaPath>
-        <rd:TableName>MD_catralog_book</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>MD_catralog_bookTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DataSet2">
       <Query>
         <DataSourceName>Amphawan_LMS_db_2DataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -669,10 +566,6 @@
           <DataField>int_type_cus</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Date_login_user">
-          <DataField>Date_login_user</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
         <Field Name="st_type_cus">
           <DataField>st_type_cus</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -685,14 +578,110 @@
           <DataField>decimal_cus_from_least</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="Date_login_user">
+          <DataField>Date_login_user</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Amphawan_LMS_db_2DataSet</rd:DataSetName>
-        <rd:SchemaPath>E:\Suparat\Amphawa_003_20210111\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\work\Amphawa_003_20210111\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet.xsd</rd:SchemaPath>
         <rd:TableName>MD_Account</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>MD_AccountTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>Amphawan_LMS_db_2DataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="int_id_catalog_book">
+          <DataField>int_id_catalog_book</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="st_name_book">
+          <DataField>st_name_book</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="st_ISBN_ISSN">
+          <DataField>st_ISBN_ISSN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="st_detail_book">
+          <DataField>st_detail_book</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dt_DATE_modify">
+          <DataField>dt_DATE_modify</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="st_type_book">
+          <DataField>st_type_book</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="st_type_book_name">
+          <DataField>st_type_book_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="bool_current">
+          <DataField>bool_current</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="int_cheeckin_out">
+          <DataField>int_cheeckin_out</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="st_cheeckin_out">
+          <DataField>st_cheeckin_out</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dt_checkout_date">
+          <DataField>dt_checkout_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="dt_checkin_date">
+          <DataField>dt_checkin_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="dt_checkin_due">
+          <DataField>dt_checkin_due</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="img_book">
+          <DataField>img_book</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="st_process_name_user">
+          <DataField>st_process_name_user</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="int_status_yet">
+          <DataField>int_status_yet</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="st_status_yet">
+          <DataField>st_status_yet</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="img_path">
+          <DataField>img_path</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="st_lend_name">
+          <DataField>st_lend_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Amphawan_LMS_db_2DataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\work\Amphawa_003_20210111\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet.xsd</rd:SchemaPath>
+        <rd:TableName>MD_catralog_book</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>MD_catralog_bookTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

@@ -16,7 +16,7 @@
     <AssemblyName>LMS_002</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>true</Use64BitIISExpress>
     <IISExpressSSLPort>44325</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -165,17 +165,6 @@
     <Content Include="Image\icons\i con map\64pixel\.DS_Store" />
     <Content Include="Amphawan_LMS_db_2DataSet.xsc">
       <DependentUpon>Amphawan_LMS_db_2DataSet.xsd</DependentUpon>
-    </Content>
-    <Content Include="Amphawan_LMS_db_2DataSeeee.xsc">
-      <DependentUpon>Amphawan_LMS_db_2DataSeeee.xsd</DependentUpon>
-    </Content>
-    <None Include="Amphawan_LMS_db_2DataSeeee.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Amphawan_LMS_db_2DataSeeee.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Amphawan_LMS_db_2DataSeeee.xss">
-      <DependentUpon>Amphawan_LMS_db_2DataSeeee.xsd</DependentUpon>
     </Content>
     <None Include="Amphawan_LMS_db_2DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -326,14 +315,17 @@
     <Content Include="Image\icons\i con map\64pixel\wifi_64.png" />
     <Content Include="Image\icons\searchicon.png" />
     <Content Include="Page\Add_book_Admin.aspx" />
-    <Content Include="Page\Detail_book.aspx" />
+    <Content Include="Page\book_detail.aspx" />
     <Content Include="Page\Edit_profile.aspx" />
     <Content Include="Page\History_lean_book.aspx" />
     <Content Include="Page\import_book_Admin.aspx" />
     <Content Include="Page\Lean_book.aspx" />
     <Content Include="Page\List_book.aspx" />
     <Content Include="Page\Login.aspx" />
+    <Content Include="Page\News_detail.aspx" />
+    <Content Include="Page\News_topic.aspx" />
     <Content Include="Page\Register.aspx" />
+    <Content Include="Page\return_detail.aspx" />
     <Content Include="Page\Role_Admin.aspx" />
     <Content Include="Page\Status_book.aspx" />
     <Content Include="Report_pdf\slip_lend_pdf.aspx" />
@@ -385,11 +377,6 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Amphawan_LMS_db_2DataSeeee.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Amphawan_LMS_db_2DataSeeee.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Amphawan_LMS_db_2DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -421,12 +408,12 @@
     <Compile Include="Page\Add_book_Admin.aspx.designer.cs">
       <DependentUpon>Add_book_Admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Page\Detail_book.aspx.cs">
-      <DependentUpon>Detail_book.aspx</DependentUpon>
+    <Compile Include="Page\book_detail.aspx.cs">
+      <DependentUpon>book_detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page\Detail_book.aspx.designer.cs">
-      <DependentUpon>Detail_book.aspx</DependentUpon>
+    <Compile Include="Page\book_detail.aspx.designer.cs">
+      <DependentUpon>book_detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Edit_profile.aspx.cs">
       <DependentUpon>Edit_profile.aspx</DependentUpon>
@@ -470,12 +457,33 @@
     <Compile Include="Page\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Page\News_detail.aspx.cs">
+      <DependentUpon>News_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\News_detail.aspx.designer.cs">
+      <DependentUpon>News_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\News_topic.aspx.cs">
+      <DependentUpon>News_topic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\News_topic.aspx.designer.cs">
+      <DependentUpon>News_topic.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Page\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Page\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\return_detail.aspx.cs">
+      <DependentUpon>return_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\return_detail.aspx.designer.cs">
+      <DependentUpon>return_detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Role_Admin.aspx.cs">
       <DependentUpon>Role_Admin.aspx</DependentUpon>

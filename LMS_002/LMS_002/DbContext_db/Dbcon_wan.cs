@@ -9,7 +9,7 @@ namespace LMS_002.DbContext_db
 {
     public class Dbcon_wan : DbContext
     {
-        public Dbcon_wan() : base("amphawacontect")
+        public Dbcon_wan() : base("amphawacontect2")
         {
         }
         public DbSet<MD_Account> tb_account { get; set; }

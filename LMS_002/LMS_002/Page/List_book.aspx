@@ -56,7 +56,7 @@
     <div>
         <div class="wrapper fadeInDown">
             <div class="text-center">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="int_id_catalog_book" OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowCommand="GridView1_RowCommand">
+                <asp:GridView ID="GridView1"  runat="server" AutoGenerateColumns="False" DataKeyNames="int_id_catalog_book" OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowCommand="GridView1_RowCommand">
                     <Columns>
 
 

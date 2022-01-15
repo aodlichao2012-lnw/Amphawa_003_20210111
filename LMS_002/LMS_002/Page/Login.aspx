@@ -94,7 +94,7 @@ h2.active {
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed;
+  background-color: #dd9933;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -248,7 +248,7 @@ input[type=text]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: #dd9933;
   content: "";
   transition: width 0.2s;
 }

@@ -22,8 +22,11 @@
     <style>
         li {
             font-size: 20px;
+            background-color:#dd9933;
         }
-
+        a{
+            color:#dd9933;
+        }
         .auto-style1 {
             display: block;
             font-size: 1rem;
@@ -116,7 +119,7 @@
         /* FORM TYPOGRAPHY*/
 
         input[type=submit], input[type=reset] {
-            background-color: #56baed;
+            background-color: #dd9933;
             border: none;
             color: white;
             padding: 15px 80px;
@@ -326,13 +329,13 @@
             bottom: -10px;
             width: 0;
             height: 2px;
-            background-color: #56baed;
+            background-color: #dd9933;
             content: "";
             transition: width 0.2s;
         }
 
         .underlineHover:hover {
-            color: #0d0d0d;
+            color: #dd9933;
         }
 
             .underlineHover:hover:after {
@@ -403,7 +406,7 @@
         }
 
         a:hover {
-            background-color: rgba(95,186,233,0.4);
+            background-color: #f6f6f6;
             font-size: 20px;
         }
     </style>
@@ -637,7 +640,7 @@
         $(document).ready(function () {
             $(function () {
                 $(".datepicker").datepicker();
-                format = "yy/dd/mm"
+                format = "MM/dd/yyyy"
             });
 
             // Bootstrap datepicker

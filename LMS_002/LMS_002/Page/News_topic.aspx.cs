@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace LMS_002.Page
 {
-    public partial class Detail_book : System.Web.UI.Page
+    public partial class News_topic : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

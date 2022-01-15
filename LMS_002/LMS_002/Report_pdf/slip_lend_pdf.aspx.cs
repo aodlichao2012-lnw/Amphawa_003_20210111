@@ -30,8 +30,10 @@ namespace LMS_002.Report_pdf
             {
                 id_iss = Request.QueryString["id_iss"].ToString();
             }
-
-            SqlDataSource1.SelectCommand = @"SELECT * FROM[dbo].[MD_catralog_book] left join dbo.MD_Account on dbo.MD_catralog_book.st_process_name_user = dbo.MD_Account.st_user where dbo.MD_catralog_book.st_process_name_user = '"+username+"' AND MD_catralog_book.st_ISBN_ISSN = '"+id_iss+"'";
+            SqlDataSource1.SelectCommand = @"SELECT * FROM[dbo].[MD_catralog_book] left join dbo.MD_Account on dbo.MD_catralog_book.st_process_name_user = dbo.MD_Account.st_user where dbo.MD_catralog_book.st_process_name_user = '"+username+"'";
+            SqlDataSource1.DataBind();        
+            SqlDataSource2.SelectCommand = @"SELECT * FROM[dbo].[MD_catralog_book] left join dbo.MD_Account on dbo.MD_catralog_book.st_process_name_user = dbo.MD_Account.st_user where dbo.MD_catralog_book.st_process_name_user = '"+username+"' ";
+            SqlDataSource2.DataBind();
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using LMS_002.DbContext_db;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -21,12 +23,12 @@ namespace LMS_002.Page
                 if (Session["user"] != null)
                 {
                     profile = Session["user"].ToString();
-                    GridView1.DataSource = Conncetions_db.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_statusbook on" +
+                    GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_statusbook on" +
                    " [dbo].[MD_catralog_book].int_cheeckin_out = MD_statusbook.self_id  where  st_process_name_user = '" + profile + "' AND int_cheeckin_out = 3 ");
                     GridView1.DataBind();
-                    ddl_account.DataSource = Conncetions_db.Connection_command("select * from [dbo].[MD_Account]");
-                    ddl_account.DataTextField = "int_id";
-                    ddl_account.DataValueField = "st_user";
+                    ddl_account.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_Account]");
+                    ddl_account.DataTextField = "st_user"; 
+                    ddl_account.DataValueField = "int_id";
                     ddl_account.SelectedIndex = 1;
                     ddl_account.DataBind();
                 }
@@ -148,19 +150,21 @@ namespace LMS_002.Page
                         //   ).FirstOrDefault();
                         try
                         {
-                         
-                            var update = Conncetions_db.Connection_command(@"UPDATE [dbo].[MD_catralog_book] SET  [int_cheeckin_out] = 1 ,[st_cheeckin_out] = 'ถูกยืม' , [dt_checkout_date] = "+min_date.Value+", " +
-                                " [dt_checkin_date] = "+max_date.Value +" st_process_name_user = '" + profile + "' , st_lend_name = '"+account_cus+"'  WHERE int_id_catalog_book = " + id + "");
-                            var update_cus = Conncetions_db.Connection_command(@"UPDATE [dbo].[MD_Account] SET [st_count] = "+count+", [decimal_cus_from_least] = 0.00  WHERE st_user = " +
+                            profile = Session["user"].ToString();
+                            string min = Convert.ToDateTime(min_date.Value).ToString("yyyy/MM/dd" , new CultureInfo("en-EN"));
+                            string max = Convert.ToDateTime(max_date.Value).ToString("yyyy/MM/dd", new CultureInfo("en-EN"));
+                            var update = Conncetions_db.Instance.Connection_command(@"UPDATE [dbo].[MD_catralog_book] SET  [int_cheeckin_out] = 1 ,[st_cheeckin_out] = 'ถูกยืม' , [dt_checkout_date] = "+min+", " +
+                                " [dt_checkin_date] = "+max+" , st_process_name_user = '" + profile + "' , st_lend_name = '"+account_cus+"'  WHERE int_id_catalog_book = " + id + "");
+                            var update_cus = Conncetions_db.Instance.Connection_command(@"UPDATE [dbo].[MD_Account] SET [st_count] = "+count+", [decimal_cus_from_least] = 0.00  WHERE st_user = " +
                                 " '"+account_cus+"'");
 
 
-                            id += Convert.ToInt32(gvrow.Cells[3].Text);
+                            id += gvrow.Cells[3].Text;
 
                         }
-                        catch
+                        catch(Exception ex)
                         {
-                            Response.Redirect(@"<script>alert('หนังสือที่ท่านเลือก ได้ถูกเตรียมที่จะยืมแล้ว')</script>");
+                            ex.Message.ToString();
                         }
 
 
@@ -169,7 +173,10 @@ namespace LMS_002.Page
                 }
             }
             GridView1.DataBind();
-            Response.Redirect(@"~/Report_pdf/slip_lend_pdf.aspx?user="+profile+"&cus="+account_cus+"&id_iss="+id+"");
+            string startupPath = Directory.GetCurrentDirectory();
+
+
+            Response.Write(@"<script>window.open('"+ startupPath + "/Report_pdf/slip_lend_pdf.aspx?user=" + profile + "&cus=" + account_cus + "&id_iss=" + id + "' , '_blank');</script>");
         }
     }
 }

@@ -18,6 +18,9 @@
         li {
             font-size:20px;
         }
+          a{
+            color:#dd9933;
+        }
         .auto-style1 {
             display: block;
             font-size: 1rem;
@@ -397,7 +400,7 @@
         }
 
         a:hover {
-            background-color: rgba(95,186,233,0.4);
+            background-color: #fff;
               font-size: 20px;
         }
 
