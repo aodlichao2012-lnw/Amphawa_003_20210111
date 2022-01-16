@@ -43,9 +43,20 @@ namespace LMS_002.Models
         public string st_status_yet { get; set; }
         public string img_path { get; set; }
         public string st_lend_name { get; set; }
+        public string video_path { get; set; }
+        public string ebook_path { get; set; }
+        public string st_author { get; set; }
+        public string st_call_number { get; set; }
+        public string count_print { get; set; }
+        public string plate_print { get; set; }
+        public string company_print { get; set; }
+        public string st_lang { get; set; }
+        public int int_lang { get; set; }
+        public int int_count_view_book { get; set; }
         //ไฟล์เสียง
 
         //ไฟล์วิดีโอ
+
 
 
 

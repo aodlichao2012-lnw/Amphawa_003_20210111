@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>แก้ไขโปรไฟล์</h2>
   <div id="formContent" runat="server" >
-    <div class="wrapper fadeInDown">
+    <div class="wrapper fadeInDown text-center">
                              <div> <input type="text" runat="server" id="txt_login" class="fadeIn second" name="login" placeholder="ชื่อผู้ใช้"></div>
                               <div class="form-group">
  

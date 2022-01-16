@@ -318,7 +318,6 @@
     <Content Include="Page\book_detail.aspx" />
     <Content Include="Page\Edit_profile.aspx" />
     <Content Include="Page\History_lean_book.aspx" />
-    <Content Include="Page\import_book_Admin.aspx" />
     <Content Include="Page\Lean_book.aspx" />
     <Content Include="Page\List_book.aspx" />
     <Content Include="Page\Login.aspx" />
@@ -386,6 +385,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="DbContext_db\Conncetions_db.cs" />
     <Compile Include="DbContext_db\Dbcon_wan.cs" />
+    <Compile Include="DbContext_db\pathFile_.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -428,13 +428,6 @@
     </Compile>
     <Compile Include="Page\History_lean_book.aspx.designer.cs">
       <DependentUpon>History_lean_book.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\import_book_Admin.aspx.cs">
-      <DependentUpon>import_book_Admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\import_book_Admin.aspx.designer.cs">
-      <DependentUpon>import_book_Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Lean_book.aspx.cs">
       <DependentUpon>Lean_book.aspx</DependentUpon>
@@ -533,6 +526,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Class_model\" />
+    <Folder Include="Doc_all_type\ebook\" />
+    <Folder Include="Doc_all_type\topic\" />
+    <Folder Include="Doc_all_type\video\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

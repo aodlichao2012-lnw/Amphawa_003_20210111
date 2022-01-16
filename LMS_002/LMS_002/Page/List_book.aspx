@@ -64,6 +64,7 @@
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:CheckBox  ID="chkrows" AutoPostBack="true" runat="server" />
+                                <asp:Button runat="server" CommandName="open" ID="btn_open"   Text="เปิดดู"/>
                             </ItemTemplate>
                         </asp:TemplateField>
 

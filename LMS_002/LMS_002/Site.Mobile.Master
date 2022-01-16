@@ -536,7 +536,7 @@
 
                         </li>
                         <li>
-                            <a class="nav-link " runat="server" id="menu_throw" href="#">หน้าคืน
+                            <a class="nav-link " runat="server" id="menu_throw" href="~/Page/return_detail.aspx">หน้าคืน
                             </a>
                         </li>
                         <li>
@@ -552,7 +552,7 @@
                             </a>
                         </li>
                            <li>
-                            <a class="nav-link " href="~/Page/import_book_Admin.aspx" runat="server" id="import_book">นำเข้าหนังสือ
+                            <a class="nav-link " href="~/Page/Add_book_Admin.aspx" runat="server" id="import_book">นำเข้าหนังสือ
                             </a>
                         </li>
                         <li>
