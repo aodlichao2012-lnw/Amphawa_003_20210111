@@ -33,8 +33,8 @@ namespace LMS_002.Models
          public int int_type_cus { get; set; }  = Convert.ToInt32( enum_type_cus.standdad);
 
         public string st_type_cus { get; set; }
-        public int st_count { get; set; }
-        public decimal decimal_cus_from_least { get; set; }
+        public int st_count { get; set; } = 0;
+        public decimal decimal_cus_from_least { get; set; } = 0;
 
         public DateTime Date_login_user { get; set; } = DateTime.Now;
 

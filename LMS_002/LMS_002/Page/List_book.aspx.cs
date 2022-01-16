@@ -20,6 +20,7 @@ namespace LMS_002.Page
         string count_book = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!Page.IsPostBack)
             {
                 using (var db = new Dbcon_wan())

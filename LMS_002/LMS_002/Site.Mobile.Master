@@ -15,6 +15,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="Content/Site.css" rel="stylesheet" />
       <style>
+
         li {
             font-size:20px;
         }
@@ -405,112 +406,45 @@
         }
 
     </style>
+   
 </head>
 <body>
     <form id="form1" runat="server">
-
             <nav>
-                <%-- <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" runat="server" id="menu_list" href="~/Page/List_book.aspx">
-         รายการหนังสือ
-        </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" runat="server" id="menu_lend" href="~/Page/Lean_book.aspx" >
-          หน้ายืม
-        </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" runat="server" id="menu_throw" href="#" >
-          หน้าคืน
-        </a>
-
-      </li>
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" runat="server" id="menu_his" href="~/Page/History_lean_book.aspx" >
-          ประวัติการยืม
-        </a>
-
-      </li>
-         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" runat="server" id="menu_status" >
-         สถานะการยืม - คืน
-        </a>
-
-      </li>
-         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" runat="server" id="menu_account">
-          ข้อมูลผู้ใช้
-        </a>
-
-      </li>
-
-         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="~/Page/Role_Admin.aspx" runat="server" id="menu_role" >
-          กำหนดสิทธิ์
-        </a>
-
-      </li>
-
-
-        <%--  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example<span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
-          </ul>--%>
-
-                <%--  <li class="nav-item dropdown " data-toggle="dropdown">
-        <a class="nav-link dropdown-toggle" href="~/Page/Login.aspx" id="logout_login" runat="server" onserverclick="logout_login_ServerClick" >
-            <asp:Label runat="server" ID="lb_user" Text=""  ></asp:Label>
-            </a>
-             </li>
-             <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="~/Page/Edit_profile.aspx" id="logout_edit" runat="server" onserverclick="logout_edit_ServerClick" >
-            <asp:Label runat="server" ID="lb_edit" Text="แก้ไขข้อมูลโปรไฟล์"  ></asp:Label>
-            
-
-        </a>
-
-      </li>
-              
-    </ul>--%>
-
-                <div class="nav navbar-nav"">
+                <div class="nav navbar-nav">
                     <a class="navbar-brand "  data-toggle="dropdown">
                         Home
   <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown">
                         <li><a class="nav-link " href="#">ข่าวประชาสัมพันธ์</a></li>
                         <li><a class="nav-link " href="#">ข่าแนะนำหนังสือใหม่</a></li>
                         <li><a class="nav-link " href="#">แนะนำหนังสือยอดนิยม ประจำเดือน</a></li>
 
                     </ul>
                 </div>
-                <div class="nav navbar-nav"">
+                <div class="nav navbar-nav">
                     <a class="navbar-brand"  data-toggle="dropdown" runat="server">
                         ABOUT US
   <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown">
                         <li><a class="nav-link " href="#">ประวัติห้องสมุด</a></li>
 
                     </ul>
                 </div>
           
-                <div class=" nav navbar-nav"">
+                <div class=" nav navbar-nav">
                     <a class="navbar-brand "  data-toggle="dropdown">
                         OPAC
   <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu ">
+                    <ul class="dropdown-menu dropdown ">
                         <li><a class="nav-link " runat="server" href="~/Page/List_book.aspx">ค้นหาข้อมูล</a></li>
 
                     </ul>
                 </div>
-                <div class=" nav navbar-nav"">
+                <div class=" nav navbar-nav">
                     <a class="navbar-brand" href="#"  data-toggle="dropdown">
                         CONTACT
   <span class="caret"></span>
@@ -521,7 +455,7 @@
                                 <asp:Label runat="server" ID="lb_user" Text="ผู้ใช้ภายนอก โปรดคลิ้กที่นี่ เพื่อเข้าสู่ระบบ">ผู้ใช้ภายนอก โปรดคลิ้กที่นี่ เพื่อเข้าสู่ระบบ</asp:Label>
 
                         </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown">
             
                         <li>
                             <a class="nav-link " href="~/Page/Edit_profile.aspx" id="logout_edit" runat="server" onserverclick="logout_edit_ServerClick">
@@ -566,43 +500,14 @@
                 </div>
                 <div> <p><asp:Label runat="server" ID="lb_status"></asp:Label></p></div>
             </nav>
-            <%-- <asp:Menu ID="Menu1" Visible="true" runat="server" Orientation="Horizontal" Width="100%" Height="40%" OnMenuItemClick="Menu1_MenuItemClick">
-                    <Items>
-                        <asp:MenuItem Text="รายการหนังสือ S" NavigateUrl="~/Page/List_book.aspx">
- 
-                        </asp:MenuItem  >
-                        <asp:MenuItem Text="หน้ายืม S"  NavigateUrl="~/Page/Lean_book.aspx" >
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="หน้าคืน S" >
-                        </asp:MenuItem>
-                        <asp:MenuItem Text="ประวัติการยืม S T" NavigateUrl="~/Page/History_lean_book.aspx" >
-                        </asp:MenuItem>   
-                        <asp:MenuItem Text="สถานะการยืม - คืน T" >
-                        </asp:MenuItem>   
-                        <asp:MenuItem Text="ข้อมูลผู้ใช้ T" >
-                        </asp:MenuItem>  
-                        <asp:MenuItem Text="กำหนดสิทธิ A"   NavigateUrl="~/Page/Role_Admin.aspx" >
-                        </asp:MenuItem>   
-                        <asp:MenuItem Text="เข้าสู่ระบบ A"  NavigateUrl="~/Page/Login.aspx">
-                            
-                        </asp:MenuItem>   
-                        <asp:MenuItem Text="ออกจากระบบ A"  NavigateUrl="~/Page/Login.aspx" >
-                        </asp:MenuItem>
-                    </Items>
-                    <LevelMenuItemStyles>
-                        <asp:MenuItemStyle CssClass="main_menu" />
-                        <asp:MenuItemStyle CssClass="level_menu" />
-
-                    </LevelMenuItemStyles>
-                </asp:Menu>--%>
-
-       
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         <section class="content-wrapper main-content clear-fix">
             <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        
+        
         </section>
         <friendlyUrls:ViewSwitcher runat="server" />
-    </div>
+   
     </form>
 </body>
 </html>

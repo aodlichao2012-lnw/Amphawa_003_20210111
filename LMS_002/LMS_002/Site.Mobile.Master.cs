@@ -13,7 +13,8 @@ namespace LMS_002
         string  profile ="";
         protected void Page_Load(object sender, EventArgs e)
         {
-                  using (var cs = new Dbcon_wan())
+            
+            using (var cs = new Dbcon_wan())
             {
                 if (Session["user"] == null)
                 {
@@ -164,5 +165,17 @@ namespace LMS_002
         {
               Response.Redirect(@"~/Page/Login.aspx");
         }
+
+        protected void FeaturedContent_Init(object sender, EventArgs e)
+        {
+           
         }
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            if (Request.Browser.IsMobileDevice)
+                MasterPageFile = "~/Mobile.Master";
+        }
+
     }
+}

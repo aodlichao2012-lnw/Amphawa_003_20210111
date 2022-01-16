@@ -13,6 +13,7 @@ namespace LMS_002.Page
         string profile = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Session["user"] != null)
             {
                 profile = Session["user"].ToString();

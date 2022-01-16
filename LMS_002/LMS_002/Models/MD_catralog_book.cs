@@ -23,13 +23,13 @@ namespace LMS_002.Models
 
         public DateTime dt_DATE_modify { get; set; } = DateTime.Now;
 
-        public int st_type_book { get; set; }
+        public int st_type_book { get; set; } = 0;
         public string st_type_book_name { get; set; }
-        public bool bool_current { get; set; }
+        public bool bool_current { get; set; } = false;
 
         //เพิ่มทีหลัง
 
-        public int int_cheeckin_out { get; set; }
+        public int int_cheeckin_out { get; set; } = 0;
         public string st_cheeckin_out { get; set; }
 
 
@@ -39,7 +39,7 @@ namespace LMS_002.Models
         public Byte[] img_book { get; set; }
 
         public string st_process_name_user { get; set; }
-        public int int_status_yet { get; set; }
+        public int int_status_yet { get; set; } = 0;
         public string st_status_yet { get; set; }
         public string img_path { get; set; }
         public string st_lend_name { get; set; }
@@ -51,8 +51,8 @@ namespace LMS_002.Models
         public string plate_print { get; set; }
         public string company_print { get; set; }
         public string st_lang { get; set; }
-        public int int_lang { get; set; }
-        public int int_count_view_book { get; set; }
+        public int int_lang { get; set; } = 0;
+        public int int_count_view_book { get; set; } = 0;
         //ไฟล์เสียง
 
         //ไฟล์วิดีโอ

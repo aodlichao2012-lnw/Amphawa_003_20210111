@@ -18,7 +18,8 @@ namespace LMS_002.Page
         string user_  = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-  
+
+
             if (!Page.IsPostBack)
             {
                 gdv_Role_admin.DataSource = Conncetions_db.Instance.Connection_command("SELECT [int_id], [st_user], [st_email], [st_type_cus] FROM [MD_Account] where st_user != 'suparat004' ");
