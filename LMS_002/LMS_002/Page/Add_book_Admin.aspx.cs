@@ -13,5 +13,15 @@ namespace LMS_002.Page
         {
 
         }
+
+        protected void chk_book_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void searchCatalog_ServerClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
