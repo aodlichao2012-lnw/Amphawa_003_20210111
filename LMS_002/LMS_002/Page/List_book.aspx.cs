@@ -18,6 +18,8 @@ namespace LMS_002.Page
         string sql = "";
         string profile = "";
         string count_book = "";
+        string img_book = "";
+        DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -32,9 +34,15 @@ namespace LMS_002.Page
                     //    " , 'dd MMM yyyy' , 'th-TH') as dt_DATE_modify" +
                     //    "  ,[MD_Account_int_id],[st_type_book],[st_type_book_name] " +
                     //    ", bool_current FROM [dbo].[MD_catralog_book]  order by dt_DATE_modify DESC";
-
-                    GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from  [dbo].[MD_catralog_book] Left join dbo.MD_statusbook on MD_catralog_book.int_cheeckin_out = MD_statusbook.self_id where  int_cheeckin_out != 3");
+                  
+                    dt = Conncetions_db.Instance.Connection_command(@"SELECT st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  tb_books_type.Type_book  , COUNT(st_ISBN_ISSN) as count_
+                            FROM MD_catralog_book
+                            LEFT JOIN MD_status_book_type ON MD_catralog_book.int_cheeckin_out = MD_status_book_type.self_id
+                            INNER JOIN dbo.tb_books_type ON MD_catralog_book.st_type_book = tb_books_type.self_id
+                            where  int_cheeckin_out != 3 group by [st_ISBN_ISSN], img_path, st_detail_book, dt_DATE_modify, st_cheeckin_out  , st_name_book  ,  tb_books_type.Type_book");
+                    GridView1.DataSource = dt;
                     GridView1.DataBind();
+
 //                    GridView1.DataBind();  GridView1.DataSource = (from db_ in db.tb_cattalog
 //                                            where db_.int_cheeckin_out != 3
 //                                            join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
@@ -106,105 +114,55 @@ namespace LMS_002.Page
             {
                 using (var db = new Dbcon_wan())
                 {
-                    mD_Catralog_.st_name_book = txt_name_book.Value;
-                    mD_Catralog_.st_ISBN_ISSN = txt_iss_num.Value;
+
+                    //string select = "select * from  [dbo].[MD_catralog_book] Left join dbo.MD_status_book_type on MD_catralog_book.int_cheeckin_out = MD_status_book_type.self_id " +
+                    //                                "inner join dbo.tb_books_type on MD_catralog_book.st_type_book = tb_books_type.self_id  where " + Types.Value + "" +
+                    //                                " like ";
+
+
+                    string select = $@"SELECT st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  tb_books_type.Type_book  , COUNT(st_ISBN_ISSN) as count_
+                            FROM MD_catralog_book
+                            LEFT JOIN MD_status_book_type ON MD_catralog_book.int_cheeckin_out = MD_status_book_type.self_id
+                            INNER JOIN dbo.tb_books_type ON MD_catralog_book.st_type_book = tb_books_type.self_id  
+                                                                   WHERE {Types.Value} LIKE 
+                                                                 ";
 
                     GridView1.DataSourceID = null;
                      List<MD_catralog_book> cs = new List<MD_catralog_book>();
                     if(Types.Value != "")
                     {
-                        if (txt_iss_num.Value != "")
+                        if (txt_ketword.Value != "")
                         {
-                            //cs = db.tb_cattalog.Where(s => s.st_ISBN_ISSN.Contains(txt_iss_num.Value) && s.st_type_book == Type.SelectedIndex).ToList();
-                            //    GridView1.DataSource = cs;
-                            GridView1.DataSource = (from db_ in db.tb_cattalog
-                                
-                                                    where db_.st_ISBN_ISSN.Contains(txt_iss_num.Value)
-                                                      where db_.int_cheeckin_out != 3
-                                                    join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
-                                                    where status.self_id == Types.SelectedIndex
-                                                    select new
-                                                    {
-                                                        status.status_book,
-                                                        db_.bool_current
-,
-                                                        db_.dt_DATE_modify,
-                                                        db_.st_ISBN_ISSN,
-                                                        db_.st_name_book,
-                                                        db_.st_detail_book,
-                                                        db_.st_type_book_name,
-                                                        db_.int_id_catalog_book,
-                                                        db_.st_type_book,
-                                                        db_.img_book,
-                                                        db_.img_path
-                                                    }
-                                                  ).ToList();
-                            GridView1.DataBind();
-                        }
-                        else if (txt_name_book.Value != "")
-                        {
-                            //cs = db.tb_cattalog.Where(s => s.st_name_book.Contains(txt_name_book.Value) && s.st_type_book == Type.SelectedIndex).ToList();
-                            //    GridView1.DataSource = cs;
-                            GridView1.DataSource = (from db_ in db.tb_cattalog
-                                                      where db_.int_cheeckin_out != 3
-                                                    where db_.st_ISBN_ISSN.Contains(txt_iss_num.Value)
-                                                    join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
-                                                    where status.self_id == Types.SelectedIndex
-                                                    select new
-                                                    {
-                                                        status.status_book,
-                                                        db_.bool_current
-,
-                                                        db_.dt_DATE_modify,
-                                                        db_.st_ISBN_ISSN,
-                                                        db_.st_name_book,
-                                                        db_.st_detail_book,
-                                                        db_.st_type_book_name,
-                                                        db_.int_id_catalog_book,
-                                                        db_.st_type_book,
-                                                        db_.img_book,
-                                                        db_.img_path
-                                                    }
-                                                ).ToList();
-                            GridView1.DataBind();
-                        }
-                        else
-                        {
-                            GridView1.DataSource = (from db_ in db.tb_cattalog
-                                        
-                                                      where db_.int_cheeckin_out != 3
-                                                     where db_.st_name_book.Contains(txt_name_book.Value)
-                                                    join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
-                                                    where status.self_id == Types.SelectedIndex
-                                                    select new
-                                                    {
-                                                        status.status_book,
-                                                        db_.bool_current
-,
-                                                        db_.dt_DATE_modify,
-                                                        db_.st_ISBN_ISSN,
-                                                        db_.st_name_book,
-                                                        db_.st_detail_book,
-                                                        db_.st_type_book_name,
-                                                        db_.int_id_catalog_book,
-                                                        db_.st_type_book,
-                                                        db_.img_book,
-                                                        db_.img_path
-                                                    }
-                                                   ).ToList();
-                            GridView1.DataBind();
-                            // SqlDataSource1.DataBind();
+                            switch(Types.Value)
+                            {
+                                case "st_name_book":
+                                    select +=  $" '%{ txt_ketword.Value }%' ";
 
+                                    break;  
+                                case "st_ISBN_ISSN":
+                                    select += $" '%{ txt_ketword.Value }%' ";
+                                    break; 
+                                case "st_type_book_name":
+                                    select += $" '%{ txt_ketword.Value }%' ";
+                                    break;  
+                                case "st_author":
+                                    select += $" '%{ txt_ketword.Value }%' ";
+                                    break;  
+                                case "st_call_number":
+                                    select += $" '%{ txt_ketword.Value }%' ";
+                                    break;  
+                                case "count_print":
+                                    select += $" '%{ txt_ketword.Value }%' ";
+                                    break;
+                            }
+                            dt = Conncetions_db.Instance.Connection_command(@"" + select + " AND  int_cheeckin_out != 3" +
+                                " group by [st_ISBN_ISSN] , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out , st_name_book  ,  tb_books_type.Type_book");
+                            GridView1.DataSource = dt;
+                            GridView1.DataBind();
                         }
-                    }
-                    
-                   
-                    
-               
+                      }
+                    }               
                     GridView1.DataBind();
-
-                }
-
 
             }
             catch(Exception ex)
@@ -227,7 +185,10 @@ namespace LMS_002.Page
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
+            if(e.CommandName == "open")
+            {
+                Response.Write(@"<script>window.open('book_detail.aspx');</script>");
+            }
         }
 
         protected void sendto_lend_ServerClick(object sender, EventArgs e)
@@ -333,25 +294,33 @@ namespace LMS_002.Page
             {
                 using (var db = new Dbcon_wan())
                 {
-                    GridView1.DataSource = (from db_ in db.tb_cattalog
-                                              where db_.int_cheeckin_out != 3
-                                            join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
-                                            select new
-                                            {
-                                                status.status_book,
-                                                db_.bool_current
-    ,
-                                                db_.dt_DATE_modify,
-                                                db_.st_ISBN_ISSN,
-                                                db_.st_name_book,
-                                                db_.st_detail_book,
-                                                db_.st_type_book_name,
-                                                db_.int_id_catalog_book,
-                                                db_.st_type_book,
-                                                db_.img_book,
-                                                db_.img_path
-                                            }).ToList();
-                    GridView1.DataBind();
+                    //GridView1.DataSource = (from db_ in db.tb_cattalog
+                    //                          where db_.int_cheeckin_out != 3
+                    //                        join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
+                    //                        join type in db.tb_books_type on db_.int_cheeckin_out equals type.self_id
+                    //                        select new
+                    //                        {
+                    //                            status.status_book,
+                    //                            db_.bool_current ,
+                    //                            type.Type_book,
+                    //                            db_.dt_DATE_modify,
+                    //                            db_.st_ISBN_ISSN,
+                    //                            db_.st_name_book,
+                    //                            db_.st_detail_book,
+                    //                            db_.st_type_book_name,
+                    //                            db_.int_id_catalog_book,
+                    //                            db_.st_type_book,
+                    //                            db_.img_book,
+                    //                            db_.img_path
+                    //                        }).ToList();
+                    //GridView1.DataBind();
+                  dt =  Conncetions_db.Instance.Connection_command(@"SELECT st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  tb_books_type.Type_book , COUNT(st_ISBN_ISSN) as count_
+                    FROM MD_catralog_book
+                    LEFT JOIN MD_status_book_type ON MD_catralog_book.int_cheeckin_out = MD_status_book_type.self_id
+                    INNER JOIN dbo.tb_books_type ON MD_catralog_book.st_type_book = tb_books_type.self_id  where  int_cheeckin_out != 3 AND st_type_book =" + Types.Value + " " +
+                    " group by[st_ISBN_ISSN], img_path, st_detail_book, dt_DATE_modify, st_cheeckin_out , st_name_book ,  tb_books_type.Type_book ");
+                    GridView1.DataSource = dt;
+                   GridView1.DataBind();
                 }
             }
             catch
@@ -367,7 +336,9 @@ namespace LMS_002.Page
             //    CheckBox checkBox = e.Row.Cells[0].Controls[0] as CheckBox;
             //    checkBox.Enabled = true;
             //}
+
         }
+        
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {

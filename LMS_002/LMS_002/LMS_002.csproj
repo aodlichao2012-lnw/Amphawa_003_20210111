@@ -174,6 +174,17 @@
     <Content Include="Amphawan_LMS_db_2DataSet.xss">
       <DependentUpon>Amphawan_LMS_db_2DataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Amphawan_LMS_db_2DataSet_.xsc">
+      <DependentUpon>Amphawan_LMS_db_2DataSet_.xsd</DependentUpon>
+    </Content>
+    <None Include="Amphawan_LMS_db_2DataSet_.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Amphawan_LMS_db_2DataSet_.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Amphawan_LMS_db_2DataSet_.xss">
+      <DependentUpon>Amphawan_LMS_db_2DataSet_.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Image\icons\128pixel\add_128.png" />
     <Content Include="Image\icons\128pixel\announce_128.png" />
@@ -380,6 +391,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Amphawan_LMS_db_2DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Amphawan_LMS_db_2DataSet_.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Amphawan_LMS_db_2DataSet_.xsd</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="DbContext_db\Conncetions_db.cs" />
@@ -399,6 +415,8 @@
     <Compile Include="Models\MD_Role.cs" />
     <Compile Include="Models\MD_search.cs" />
     <Compile Include="Models\MD_statusbook.cs" />
+    <Compile Include="Models\MD_status_book_type.cs" />
+    <Compile Include="Models\MD_type_book.cs" />
     <Compile Include="Models\MD_type_Laguage.cs" />
     <Compile Include="Page\Add_book_Admin.aspx.cs">
       <DependentUpon>Add_book_Admin.aspx</DependentUpon>

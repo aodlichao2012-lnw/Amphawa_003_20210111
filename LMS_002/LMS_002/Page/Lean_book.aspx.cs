@@ -24,8 +24,8 @@ namespace LMS_002.Page
                 if (Session["user"] != null)
                 {
                     profile = Session["user"].ToString();
-                    GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_statusbook on" +
-                   " [dbo].[MD_catralog_book].int_cheeckin_out = MD_statusbook.self_id  where  st_process_name_user = '" + profile + "' AND int_cheeckin_out = 3 ");
+                    GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_status_book_type on " +
+                        "[dbo].[MD_catralog_book].int_cheeckin_out = MD_status_book_type.self_id   where  st_process_name_user = '" + profile + "' AND int_cheeckin_out = 3 ");
                     GridView1.DataBind();
                     ddl_account.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_Account]");
                     ddl_account.DataTextField = "st_user"; 
@@ -59,25 +59,29 @@ namespace LMS_002.Page
             {
                 using (var db = new Dbcon_wan())
                 {
-                    GridView1.DataSource = (from db_ in db.tb_cattalog
-                                            where db_.int_cheeckin_out != 3
-                                            join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
-                                            select new
-                                            {
-                                                status.status_book,
-                                                db_.bool_current
-    ,
-                                                db_.dt_DATE_modify,
-                                                db_.st_ISBN_ISSN,
-                                                db_.st_name_book,
-                                                db_.st_detail_book,
-                                                db_.st_type_book_name,
-                                                db_.int_id_catalog_book,
-                                                db_.st_type_book,
-                                                db_.img_book,
-                                                db_.img_path
-                                            }).ToList();
+                    //                GridView1.DataSource = (from db_ in db.tb_cattalog
+                    //                                        where db_.int_cheeckin_out != 3
+                    //                                        join status in db.tb_statusbooks_type on db_.int_cheeckin_out equals status.self_id
+                    //                                        select new
+                    //                                        {
+                    //                                            status.status_book,
+                    //                                            db_.bool_current
+                    //,
+                    //                                            db_.dt_DATE_modify,
+                    //                                            db_.st_ISBN_ISSN,
+                    //                                            db_.st_name_book,
+                    //                                            db_.st_detail_book,
+                    //                                            db_.st_type_book_name,
+                    //                                            db_.int_id_catalog_book,
+                    //                                            db_.st_type_book,
+                    //                                            db_.img_book,
+                    //                                            db_.img_path
+                    //                                        }).ToList();
+                    //                GridView1.DataBind();
+                    GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_status_book_type on " +
+                                       "[dbo].[MD_catralog_book].int_cheeckin_out = MD_status_book_type.self_id   where  st_process_name_user = '" + profile + "' AND int_cheeckin_out = 3 ");
                     GridView1.DataBind();
+                    //            }
                 }
             }
             catch
@@ -159,7 +163,17 @@ namespace LMS_002.Page
                             var update_cus = Conncetions_db.Instance.Connection_command(@"UPDATE [dbo].[MD_Account] SET [st_count] = "+count+", [decimal_cus_from_least] = 0.00  WHERE st_user = " +
                                 " '"+account_cus+"'");
 
-
+                            //var savefile = Conncetions_db.Instance.Connection_command(@"select  video_path , ebook_path from  [dbo].[MD_catralog_book] where int_id_catalog_book = " + id + " AND " +
+                            //    "st_lend_name = '"+account_cus+"'");
+                            //while (savefile.Rows.Count > 0)
+                            //{ int count = 0;
+                            //    string path = savefile.Rows[count]["ebook_path"].ToString();
+                            //    string path_video = savefile.Rows[count]["video_path"].ToString();
+                            //    File.Copy(path, HttpContext.Current.Server.MapPath("~/"));
+                            //    count++;
+                            //}
+                                
+                        
                             id += gvrow.Cells[3].Text;
 
                         }
@@ -174,10 +188,9 @@ namespace LMS_002.Page
                 }
             }
             GridView1.DataBind();
-            string startupPath = Directory.GetCurrentDirectory();
 
 
-            Response.Write(@"<script>window.open('"+ startupPath + "/Report_pdf/slip_lend_pdf.aspx?user=" + profile + "&cus=" + account_cus + "&id_iss=" + id + "' , '_blank');</script>");
+            Response.Write(@"<script>window.open('../Report_pdf/slip_lend_pdf.aspx?user=" + profile + "&cus=" + account_cus + "&id_iss=" + id + "' , '_blank');</script>");
         }
     }
 }

@@ -584,8 +584,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>Amphawan_LMS_db_2DataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\work\Amphawa_003_20210111\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>Amphawan_LMS_db_2DataSet_</rd:DataSetName>
+        <rd:SchemaPath>D:\Suparat\Amphawa_003_20210112\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet_.xsd</rd:SchemaPath>
         <rd:TableName>MD_Account</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -677,7 +677,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Amphawan_LMS_db_2DataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\work\Amphawa_003_20210111\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\Suparat\Amphawa_003_20210112\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet.xsd</rd:SchemaPath>
         <rd:TableName>MD_catralog_book</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

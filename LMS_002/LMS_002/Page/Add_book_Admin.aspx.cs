@@ -1,9 +1,12 @@
 ﻿using LMS_002.DbContext_db;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace LMS_002.Page
@@ -22,90 +25,203 @@ namespace LMS_002.Page
 
         protected void searchCatalog_ServerClick(object sender, EventArgs e)
         {
-            int count = Convert.ToInt32(count_book.Value.Equals("") ? "0" : count_book.Value);
-            if(count > 0)
+            int count = int.Parse(count_book.Value);
+            string int_types = Types.Value.Split(' ')[0];
+            string st_types = Types.Value.Split(' ')[1];
+            System.Diagnostics.Debug.WriteLine("total books: " + count);
+
+            for (int i = 0; i < count; i++)
             {
-                for (int i = 0; i <= count; i++)
+                switch (Types.SelectedIndex)
                 {
-                    if(Types.SelectedIndex == 0)
-                    {
+                    case 0:
                         f_book.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName));
-                    } else if(Types.SelectedIndex == 1)
-                    {
+                        break;
+                    case 1:
                         f_book.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName));
                         f_ebook.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\ebook\", f_ebook.FileName));
-                    } else if(Types.SelectedIndex == 3)
-                    {
+                        break;
+                    case 3:
                         f_video.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\video\", f_video.FileName));
                         f_book.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName));
-                    }
-                   
-                   
-                 
-                    var result = Conncetions_db.Instance.Connection_command(@"INSERT INTO [dbo].[MD_catralog_book]
-                               ([st_name_book]
-                               ,[st_ISBN_ISSN]
-                               ,[st_detail_book]
-                               ,[dt_DATE_modify]
-                               ,[st_type_book]
-                               ,[st_type_book_name]
-                               ,[bool_current]
-                               ,[int_cheeckin_out]
-                               ,[st_cheeckin_out]
-                               ,[dt_checkout_date]
-                               ,[dt_checkin_date]
-                               ,[dt_checkin_due]
-                               ,[img_book]
-                               ,[st_process_name_user]
-                               ,[int_status_yet]
-                               ,[st_status_yet]
-                               ,[img_path]
-                               ,[video_path]
-                               ,[ebook_path]
-                               ,[st_lend_name]
-                               ,[st_author]
-                               ,[st_call_number]
-                               ,[count_print]
-                               ,[plate_print]
-                               ,[company_print]
-                               ,[int_lang]
-                               ,[st_lang])
-                         VALUES
-                               ('" + txt_book_name.Value + "'," +
-                                   "'"+txt_iss_num.Value+"'," +
-                                   "'"+detail_book.Value+"'," +
-                                   ""+DateTime.Now.ToString("yyyy/MM/dd")+"," +
-                                   ""+Types.Value+"," +
-                                   "''," +
-                                   "'False'," +
-                                   "0," +
-                                   "'พร้อมยืม'," +
-                                   "null," +
-                                   "null," +
-                                   "null," +
-                                   "null," +
-                                   "'"+Session["user"].ToString()+"'," +
-                                   "0 ," +
-                                   "''," +
-                                   "'"+ pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName) + "'," +
-                                   "'"+ pathFile_.instance_.pathas(@"~\Doc_all_type\video\", f_video.PostedFile.FileName)+"' ," +
-                                   "'"+ pathFile_.instance_.pathas(@"~\Doc_all_type\ebook\", f_ebook.FileName) + "'," +
-                                   "''," +
-                                   "'"+txt_author.Value+"'," +
-                                   "'"+txt_bar_code+"'," +
-                                   ""+count_print.Value+"," +
-                                   "'"+plate_print.Value+"'," +
-                                   "'"+company_print.Value+"'," +
-                                   "0," +
-                                   "'ภาษาไทย') ");
+                        break;
+
                 }
+                
+                string sql = $@"INSERT INTO [dbo].[MD_catralog_book]
+                           ([st_name_book]
+                           ,[st_ISBN_ISSN]
+                           ,[st_detail_book]
+                           ,[dt_DATE_modify]
+                           ,[st_type_book]
+                           ,[st_type_book_name]
+                           ,[bool_current]
+                           ,[int_cheeckin_out]
+                           ,[st_cheeckin_out]
+                          
+                           ,[st_process_name_user]
+                           ,[int_status_yet]
+                           ,[st_status_yet]
+                           ,[img_path]
+                           ,[video_path]
+                           ,[ebook_path]
+                           ,[st_lend_name]
+                           ,[st_author]
+                           ,[st_call_number]
+                           ,[count_print]
+                           ,[plate_print]
+                           ,[company_print]
+                           ,[int_lang]
+                           ,[st_lang])
+                     VALUES
+                           ('{ Convert.ToString(txt_book_name.Value, new CultureInfo("th-TH")) }' ,
+                               '{ txt_iss_num.Value }',
+                               '{ detail_book.Value }',
+                               '{ DateTime.UtcNow.ToString("yyyy/MM/dd", new CultureInfo("en-EN")) }',
+                               '{ int_types}',
+                               '{st_types}',
+                               '{"False"}',
+                               {0},
+                               '{"พร้อมยืม"}',
+                               '{ Session["user"].ToString() }',
+                               {0 },
+                               '{""}',
+                               '{pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName) }',
+                               '{ pathFile_.instance_.pathas(@"~\Doc_all_type\video\", f_video.PostedFile.FileName) }',
+                               '{ pathFile_.instance_.pathas(@"~\Doc_all_type\ebook\", f_ebook.FileName) }',
+                               '{""}',
+                               '{txt_author.Value }',
+                               '{ txt_bar_code.Value }',
+                               '{ count_print.Value }',
+                               '{plate_print.Value}',
+                               '{ company_print.Value }',
+                               {0},
+                               '{"ภาษาไทย"}')";
+
+
+                //        string sql = $@"INSERT INTO MD_catralog_book (st_name_book)
+                //VALUES ('title')";
+
+                var result = Conncetions_db.Instance.Connection_command(sql);
+
+                //var result = Conncetions_db.Instance.Connection_command(@"INSERT INTO [dbo].[MD_catralog_book]
+                //           ([st_name_book]
+                //           ,[st_ISBN_ISSN]
+                //           ,[st_detail_book]
+                //           ,[dt_DATE_modify]
+                //           ,[st_type_book]
+                //           ,[st_type_book_name]
+                //           ,[bool_current]
+                //           ,[int_cheeckin_out]
+                //           ,[st_cheeckin_out]
+                //           ,[dt_checkout_date]
+                //           ,[dt_checkin_date]
+                //           ,[dt_checkin_due]
+                //           ,[img_book]
+                //           ,[st_process_name_user]
+                //           ,[int_status_yet]
+                //           ,[st_status_yet]
+                //           ,[img_path]
+                //           ,[video_path]
+                //           ,[ebook_path]
+                //           ,[st_lend_name]
+                //           ,[st_author]
+                //           ,[st_call_number]
+                //           ,[count_print]
+                //           ,[plate_print]
+                //           ,[company_print]
+                //           ,[int_lang]
+                //           ,[st_lang])
+                //     VALUES
+                //           ('" + Convert.ToString( txt_book_name.Value , new CultureInfo("th-TH"))+ "'," +
+                //               "'"+txt_iss_num.Value+"'," +
+                //               "'"+detail_book.Value+"'," +
+                //               "'"+DateTime.UtcNow.ToString("yyyy/MM/dd" , new  CultureInfo("en-EN"))+"'," +
+                //               ""+Types.Value+"," +
+                //               "''," +
+                //               "'False'," +
+                //               "0," +
+                //               "'พร้อมยืม'," +
+                //               "null," +
+                //               "null," +
+                //               "null," +
+                //               "null," +
+                //               "'"+Session["user"].ToString()+"'," +
+                //               "0 ," +
+                //               "''," +
+                //               "'"+ pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName) + "'," +
+                //               "'"+ pathFile_.instance_.pathas(@"~\Doc_all_type\video\", f_video.PostedFile.FileName)+"' ," +
+                //               "'"+ pathFile_.instance_.pathas(@"~\Doc_all_type\ebook\", f_ebook.FileName) + "'," +
+                //               "''," +
+                //               "'"+txt_author.Value+"'," +
+                //               "'"+txt_bar_code+"'," +
+                //               ""+count_print.Value+"," +
+                //               "'"+plate_print.Value+"'," +
+                //               "'"+company_print.Value+"'," +
+                //               "0," +
+                //               "'ภาษาไทย') ");
+
+                //string sql = $@"INSERT INTO [dbo].[MD_catralog_book]
+                //           ([st_name_book]
+                //           ,[st_ISBN_ISSN]
+                //           ,[st_detail_book]
+                //           ,[dt_DATE_modify]
+                //           ,[st_type_book]
+                //           ,[st_type_book_name]
+                //           ,[bool_current]
+                //           ,[int_cheeckin_out]
+                //           ,[st_cheeckin_out]
+                //           ,[dt_checkout_date]
+                //           ,[dt_checkin_date]
+                //           ,[dt_checkin_due]
+                //           ,[img_book]
+                //           ,[st_process_name_user]
+                //           ,[int_status_yet]
+                //           ,[st_status_yet]
+                //           ,[img_path]
+                //           ,[video_path]
+                //           ,[ebook_path]
+                //           ,[st_lend_name]
+                //           ,[st_author]
+                //           ,[st_call_number]
+                //           ,[count_print]
+                //           ,[plate_print]
+                //           ,[company_print]
+                //           ,[int_lang]
+                //           ,[st_lang])
+                //     VALUES
+                //           ('{ Convert.ToString(txt_book_name.Value, new CultureInfo("th-TH")) }' ,
+                //               '{ txt_iss_num.Value }',
+                //               '{ detail_book.Value }',
+                //               '{ DateTime.UtcNow.ToString("yyyy/MM/dd", new CultureInfo("en-EN")) }',
+                //               '{ Types.Value }',
+                //               '{""}',
+                //               '{"False"}',
+                //               {0},
+                //               '{"พร้อมยืม"}',
+                //               {null},
+                //               {null},
+                //               {null},
+                //               {null},
+                //               '{ Session["user"].ToString() }',
+                //               {0 },
+                //               '{""}',
+                //               '{pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName) }',
+                //               '{ pathFile_.instance_.pathas(@"~\Doc_all_type\video\", f_video.PostedFile.FileName) }',
+                //               '{ pathFile_.instance_.pathas(@"~\Doc_all_type\ebook\", f_ebook.FileName) }',
+                //               '{""}',
+                //               '{txt_author.Value }',
+                //               '{ txt_bar_code.Value }',
+                //               '{ count_print.Value }',
+                //               '{plate_print.Value}',
+                //               '{ company_print.Value }',
+                //               {0},
+                //               '{"ภาษาไทย"}')";
 
 
             }
-            else
-            {
-                Response.Write(@"<script>alert('กรุณากำหนด จำนวนหนังสือ ด้วยครับ')</script>");
-            }
+            
+            
         }
            
     }

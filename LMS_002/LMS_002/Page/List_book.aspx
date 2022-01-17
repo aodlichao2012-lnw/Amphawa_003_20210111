@@ -12,28 +12,24 @@
             <div class="row">
                 <div class="text-center">
                     <div class="form-group w-100" style="display: inline-block;">
-                        <label>ประเภท</label>
+                        <label>ค้นหาตาม</label>
                         <select name="JobID" runat="server" id="Types" class=" w-100 ddl">
-                            <option value="books">หนังสือ</option>
-                            <option value="ebook">E-book</option>
-                            <option value="digital_cllection">หนังสือเสียง</option>
-                            <option value="video">วิดีโอ</option>
-
+                            <option value="st_name_book">ชื่อหนังสือ</option>
+                            <option value="st_ISBN_ISSN">ISBN-ISSN</option>
+                            <option value="st_type_book_name">ประเภทหนังสือ</option>
+                            <option value="st_author">ชื่อผู้แต่ง</option>
+                            <option value="st_call_number">บาร์โค้ด</option>
+                            <option value="count_print">จำนวนที่พิมพ์</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group w-100 text-center">
                     <div class="form-group w-100">
-                        <label>รหัสหนังสือ</label>
-                        <input runat="server" type="text" id="txt_iss_num" name="Age" class="w-100" placeholder="รหัสหนังสือ">
+                        <label>คำค้น</label>
+                        <input runat="server" type="text" id="txt_ketword" name="Age" class="w-100" placeholder="รหัสหนังสือ">
                     </div>
                 </div>
-                <div class="form-group w-100 text-center">
-                    <div class="form-group w-100">
-                        <label>ชื่อหนังสือ</label>
-                        <input runat="server" type="text" id="txt_name_book" name="Age" class="w-100" placeholder="ชื่อหนังสือ">
-                    </div>
-                </div>
+            
                 <%--         <div class="col-md-2 pl-1">
                         <div class="form-group">
                             <label>จากวันที่</label>
@@ -56,29 +52,26 @@
     <div>
         <div class="wrapper fadeInDown">
             <div class="text-center">
-                <asp:GridView ID="GridView1"  runat="server" AutoGenerateColumns="False" DataKeyNames="int_id_catalog_book" OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowCommand="GridView1_RowCommand">
+                <asp:GridView ID="GridView1"  runat="server" AutoGenerateColumns="False" DataKeyNames="st_ISBN_ISSN" OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowCommand="GridView1_RowCommand">
                     <Columns>
-
-
-                        <%--   <asp:CheckBoxField DataField="bool_current" HeaderText="เลือก"  />--%>
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:CheckBox  ID="chkrows" AutoPostBack="true" runat="server" />
                                 <asp:Button runat="server" CommandName="open" ID="btn_open"   Text="เปิดดู"/>
                             </ItemTemplate>
                         </asp:TemplateField>
-
-
-                        <asp:BoundField  DataField="int_id_catalog_book" HeaderText="ลำดับหนังสือ" InsertVisible="False" ReadOnly="True" SortExpression="int_id_catalog_book" />
-                        <asp:BoundField DataField="st_name_book" HeaderText="ชื่อหนังสือ" SortExpression="st_name_book" />
-                        <asp:ImageField DataAlternateTextField="img_book"  HeaderText="ภาพหนังสือ" DataImageUrlField="img_book">
+                        <asp:BoundField DataField="st_name_book"  HeaderText="ชื่อหนังสือ" SortExpression="st_name_book" />
+                      
+          
+                          <asp:ImageField  HeaderText="ภาพหนังสือ" ItemStyle-Width="20px" ItemStyle-Height="20px"  ControlStyle-Width="100" ControlStyle-Height = "100"  DataImageUrlField="img_path">
                         </asp:ImageField>
                         <asp:BoundField DataField="st_ISBN_ISSN" HeaderText="ISBN_ISSN" SortExpression="st_ISBN_ISSN" />
                         <asp:BoundField DataField="st_detail_book" HeaderText="รายละเอียด หนังสือ" SortExpression="st_detail_book" />
                         <asp:BoundField DataField="dt_DATE_modify" HeaderText="วันที่มีหนังสือเล่มนี้" SortExpression="dt_DATE_modify" />
-                        <asp:BoundField DataField="st_type_book_name" HeaderText="ประเภทหนังสือ" SortExpression="st_type_book_name" />
-                        <asp:BoundField DataField="status_book" HeaderText="สถานะ" SortExpression="status_book" />
-                        <%-- <asp:BoundField DataField="count_ISBN" HeaderText="จำนวนหนังสือที่เหลืออยู่" SortExpression="st_type_book_name" />--%>
+                        <asp:BoundField DataField="Type_book" HeaderText="ประเภทหนังสือ" SortExpression="st_type_book_name" />
+                        <asp:BoundField DataField="st_cheeckin_out" HeaderText="สถานะ" SortExpression="status_book" />
+                        <asp:BoundField DataField="count_" HeaderText="จำนวน" SortExpression="status_book" />
+
                     </Columns>
                 </asp:GridView>
             </div>

@@ -24,22 +24,13 @@ namespace LMS_002.Page
         protected global::System.Web.UI.HtmlControls.HtmlSelect Types;
 
         /// <summary>
-        /// txt_iss_num control.
+        /// txt_ketword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_iss_num;
-
-        /// <summary>
-        /// txt_name_book control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_name_book;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_ketword;
 
         /// <summary>
         /// searchCatalog control.

@@ -24,11 +24,10 @@
                     <div class="form-group w-100" style="display: inline-block;">
                         <label>ประเภท</label>
                         <select name="JobID" runat="server" id="Types" class=" w-100 ddl">
-                            <option value="0">หนังสือ</option>
-                            <option value="1">E-book</option>
-                            <option value="2">หนังสือเสียง</option>
-                            <option value="3">วิดีโอ</option>
-
+                            <option value="0 หนังสือ">หนังสือ</option>
+                            <option value="1 E-book">E-book</option>
+                            <option value="2 หนังสือเสียง">หนังสือเสียง</option>
+                            <option value="3 วิดีโอ">วิดีโอ</option>
                         </select>
                     </div>
                 </div>
