@@ -25,11 +25,23 @@ namespace LMS_002.Page
             int count = Convert.ToInt32(count_book.Value.Equals("") ? "0" : count_book.Value);
             if(count > 0)
             {
-                for (int i = 0; i < count; i++)
+                for (int i = 0; i <= count; i++)
                 {
-                    f_video.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\video\", f_video.FileName));
-                    f_ebook.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\ebook\", f_ebook.FileName));
-                    f_book.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName));
+                    if(Types.SelectedIndex == 0)
+                    {
+                        f_book.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName));
+                    } else if(Types.SelectedIndex == 1)
+                    {
+                        f_book.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName));
+                        f_ebook.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\ebook\", f_ebook.FileName));
+                    } else if(Types.SelectedIndex == 3)
+                    {
+                        f_video.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\video\", f_video.FileName));
+                        f_book.SaveAs(pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName));
+                    }
+                   
+                   
+                 
                     var result = Conncetions_db.Instance.Connection_command(@"INSERT INTO [dbo].[MD_catralog_book]
                                ([st_name_book]
                                ,[st_ISBN_ISSN]
@@ -60,32 +72,32 @@ namespace LMS_002.Page
                                ,[st_lang])
                          VALUES
                                ('" + txt_book_name.Value + "'," +
-                                   "'"+txt_iss_num.Value+"'" +
-                                   "'"+detail_book.Value+"'" +
-                                   ""+DateTime.Now.ToString("yyyy/MM/dd")+"" +
-                                   "<st_type_book, int," +
-                                   "<st_type_book_name, nvarchar(max)," +
-                                   "<bool_current, bit," +
-                                   "<int_cheeckin_out, int," +
-                                   "<st_cheeckin_out, nvarchar(max)," +
-                                   "<dt_checkout_date, datetime," +
-                                   "<dt_checkin_date, datetime," +
-                                   "<dt_checkin_due, datetime," +
-                                   "<img_book, varbinary(max)," +
-                                   "<st_process_name_user, nvarchar(max)," +
-                                   "<int_status_yet, int," +
-                                   "<st_status_yet, nvarchar(max)," +
+                                   "'"+txt_iss_num.Value+"'," +
+                                   "'"+detail_book.Value+"'," +
+                                   ""+DateTime.Now.ToString("yyyy/MM/dd")+"," +
+                                   ""+Types.Value+"," +
+                                   "''," +
+                                   "'False'," +
+                                   "0," +
+                                   "'พร้อมยืม'," +
+                                   "null," +
+                                   "null," +
+                                   "null," +
+                                   "null," +
+                                   "'"+Session["user"].ToString()+"'," +
+                                   "0 ," +
+                                   "''," +
                                    "'"+ pathFile_.instance_.pathas(@"~\Doc_all_type\topic\", f_book.FileName) + "'," +
                                    "'"+ pathFile_.instance_.pathas(@"~\Doc_all_type\video\", f_video.PostedFile.FileName)+"' ," +
                                    "'"+ pathFile_.instance_.pathas(@"~\Doc_all_type\ebook\", f_ebook.FileName) + "'," +
-                                   "<st_lend_name, nvarchar(max)," +
-                                   "<st_author, nvarchar(max)," +
-                                   "<st_call_number, nvarchar(max)," +
-                                   "<count_print, nvarchar(max)," +
-                                   "<plate_print, nvarchar(max)," +
-                                   "<company_print, nvarchar(max)," +
-                                   "<int_lang, int," +
-                                   "<st_lang, nvarchar(max),> ");
+                                   "''," +
+                                   "'"+txt_author.Value+"'," +
+                                   "'"+txt_bar_code+"'," +
+                                   ""+count_print.Value+"," +
+                                   "'"+plate_print.Value+"'," +
+                                   "'"+company_print.Value+"'," +
+                                   "0," +
+                                   "'ภาษาไทย') ");
                 }
 
 

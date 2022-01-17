@@ -15,31 +15,13 @@ namespace LMS_002.Page
     {
 
         /// <summary>
-        /// chk_book control.
+        /// Types control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chk_book;
-
-        /// <summary>
-        /// chk__video control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chk__video;
-
-        /// <summary>
-        /// chk_e_book control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chk_e_book;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Types;
 
         /// <summary>
         /// f_book control.

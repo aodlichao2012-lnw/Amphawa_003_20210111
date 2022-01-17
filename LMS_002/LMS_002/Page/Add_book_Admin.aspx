@@ -12,14 +12,26 @@
                <h2>เพิ่มหนังสือ</h2>
             <div class=" card-body mt-2 col-1 w-100">
                 <div class=" col-1 w-25 d-inline-block">
-                    <asp:CheckBox ID="chk_book" CssClass="ddl" Text="หนังสือ" OnCheckedChanged="chk_book_CheckedChanged" runat="server" />
+                 <%--   <asp:CheckBox ID="chk_book" CssClass="ddl" Text="หนังสือ"   OnCheckedChanged="chk_book_CheckedChanged" runat="server" />
                     </div>
                      <div class=" col-1 w-25 d-inline-block">
                     <asp:CheckBox ID="chk__video" CssClass="ddl" Text="วิดีโอ" OnCheckedChanged="chk_book_CheckedChanged" runat="server" />
                          </div>
                           <div class=" col-1 w-25 d-inline-block">
                     <asp:CheckBox ID="chk_e_book" CssClass="ddl" Text="E-book" OnCheckedChanged="chk_book_CheckedChanged" runat="server" />
-                              </div>
+                              </div>--%>
+                      <div class="text-center">
+                    <div class="form-group w-100" style="display: inline-block;">
+                        <label>ประเภท</label>
+                        <select name="JobID" runat="server" id="Types" class=" w-100 ddl">
+                            <option value="0">หนังสือ</option>
+                            <option value="1">E-book</option>
+                            <option value="2">หนังสือเสียง</option>
+                            <option value="3">วิดีโอ</option>
+
+                        </select>
+                    </div>
+                </div>
             </div>
                 <div class=" card-body mt-2 col-1 w-100">
                 <div class=" col-1 w-25 d-inline-block">

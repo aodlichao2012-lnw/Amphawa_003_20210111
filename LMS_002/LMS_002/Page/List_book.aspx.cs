@@ -118,10 +118,11 @@ namespace LMS_002.Page
                             //cs = db.tb_cattalog.Where(s => s.st_ISBN_ISSN.Contains(txt_iss_num.Value) && s.st_type_book == Type.SelectedIndex).ToList();
                             //    GridView1.DataSource = cs;
                             GridView1.DataSource = (from db_ in db.tb_cattalog
-                                                    where db_.st_type_book == Types.SelectedIndex 
+                                
                                                     where db_.st_ISBN_ISSN.Contains(txt_iss_num.Value)
                                                       where db_.int_cheeckin_out != 3
                                                     join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
+                                                    where status.self_id == Types.SelectedIndex
                                                     select new
                                                     {
                                                         status.status_book,
@@ -145,10 +146,10 @@ namespace LMS_002.Page
                             //cs = db.tb_cattalog.Where(s => s.st_name_book.Contains(txt_name_book.Value) && s.st_type_book == Type.SelectedIndex).ToList();
                             //    GridView1.DataSource = cs;
                             GridView1.DataSource = (from db_ in db.tb_cattalog
-                                                    where db_.st_type_book == Types.SelectedIndex
                                                       where db_.int_cheeckin_out != 3
                                                     where db_.st_ISBN_ISSN.Contains(txt_iss_num.Value)
                                                     join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
+                                                    where status.self_id == Types.SelectedIndex
                                                     select new
                                                     {
                                                         status.status_book,
@@ -170,10 +171,11 @@ namespace LMS_002.Page
                         else
                         {
                             GridView1.DataSource = (from db_ in db.tb_cattalog
-                                                    where db_.st_type_book  == Types.SelectedIndex
+                                        
                                                       where db_.int_cheeckin_out != 3
                                                      where db_.st_name_book.Contains(txt_name_book.Value)
                                                     join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
+                                                    where status.self_id == Types.SelectedIndex
                                                     select new
                                                     {
                                                         status.status_book,
