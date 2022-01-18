@@ -212,7 +212,7 @@ namespace LMS_002.Page
                         CheckBox chk = (CheckBox)gvrow.FindControl("chkrows");
                         if (chk != null & chk.Checked)
                         {
-                            var id = Convert.ToInt32( gvrow.Cells[1].Text);
+                            var id = gvrow.Cells[3].Text;
                             id_book = id.ToString();
 
                             //                           var update = (from db_ in db.tb_cattalog
@@ -238,7 +238,7 @@ namespace LMS_002.Page
                             try
                             {
                                 var update = Conncetions_db.Instance.Connection_command(  @"UPDATE [dbo].[MD_catralog_book] SET  [int_cheeckin_out] = 3 ,[st_cheeckin_out] = 'เตรียมพร้อมเพื่อยืม' , st_process_name_user
-                           = '"+profile+"' WHERE int_id_catalog_book = " + id + "");
+                           = '"+profile+ "' WHERE st_ISBN_ISSN = '" + id + "'");
                             }
                             catch
                             {
