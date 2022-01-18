@@ -72,7 +72,8 @@ namespace LMS_002.Page
                            ,[plate_print]
                            ,[company_print]
                            ,[int_lang]
-                           ,[st_lang])
+                           ,[st_lang]
+                           , int_count_view_book )
                      VALUES
                            ('{ Convert.ToString(txt_book_name.Value, new CultureInfo("th-TH")) }' ,
                                '{ txt_iss_num.Value }',
@@ -96,7 +97,7 @@ namespace LMS_002.Page
                                '{plate_print.Value}',
                                '{ company_print.Value }',
                                {0},
-                               '{"ภาษาไทย"}')";
+                               '{"ภาษาไทย"}' , 0)";
 
 
                 //        string sql = $@"INSERT INTO MD_catralog_book (st_name_book)

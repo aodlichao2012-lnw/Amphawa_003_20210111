@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="LMS_002.Site_Mobile" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="LMS_002.Site_Mobile" %>
 <%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
 
 <!DOCTYPE html>
@@ -410,16 +410,84 @@
 </head>
 <body>
     <form id="form1" runat="server">
+                <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
             <nav>
+                <%-- <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" runat="server" id="menu_list" href="~/Page/List_book.aspx">
+         รายการหนังสือ
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" runat="server" id="menu_lend" href="~/Page/Lean_book.aspx" >
+          หน้ายืม
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" runat="server" id="menu_throw" href="#" >
+          หน้าคืน
+        </a>
+
+      </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" runat="server" id="menu_his" href="~/Page/History_lean_book.aspx" >
+          ประวัติการยืม
+        </a>
+
+      </li>
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" runat="server" id="menu_status" >
+         สถานะการยืม - คืน
+        </a>
+
+      </li>
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" runat="server" id="menu_account">
+          ข้อมูลผู้ใช้
+        </a>
+
+      </li>
+
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="~/Page/Role_Admin.aspx" runat="server" id="menu_role" >
+          กำหนดสิทธิ์
+        </a>
+
+      </li>
+
+
+        <%--  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example<span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JavaScript</a></li>
+          </ul>--%>
+
+                <%--  <li class="nav-item dropdown " data-toggle="dropdown">
+        <a class="nav-link dropdown-toggle" href="~/Page/Login.aspx" id="logout_login" runat="server" onserverclick="logout_login_ServerClick" >
+            <asp:Label runat="server" ID="lb_user" Text=""  ></asp:Label>
+            </a>
+             </li>
+             <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="~/Page/Edit_profile.aspx" id="logout_edit" runat="server" onserverclick="logout_edit_ServerClick" >
+            <asp:Label runat="server" ID="lb_edit" Text="แก้ไขข้อมูลโปรไฟล์"  ></asp:Label>
+            
+
+        </a>
+
+      </li>
+              
+    </ul>--%>
+
                 <div class="nav navbar-nav">
                     <a class="navbar-brand "  data-toggle="dropdown">
                         Home
   <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu dropdown">
-                        <li><a class="nav-link " href="#">���ǻ�Ъ�����ѹ��</a></li>
-                        <li><a class="nav-link " href="#">����й�˹ѧ�������</a></li>
-                        <li><a class="nav-link " href="#">�й�˹ѧ����ʹ���� ��Ш���͹</a></li>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link " runat="server" href="~/Page/News_topic.aspx">ข่าวประชาสัมพันธ์</a></li>
+                        <li><a class="nav-link " href="#">ข่าแนะนำหนังสือใหม่</a></li>
+                        <li><a class="nav-link " href="#">แนะนำหนังสือยอดนิยม ประจำเดือน</a></li>
 
                     </ul>
                 </div>
@@ -428,8 +496,8 @@
                         ABOUT US
   <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu dropdown">
-                        <li><a class="nav-link " href="#">����ѵ���ͧ��ش</a></li>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link " href="#">ประวัติห้องสมุด</a></li>
 
                     </ul>
                 </div>
@@ -439,8 +507,8 @@
                         OPAC
   <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu dropdown ">
-                        <li><a class="nav-link " runat="server" href="~/Page/List_book.aspx">���Ң�����</a></li>
+                    <ul class="dropdown-menu ">
+                        <li><a class="nav-link " runat="server" href="~/Page/List_book.aspx">ค้นหาข้อมูล</a></li>
 
                     </ul>
                 </div>
@@ -452,54 +520,87 @@
                 </div>
                       <div class="nav navbar-nav bg-light">
                     <a class="nav-link " data-toggle="dropdown" href="~/Page/Login.aspx" runat="server" id="login"  onserverclick="login_ServerClick">
-                                <asp:Label runat="server" ID="lb_user" Text="�������¹͡ �ô���顷���� �����������к�">�������¹͡ �ô���顷���� �����������к�</asp:Label>
-
+                                <asp:Label runat="server" ID="lb_user" Text="ผู้ใช้ภายนอก โปรดคลิ้กที่นี่ เพื่อเข้าสู่ระบบ">ผู้ใช้ภายนอก โปรดคลิ้กที่นี่ เพื่อเข้าสู่ระบบ    </asp:Label>
+                        <a href="#" class="notification  w-50 h-50">
+                            <span class="badge bg-danger w-50 h-100">3</span>
                         </a>
-                    <ul class="dropdown-menu dropdown">
+                        </a>
+                    <ul class="dropdown-menu">
             
                         <li>
                             <a class="nav-link " href="~/Page/Edit_profile.aspx" id="logout_edit" runat="server" onserverclick="logout_edit_ServerClick">
-                                <asp:Label runat="server" ID="lb_edit" Text="��䢢����������"></asp:Label>
+                                <asp:Label runat="server" ID="lb_edit" Text="แก้ไขข้อมูลโปรไฟล์"></asp:Label>
 
                             </a>
 
                         </li>
                         <li>
-                            <a class="nav-link " runat="server" id="menu_lend" href="~/Page/Lean_book.aspx">˹�����
+                            <a class="nav-link " runat="server" id="menu_lend" href="~/Page/Lean_book.aspx">หน้ายืม
                             </a>
 
                         </li>
                         <li>
-                            <a class="nav-link " runat="server" id="menu_throw" href="~/Page/return_detail.aspx">˹�Ҥ׹
+                            <a class="nav-link " runat="server" id="menu_throw" href="~/Page/return_detail.aspx">หน้าคืน
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link " runat="server" id="menu_his" href="~/Page/History_lean_book.aspx">����ѵԡ�����
+                            <a class="nav-link " runat="server" id="menu_his" href="~/Page/History_lean_book.aspx">ประวัติการยืม
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link " href="~/Page/Status_book.aspx" runat="server" id="menu_status">ʶҹС����� - �׹
+                            <a class="nav-link " href="~/Page/Status_book.aspx" runat="server" id="menu_status">สถานะการยืม - คืน
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link " href="~/Page/Role_Admin.aspx" runat="server" id="menu_role">��˹��Է���
+                            <a class="nav-link " href="~/Page/Role_Admin.aspx" runat="server" id="menu_role">กำหนดสิทธิ์
                             </a>
-                        </li>
-                           <li>
-                            <a class="nav-link " href="~/Page/Add_book_Admin.aspx" runat="server" id="import_book">�����˹ѧ���
+                        </li> 
+                        <li>
+                            <a class="nav-link " href="~/Page/Add_book_Admin.aspx" runat="server" id="import_book">นำเข้าหนังสือ
                             </a>
                         </li>
                         <li>
-                             <a class="nav-link "  id="logout_login" runat="server" onserverclick="logout_login_ServerClick">�͡�ҡ�к�</a>
+                             <a class="nav-link "  id="logout_login" runat="server" onserverclick="logout_login_ServerClick">ออกจากระบบ</a>
                         </li>
                         
                         <li>
-                             <a class="nav-link "  id="login_other_people" runat="server" onserverclick="login_other_people_ServerClick">�������к�</a>
+                             <a class="nav-link "  id="login_other_people" runat="server" onserverclick="login_other_people_ServerClick">เข้าสู่ระบบ</a>
                         </li>
                     </ul>
                 </div>
                 <div> <p><asp:Label runat="server" ID="lb_status"></asp:Label></p></div>
             </nav>
+            <%-- <asp:Menu ID="Menu1" Visible="true" runat="server" Orientation="Horizontal" Width="100%" Height="40%" OnMenuItemClick="Menu1_MenuItemClick">
+                    <Items>
+                        <asp:MenuItem Text="รายการหนังสือ S" NavigateUrl="~/Page/List_book.aspx">
+ 
+                        </asp:MenuItem  >
+                        <asp:MenuItem Text="หน้ายืม S"  NavigateUrl="~/Page/Lean_book.aspx" >
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="หน้าคืน S" >
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="ประวัติการยืม S T" NavigateUrl="~/Page/History_lean_book.aspx" >
+                        </asp:MenuItem>   
+                        <asp:MenuItem Text="สถานะการยืม - คืน T" >
+                        </asp:MenuItem>   
+                        <asp:MenuItem Text="ข้อมูลผู้ใช้ T" >
+                        </asp:MenuItem>  
+                        <asp:MenuItem Text="กำหนดสิทธิ A"   NavigateUrl="~/Page/Role_Admin.aspx" >
+                        </asp:MenuItem>   
+                        <asp:MenuItem Text="เข้าสู่ระบบ A"  NavigateUrl="~/Page/Login.aspx">
+                            
+                        </asp:MenuItem>   
+                        <asp:MenuItem Text="ออกจากระบบ A"  NavigateUrl="~/Page/Login.aspx" >
+                        </asp:MenuItem>
+                    </Items>
+                    <LevelMenuItemStyles>
+                        <asp:MenuItemStyle CssClass="main_menu" />
+                        <asp:MenuItemStyle CssClass="level_menu" />
+
+                    </LevelMenuItemStyles>
+                </asp:Menu>--%>
+        </div>
+
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         <section class="content-wrapper main-content clear-fix">
             <asp:ContentPlaceHolder runat="server" ID="MainContent" />

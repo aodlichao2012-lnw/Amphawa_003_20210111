@@ -19,6 +19,7 @@ namespace LMS_002.Page
         string profile = "";
         string count_book = "";
         string img_book = "";
+         string id_book = "";
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,7 +43,7 @@ namespace LMS_002.Page
                             where  int_cheeckin_out != 3 group by [st_ISBN_ISSN], img_path, st_detail_book, dt_DATE_modify, st_cheeckin_out  , st_name_book  ,  tb_books_type.Type_book");
                     GridView1.DataSource = dt;
                     GridView1.DataBind();
-
+                  
 //                    GridView1.DataBind();  GridView1.DataSource = (from db_ in db.tb_cattalog
 //                                            where db_.int_cheeckin_out != 3
 //                                            join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
@@ -185,10 +186,18 @@ namespace LMS_002.Page
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if(e.CommandName == "open")
-            {
-                Response.Write(@"<script>window.open('book_detail.aspx');</script>");
-            }
+            //if (e.CommandName == "open")
+            //{
+
+            //    Button chk = (Button)GridView1.FindControl("btn_open");
+            //    if (chk.CommandArgument ==  )
+            //    {
+            //        var id = Convert.ToInt32(gvrow.Cells[1].Text);
+            //        id_book = id.ToString();
+
+            //        Response.Write(@"<script>window.open('book_detail.aspx?');</script>");
+            //    }
+            //}
         }
 
         protected void sendto_lend_ServerClick(object sender, EventArgs e)
@@ -204,6 +213,7 @@ namespace LMS_002.Page
                         if (chk != null & chk.Checked)
                         {
                             var id = Convert.ToInt32( gvrow.Cells[1].Text);
+                            id_book = id.ToString();
 
                             //                           var update = (from db_ in db.tb_cattalog
 
@@ -343,6 +353,14 @@ namespace LMS_002.Page
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
            
+        }
+
+        protected void btn_open_Click(object sender, EventArgs e)
+        {
+            Button chk1 = (Button)sender;
+            GridViewRow gvr = (GridViewRow)chk1.NamingContainer;
+            string issn_book = gvr.Cells[3].Text;
+            Response.Write(@"<script>window.open('book_detail.aspx?issn="+issn_book+"');</script>");
         }
     }
 }

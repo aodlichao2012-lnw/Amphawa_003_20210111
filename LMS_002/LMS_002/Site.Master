@@ -511,7 +511,7 @@
   <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="nav-link " href="#">ข่าวประชาสัมพันธ์</a></li>
+                        <li><a class="nav-link " runat="server" href="~/Page/News_topic.aspx">ข่าวประชาสัมพันธ์</a></li>
                         <li><a class="nav-link " href="#">ข่าแนะนำหนังสือใหม่</a></li>
                         <li><a class="nav-link " href="#">แนะนำหนังสือยอดนิยม ประจำเดือน</a></li>
 

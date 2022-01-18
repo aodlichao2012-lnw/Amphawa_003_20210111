@@ -57,7 +57,7 @@
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:CheckBox  ID="chkrows" AutoPostBack="true" runat="server" />
-                                <asp:Button runat="server" CommandName="open" ID="btn_open"   Text="เปิดดู"/>
+                                <asp:Button runat="server" CommandName="open" ID="btn_open" OnClick="btn_open_Click"   Text="เปิดดู"/>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="st_name_book"  HeaderText="ชื่อหนังสือ" SortExpression="st_name_book" />
