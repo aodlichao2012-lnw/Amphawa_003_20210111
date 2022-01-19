@@ -664,8 +664,9 @@
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                 <hr />
             </asp:ContentPlaceHolder>
-            <hr />
+           
 
         </div>
 

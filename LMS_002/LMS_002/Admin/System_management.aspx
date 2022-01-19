@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="System_management.aspx.cs" Inherits="LMS_002.Admin.System_management" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div id="mainContent" style="display: block;"><div class="menuBox">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="System_management.aspx.cs" Inherits="LMS_002.Admin.System_management" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
+
+    <div style="margin-top:80px;" id="mainContent" ><div class="menuBox">
   <div class="menuBoxInner systemIcon">
     <div class="per_title">
       <h2>ตั้งค่าระบบ</h2>

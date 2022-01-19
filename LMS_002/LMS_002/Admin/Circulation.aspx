@@ -1,11 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Circulation.aspx.cs" Inherits="LMS_002.Admin.Circulation" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <h2>ค้นหาหนังสือ</h2>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Circulation.aspx.cs" Inherits="LMS_002.Admin.Circulation" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
+
+     <h2 style="margin-top:80px;">ค้นหาหนังสือ</h2>
     <div class="card text-center">
         <div class="card-body">
             <div class="row">
                 <div class="text-center">
-                    <div class="form-group w-100" style="display: inline-block;">
+                    <div class="form-group w-100" >
                         <label>ค้นหาตาม</label>
                         <select name="JobID" runat="server" id="Types" class=" w-100 ddl">
                             <option value="st_name_book">ชื่อหนังสือ</option>
@@ -45,9 +46,9 @@
     </div>
     <div>
             <div class="text-center">
-        <a class="btn btn-success btn-lg " runat="server" onserverclick="delete_1_ServerClick" id="delete_1" data-id="1" href="#"><i class="fa fa-filter "></i>ลบข้อมูล </a>
-        <a class="btn btn-success btn-lg " runat="server" onserverclick="select_all_ServerClick" id="select_all" data-id="1" href="#"><i class="fa fa-filter "></i>เลือกรายการทั้งหมด </a>
-        <a class="btn btn-secondary btn-lg " runat="server" onserverclick="cancle_ServerClick"  id="cancle" href="#"><i class="fa fa-eraser "></i>ยกเลิกรายการ</a>
+        <a class="btn btn-success btn-lg " runat="server" onserverclick="delete_1_ServerClick1" id="delete_1" data-id="1" href="#"><i class="fa fa-filter "></i>ลบข้อมูล </a>
+        <a class="btn btn-success btn-lg " runat="server" onserverclick="select_all_ServerClick1" id="select_all" data-id="1" href="#"><i class="fa fa-filter "></i>เลือกรายการทั้งหมด </a>
+        <a class="btn btn-secondary btn-lg " runat="server" onserverclick="cancle_ServerClick1"  id="cancle" href="#"><i class="fa fa-eraser "></i>ยกเลิกรายการ</a>
     </div>
         <div class="wrapper fadeInDown">
             <div class="text-center">
@@ -80,8 +81,8 @@
         <%--        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Amphawan_LMS_db_2ConnectionString2 %>" SelectCommand="SELECT top 5 st_ISBN_ISSN , [int_id_catalog_book],[st_name_book], dbo.MD_statusbook.status_book as statusbook ,[st_detail_book], format( [dt_DATE_modify]   , 'dd MMM yyyy' , 'th-TH') as dt_DATE_modify  ,[MD_Account_int_id],[st_type_book],[st_type_book_name] , bool_current FROM [dbo].[MD_catralog_book] Left join dbo.MD_statusbook on [dbo].[MD_catralog_book].int_cheeckin_out = dbo.MD_statusbook.self_id order by dt_DATE_modify DESC"></asp:SqlDataSource>--%>
     </div>
     <div class="text-center">
-    <a class="btn btn-success btn-lg " runat="server" onseronserverclick="delete_1_ServerClick"  data-id="1" href="#"><i class="fa fa-filter "></i>ลบข้อมูล </a>
-        <a class="btn btn-success btn-lg " runat="server" onserverclick="select_all_ServerClick" id="select_all2" data-id="1" href="#"><i class="fa fa-filter "></i>เลือกรายการทั้งหมด </a>
-        <a class="btn btn-secondary btn-lg " runat="server" onserverclick="cancle_ServerClick"   id="cancle2" href="#"><i class="fa fa-eraser "></i>ยกเลิกรายการ</a>
+    <a class="btn btn-success btn-lg " runat="server" onserverclick="delete_2_ServerClick" id="delete_2" data-id="1" href="#"><i class="fa fa-filter "></i>ลบข้อมูล </a>
+        <a class="btn btn-success btn-lg " runat="server" onserverclick="select_all2_ServerClick" id="select_all2" data-id="1" href="#"><i class="fa fa-filter "></i>เลือกรายการทั้งหมด </a>
+        <a class="btn btn-secondary btn-lg " runat="server" onserverclick="cancle2_ServerClick"  id="cancle2" href="#"><i class="fa fa-eraser "></i>ยกเลิกรายการ</a>
     </div>
 </asp:Content>

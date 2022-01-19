@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="LMS_002.Admin.dashboard" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div id="mainContent">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="LMS_002.Admin.dashboard" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
+    <div style="margin-top:80px;" id="mainContent"></div>
     <div class="menuBox adminHome">
     <div class="menuBoxInner">
         <div class="per_title">
@@ -8,7 +8,7 @@
         </div>
     </div>
 </div>
-<div class="contentDesc">
+<div class="contentDesc" onload="GetDetails();">
     <div class="container-fluid">
 
         <div id="alert-new-version" class="alert alert-info border-0 mt-3 hidden">
@@ -100,149 +100,168 @@
         </div>
     </div>
 </div>
-    <script src="/senayan/js/chartjs/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
     <script>
-            
+
+        function getTotal(select, res) {
+            let ress = JSON.parse(res);
+            $(selector).text(new Intl.NumberFormat('id-ID').format(ress.data));
+        }
+        function GetDetails() {
+            PageMethods.biblio_all(getTotal('.biblio_total_all'));
+            PageMethods.all(getTotal('.item_total_all'));
+            PageMethods.lent(getTotal('.item_total_lent'));
+            PageMethods.available(getTotal('.item_total_available'));
+        }
+
+        window.onload = GetDetails();
         $(function () {
 
-            async function getTotal(url, selector = null) {
-                if(selector !== null) $(selector).text('...');
-                let res = await (await fetch(url)).json();
-                if(selector !== null) $(selector).text(new Intl.NumberFormat('id-ID').format(res.data));
-                return res.data;
-            }
+            //async function getTotal(url, selector = null)
+            //{
+            //    if (selector !== null) $(selector).text('...');
 
-            getTotal('/senayan/index.php?p=api/biblio/total/all', '.biblio_total_all');
-            getTotal('/senayan/index.php?p=api/item/total/all', '.item_total_all');
-            getTotal('/senayan/index.php?p=api/item/total/lent', '.item_total_lent');
-            getTotal('/senayan/index.php?p=api/item/total/available', '.item_total_available');
+            //    let res = await (await fetch(url)).json();
+
+            //    if (selector !== null)
+            //        $(selector).text(new Intl.NumberFormat('id-ID').format(res.data));
+            //    return res.data;
+            //}
+          
+
+
+            //getTotal('api/biblio/total/all', '.biblio_total_all');
+            //getTotal('api/item/total/all', '.item_total_all');
+            //getTotal('api/item/total/lent', '.item_total_lent');
+            //getTotal('api/item/total/available', '.item_total_available');
 
             // get summary
-            fetch('/senayan/index.php?p=api/loan/summary')
-                .then(res => res.json())
-                .then(res => {
+        //    fetch('api/loan/summary')
+        //        .then(res => res.json())
+        //        .then(res => {
 
-                    $('.loan_total').text(new Intl.NumberFormat('id-ID').format(res.data.total));
-                    $('.loan_new').text(new Intl.NumberFormat('id-ID').format(res.data.new));
-                    $('.loan_return').text(new Intl.NumberFormat('id-ID').format(res.data.return));
-                    $('.loan_extend').text(new Intl.NumberFormat('id-ID').format(res.data.extend));
-                    $('.loan_overdue').text(new Intl.NumberFormat('id-ID').format(res.data.overdue));
+        //            $('.loan_total').text(new Intl.NumberFormat('id-ID').format(res.data.total));
+        //            $('.loan_new').text(new Intl.NumberFormat('id-ID').format(res.data.new));
+        //            $('.loan_return').text(new Intl.NumberFormat('id-ID').format(res.data.return));
+        //            $('.loan_extend').text(new Intl.NumberFormat('id-ID').format(res.data.extend));
+        //            $('.loan_overdue').text(new Intl.NumberFormat('id-ID').format(res.data.overdue));
 
-                    let data = [
-                        {
-                            value: parseInt(res.data.total),
-                            color: "#f2f2f2",
-                            label: "Total"
-                        },
-                        {
-                            value: parseInt(res.data.new),
-                            color: "#337AB7",
-                            label: "ยืม"
-                        },
-                        {
-                            value: parseInt(res.data.return),
-                            color: "#06B1CD",
-                            label: "คืน"
-                        },
-                        {
-                            value: parseInt(res.data.extend),
-                            color: "#4AC49B",
-                            label: "ขยายเวลา"
-                        },
-                        {
-                            value: parseInt(res.data.overdue),
-                            color: "#F4CC17",
-                            label: "ยืมเกินกำหนด"
-                        }
+        //            let data = [
+        //                {
+        //                    value: parseInt(res.data.total),
+        //                    color: "#f2f2f2",
+        //                    label: "Total"
+        //                },
+        //                {
+        //                    value: parseInt(res.data.new),
+        //                    color: "#337AB7",
+        //                    label: "ยืม"
+        //                },
+        //                {
+        //                    value: parseInt(res.data.return),
+        //                    color: "#06B1CD",
+        //                    label: "คืน"
+        //                },
+        //                {
+        //                    value: parseInt(res.data.extend),
+        //                    color: "#4AC49B",
+        //                    label: "ขยายเวลา"
+        //                },
+        //                {
+        //                    value: parseInt(res.data.overdue),
+        //                    color: "#F4CC17",
+        //                    label: "ยืมเกินกำหนด"
+        //                }
 
-                    ];
+        //            ];
 
-                    let r = $('#radar-chartjs');
-                    let container = $(r).parent();
-                    let rt = r.get(0).getContext("2d");
-                    $(window).resize(respondCanvas);
+        //            let r = $('#radar-chartjs');
+        //            let container = $(r).parent();
+        //            let rt = r.get(0).getContext("2d");
+        //            $(window).resize(respondCanvas);
 
-                    function respondCanvas() {
-                        r.attr('width', $(container).width()); //max width
-                        r.attr('height', $(container).height()); //max height
-                        //Call a function to redraw other content (texts, images etc)
-                        let myChart = new Chart(rt).Doughnut(data, {
-                            animation: false,
-                            segmentStrokeWidth: 1
-                        });
-                    }
+        //            function respondCanvas() {
+        //                r.attr('width', $(container).width()); //max width
+        //                r.attr('height', $(container).height()); //max height
+        //                //Call a function to redraw other content (texts, images etc)
+        //                let myChart = new Chart(rt).Doughnut(data, {
+        //                    animation: false,
+        //                    segmentStrokeWidth: 1
+        //                });
+        //            }
 
-                    respondCanvas()
-                });
+        //            respondCanvas()
+        //        });
 
-            // ===================================
-            // bar chart
-            // ===================================
+        //    // ===================================
+        //    // bar chart
+        //    // ===================================
 
-            fetch('/senayan/index.php?p=api/loan/getdate/2022-01-19')
-            .then(res => res.json())
-            .then(res => {
+        //    fetch('api/loan/getdate/2022-01-19')
+        //    .then(res => res.json())
+        //    .then(res => {
 
-                let a = getTotal('/senayan/index.php?p=api/loan/summary/2022-01-19');
-                a.then(res_total => {
+        //        let a = getTotal('api/loan/summary/2022-01-19');
+        //        a.then(res_total => {
 
-                    let lineChartData = {
-                        labels: res.raw,
-                        datasets: [
-                            {
-                                fillColor: '#F4CC17',
-                                highlightFill: '#F4CC17',
-                                data: res_total.loan
-                            },
-                            {
-                                fillColor: '#459CBD',
-                                highlightFill: '#459CBD',
-                                data: res_total.return
-                            },
-                            {
-                                fillColor: '#5D45BD',
-                                highlightFill: '#5D45BD',
-                                data: res_total.extend
-                            },
-                        ]
-                    }
+        //            let lineChartData = {
+        //                labels: res.raw,
+        //                datasets: [
+        //                    {
+        //                        fillColor: '#F4CC17',
+        //                        highlightFill: '#F4CC17',
+        //                        data: res_total.loan
+        //                    },
+        //                    {
+        //                        fillColor: '#459CBD',
+        //                        highlightFill: '#459CBD',
+        //                        data: res_total.return
+        //                    },
+        //                    {
+        //                        fillColor: '#5D45BD',
+        //                        highlightFill: '#5D45BD',
+        //                        data: res_total.extend
+        //                    },
+        //                ]
+        //            }
 
-                    let c = $('#line-chartjs');
-                    let container = $(c).parent();
-                    let ct = c.get(0).getContext("2d");
-                    $(window).resize(respondCanvas);
+        //            let c = $('#line-chartjs');
+        //            let container = $(c).parent();
+        //            let ct = c.get(0).getContext("2d");
+        //            $(window).resize(respondCanvas);
 
-                    function respondCanvas() {
-                        c.attr('width', $(container).width()); //max width
-                        c.attr('height', $(container).height()); //max height
-                        //Call a function to redraw other content (texts, images etc)
-                        new Chart(ct).Bar(lineChartData, {
-                            barShowStroke: false,
-                            barDatasetSpacing: 4,
-                            animation: {
-                                onProgress: function(animation) {
-                                    progress.value = animation.animationObject.currentStep / animation.animationObject.numSteps;
-                                }
-                            }
-                        });
-                    }
+        //            function respondCanvas() {
+        //                c.attr('width', $(container).width()); //max width
+        //                c.attr('height', $(container).height()); //max height
+        //                //Call a function to redraw other content (texts, images etc)
+        //                new Chart(ct).Bar(lineChartData, {
+        //                    barShowStroke: false,
+        //                    barDatasetSpacing: 4,
+        //                    animation: {
+        //                        onProgress: function(animation) {
+        //                            progress.value = animation.animationObject.currentStep / animation.animationObject.numSteps;
+        //                        }
+        //                    }
+        //                });
+        //            }
 
-                    respondCanvas();
-                })
-            })
-        });
+        //            respondCanvas();
+        //        })
+        //    })
+        //});
 
-                // get lastest release
-        fetch('https://api.github.com/repos/slims/slims9_bulian/releases/latest')
-            .then(res => res.json())
-            .then(res => {
-                if (res.tag_name !== 'v9.4.2') {
-                    $('#new_version').text(res.tag_name);
-                    $('#alert-new-version').removeClass('hidden');
-                    $('#alert-new-version a').attr('href', res.html_url)
-                }
-            })
+        //        // get lastest release
+        //fetch('https://api.github.com/repos/slims/slims9_bulian/releases/latest')
+        //    .then(res => res.json())
+        //    .then(res => {
+        //        if (res.tag_name !== 'v9.4.2') {
+        //            $('#new_version').text(res.tag_name);
+        //            $('#alert-new-version').removeClass('hidden');
+        //            $('#alert-new-version a').attr('href', res.html_url)
+        //        }
+        //    })
         
     </script>
 </div>
+
 </asp:Content>

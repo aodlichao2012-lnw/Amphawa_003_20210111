@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Catalog_module.aspx.cs" Inherits="LMS_002.Admin.Catalog_module" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div id="mainContent" style="display: block;">    <div class="menuBox">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Catalog_module.aspx.cs" Inherits="LMS_002.Admin.Catalog_module" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div id="mainContent" style="margin-top:80px;" >    
+        <div class="menuBox">
         <div class="menuBoxInner biblioIcon">
             <div class="per_title">
                 <h2>บรรณานุกรม</h2>
@@ -70,7 +72,6 @@
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:CheckBox  ID="chkrows" AutoPostBack="true" runat="server" />
-                                <asp:Button runat="server" CommandName="open" ID="btn_open" OnClick="btn_open_Click"   Text="เปิดดู"/>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="st_name_book"  HeaderText="ชื่อหนังสือ" SortExpression="st_name_book" />

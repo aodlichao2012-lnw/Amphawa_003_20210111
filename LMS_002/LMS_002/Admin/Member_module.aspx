@@ -1,6 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Member_module.aspx.cs" Inherits="LMS_002.Admin.Member_module" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div id="mainContent" style="display: block;"><div class="menuBox">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Member_module.aspx.cs" Inherits="LMS_002.Admin.Member_module" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
+
+    <div  style="margin-top:80px;" id="mainContent" ><div class="menuBox">
 <div class="menuBoxInner memberIcon">
 	<div class="per_title">
     	<h2>สมาชิกห้องสมุด</h2>

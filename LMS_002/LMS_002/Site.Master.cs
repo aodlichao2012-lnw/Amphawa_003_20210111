@@ -65,6 +65,7 @@ namespace LMS_002
                             lb_status.Text = "สถานะ โปรไฟล์ : ผู้ดูแล";
                             admin_page.Visible = true;
                             import_book.Visible = true;
+                            Response.Redirect(@"~/Admin/dashboard.aspx");
                             }
                             else if (Session["role"].ToString() == "3")
                             {

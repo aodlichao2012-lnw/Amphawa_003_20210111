@@ -33,5 +33,70 @@ namespace LMS_002.Admin
         {
 
         }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void delete_2_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void select_all2_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void cancle2_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void searchCatalog_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void clear_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void delete_1_ServerClick1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void select_all_ServerClick1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void cancle_ServerClick1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
