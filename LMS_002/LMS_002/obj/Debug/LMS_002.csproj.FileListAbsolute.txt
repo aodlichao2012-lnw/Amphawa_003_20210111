@@ -779,3 +779,9 @@ D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHos
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Net.Http.Formatting.xml
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.xml
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHost.xml
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Net.Http.Formatting.dll
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.dll
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHost.dll
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Net.Http.Formatting.xml
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.xml
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHost.xml

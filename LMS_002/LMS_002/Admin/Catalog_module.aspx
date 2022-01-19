@@ -67,7 +67,7 @@
                   </div></td><td valign="top">31379016171341</td><td valign="top">1</td><td valign="top">2021-12-16 09:31:13</td></tr>
 </tbody></table>--%>
 
-       <asp:GridView ID="GridView1"  runat="server" AutoGenerateColumns="False" DataKeyNames="st_ISBN_ISSN" OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowCommand="GridView1_RowCommand">
+       <asp:GridView ID="GridView1" CssClass="s-table table"  runat="server" AutoGenerateColumns="False" DataKeyNames="st_ISBN_ISSN" OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowCommand="GridView1_RowCommand">
                     <Columns>
                         <asp:TemplateField>
                             <ItemTemplate>
