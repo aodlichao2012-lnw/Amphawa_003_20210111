@@ -130,6 +130,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Catalog_module.aspx" />
+    <Content Include="Admin\Circulation.aspx" />
+    <Content Include="Admin\dashboard.aspx" />
+    <Content Include="Admin\Member_module.aspx" />
+    <Content Include="Admin\Report.aspx" />
+    <Content Include="Admin\System_management.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -388,6 +394,48 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Catalog_module.aspx.cs">
+      <DependentUpon>Catalog_module.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Catalog_module.aspx.designer.cs">
+      <DependentUpon>Catalog_module.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Circulation.aspx.cs">
+      <DependentUpon>Circulation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Circulation.aspx.designer.cs">
+      <DependentUpon>Circulation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Member_module.aspx.cs">
+      <DependentUpon>Member_module.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Member_module.aspx.designer.cs">
+      <DependentUpon>Member_module.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\System_management.aspx.cs">
+      <DependentUpon>System_management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\System_management.aspx.designer.cs">
+      <DependentUpon>System_management.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Amphawan_LMS_db_2DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

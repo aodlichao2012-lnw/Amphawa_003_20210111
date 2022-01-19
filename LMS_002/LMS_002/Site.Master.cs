@@ -28,6 +28,7 @@ namespace LMS_002
                      logout_edit.Visible = false;
                     logout_login.Visible = false;
                     login_other_people.Visible = true;
+                    admin_page.Visible = false;
                 }
                 else if(Session["user"] != null)
                 {
@@ -49,7 +50,8 @@ namespace LMS_002
                              login_other_people.Visible = false;
                                 import_book.Visible = false;
                             lb_status.Text = "สถานะ โปรไฟล์ : เจ้าหน้าที่";
-                            }
+                            admin_page.Visible = false;
+                        }
                             else if (Session["role"].ToString() == "2")
                             {
                                 menu_role.Visible = true;
@@ -61,6 +63,7 @@ namespace LMS_002
                               logout_login.Visible = true;
                               login_other_people.Visible = false;
                             lb_status.Text = "สถานะ โปรไฟล์ : ผู้ดูแล";
+                            admin_page.Visible = true;
                             import_book.Visible = true;
                             }
                             else if (Session["role"].ToString() == "3")
@@ -74,7 +77,8 @@ namespace LMS_002
                               logout_login.Visible = true;
                              login_other_people.Visible = false;
                                 import_book.Visible = false;
-                               lb_status.Text = "สถานะ โปรไฟล์ : บุคคลทั่วไป";
+                            admin_page.Visible = false;
+                            lb_status.Text = "สถานะ โปรไฟล์ : บุคคลทั่วไป";
                             }
                         }
                         else
@@ -91,7 +95,8 @@ namespace LMS_002
                           logout_login.Visible = false;
                             import_book.Visible = false;
                          login_other_people.Visible = true;
-                        }
+                        admin_page.Visible = false;
+                    }
 
 
 
@@ -129,7 +134,8 @@ namespace LMS_002
                    logout_login.Visible = false;
                  login_other_people.Visible = true;
                     import_book.Visible = false;
-                  Response.Redirect(@"~/Page/Login.aspx");
+                admin_page.Visible = false;
+                Response.Redirect(@"~/Page/Login.aspx");
 
             }
             else

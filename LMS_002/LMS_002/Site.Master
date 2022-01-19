@@ -544,6 +544,43 @@
   <span class="caret"></span>
                     </a>
                 </div>
+
+
+               <%-- admin --%>
+
+                   <div class=" nav navbar-nav">
+                    <a class="navbar-brand "  runat="server" id="admin_page" data-toggle="dropdown">
+                        ADMIN
+  <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu ">
+                         <li>
+                            <a class="nav-link " href="~/Admin/dashboard.aspx" runat="server" id="dash">ภาพรวม
+                            </a>
+                        </li>
+                         <li>
+                            <a class="nav-link " href="~/Admin/Circulation.aspx" runat="server" id="circulation">circulation
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link " href="~/Admin/Catalog_module.aspx" runat="server" id="import_book">รายการหนังสือ
+                            </a>
+                        </li> 
+                          <li>
+                            <a class="nav-link " href="~/Admin/Member_module.aspx" runat="server" id="member">จัดการสมาชิก
+                            </a>
+                        </li> 
+                          <li>
+                            <a class="nav-link " href="~/Admin/System_management.aspx" runat="server" id="System_management">จัดการระบบ
+                            </a>
+                        </li> 
+                         <li>
+                            <a class="nav-link " href="~/Admin/Report.aspx" runat="server" id="report">รายงาน
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+
                       <div class="nav navbar-nav bg-light">
                     <a class="nav-link " data-toggle="dropdown" href="~/Page/Login.aspx" runat="server" id="login"  onserverclick="login_ServerClick">
                                 <asp:Label runat="server" ID="lb_user" Text="ผู้ใช้ภายนอก โปรดคลิ้กที่นี่ เพื่อเข้าสู่ระบบ">ผู้ใช้ภายนอก โปรดคลิ้กที่นี่ เพื่อเข้าสู่ระบบ    </asp:Label>
@@ -581,10 +618,7 @@
                             <a class="nav-link " href="~/Page/Role_Admin.aspx" runat="server" id="menu_role">กำหนดสิทธิ์
                             </a>
                         </li> 
-                        <li>
-                            <a class="nav-link " href="~/Page/Add_book_Admin.aspx" runat="server" id="import_book">นำเข้าหนังสือ
-                            </a>
-                        </li>
+                       
                         <li>
                              <a class="nav-link "  id="logout_login" runat="server" onserverclick="logout_login_ServerClick">ออกจากระบบ</a>
                         </li>

@@ -49,7 +49,7 @@ namespace LMS_002.Page
                     txt_Email.Value = md_account.st_email;
                     ddl_role.SelectedValue = md_account.int_type_cus.ToString();
                 }
-                 Response.Redirect("~/Page/Role_Admin.aspx");
+                 //Response.Redirect("~/Page/Role_Admin.aspx");
             }
             else if(e.CommandName =="delete")
             {

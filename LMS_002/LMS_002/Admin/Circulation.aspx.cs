@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace LMS_002.Admin
+{
+    public partial class Circulation : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void A1_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void delete_1_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void select_all_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void cancle_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
