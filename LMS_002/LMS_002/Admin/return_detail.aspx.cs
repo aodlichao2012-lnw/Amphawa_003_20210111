@@ -78,21 +78,21 @@ namespace LMS_002.Admin
                             FROM MD_catralog_book
                             LEFT JOIN MD_status_book_type ON MD_catralog_book.int_cheeckin_out = MD_status_book_type.self_id
                             INNER JOIN dbo.tb_books_type ON MD_catralog_book.st_type_book = tb_books_type.self_id  
-                                                                   WHERE barcode LIKE  {txt_barcode.Value} AND MD_status_book_type.self_id = 1
+                                                                   WHERE barcode LIKE  '{txt_barcode.Value}' AND MD_status_book_type.self_id = 1
                                                                  ";
 
 
                 dt = Conncetions_db.Instance.Connection_command(@"" + select + "");
-                if(dt.Rows.Count != null)
+                if(dt.Rows == null)
+                {
+                    Response.Write(@"<script>alert('หนังสือเล่มที่คุณค้นหา ยังไม่ถูกยืม')</script>");
+                    sendto_lend.Visible = false;
+                }
+                else
                 {
                     GridView1.DataSource = dt;
                     GridView1.DataBind();
                     sendto_lend.Visible = true;
-                }
-                else
-                {
-                    Response.Write(@"<script>alert('หนังสือเล่มที่คุณค้นหา ยังไม่ถูกยืม')</script>");
-                    sendto_lend.Visible = false;
                 }
            
 

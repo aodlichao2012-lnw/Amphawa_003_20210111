@@ -23,7 +23,7 @@ namespace LMS_002.Page
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Page.SetFocus(txt_ketword2.ClientID);
             if (!Page.IsPostBack)
             {
                 using (var db = new Dbcon_wan())
@@ -132,28 +132,28 @@ namespace LMS_002.Page
                      List<MD_catralog_book> cs = new List<MD_catralog_book>();
                     if(Types.Value != "")
                     {
-                        if (txt_ketword.Value != "")
+                        if (txt_ketword2.Text != "")
                         {
                             switch(Types.Value)
                             {
                                 case "st_name_book":
-                                    select +=  $" '%{ txt_ketword.Value }%' ";
+                                    select +=  $" '%{ txt_ketword2.Text }%' ";
 
                                     break;  
                                 case "st_ISBN_ISSN":
-                                    select += $" '%{ txt_ketword.Value }%' ";
+                                    select += $" '%{ txt_ketword2.Text }%' ";
                                     break; 
                                 case "st_type_book_name":
-                                    select += $" '%{ txt_ketword.Value }%' ";
+                                    select += $" '%{ txt_ketword2.Text }%' ";
                                     break;  
                                 case "st_author":
-                                    select += $" '%{ txt_ketword.Value }%' ";
+                                    select += $" '%{ txt_ketword2.Text }%' ";
                                     break;  
                                 case "barcode":
-                                    select += $" '%{ txt_ketword.Value }%' ";
+                                    select += $" '%{ txt_ketword2.Text }%' ";
                                     break;  
                                 case "count_print":
-                                    select += $" '%{ txt_ketword.Value }%' ";
+                                    select += $" '%{ txt_ketword2.Text }%' ";
                                     break;
                             }
                             dt = Conncetions_db.Instance.Connection_command(@"" + select + " AND  int_cheeckin_out != 3" +
@@ -361,6 +361,11 @@ namespace LMS_002.Page
             GridViewRow gvr = (GridViewRow)chk1.NamingContainer;
             string issn_book = gvr.Cells[3].Text;
             Response.Write(@"<script>window.open('book_detail.aspx?issn="+issn_book+"');</script>");
+        }
+
+        protected void txt_ketword2_TextChanged(object sender, EventArgs e)
+        {
+            searchCatalog_ServerClick("", null);
         }
     }
 }

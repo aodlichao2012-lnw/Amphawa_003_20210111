@@ -26,7 +26,7 @@
                 <div class="form-group w-100 text-center">
                     <div class="form-group w-100">
                         <label>คำค้น</label>
-                        <input runat="server" type="text" id="txt_ketword" name="Age" class="w-100" placeholder="รหัสหนังสือ">
+                        <asp:TextBox runat="server"  ID="txt_ketword2" CssClass="w-100" OnTextChanged="txt_ketword2_TextChanged"  ></asp:TextBox>
                     </div>
                 </div>
             

@@ -1,6 +1,7 @@
 ﻿using LMS_002.DbContext_db;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -10,15 +11,16 @@ using System.Web.UI.WebControls;
 
 namespace LMS_002.Admin
 {
+   
     public partial class Lean_book : System.Web.UI.Page
     {
           static  int  count  =  0 ;
-
+        DataTable dt = new DataTable();
         string profile = "";
         protected void Page_Load(object sender, EventArgs e)
         {
 
- 
+            this.Page.SetFocus(txt_keyword.ClientID);
             if (!Page.IsPostBack)
             {
                 if (Session["user"] != null)
@@ -131,7 +133,7 @@ namespace LMS_002.Admin
                     CheckBox chk = (CheckBox)gvrow.FindControl("chkrows");
                     if (chk != null & chk.Checked)
                     {
-                         id += Convert.ToInt32(gvrow.Cells[1].Text);
+                         id += Convert.ToInt32(gvrow.Cells[0].Text);
 
                         //                           var update = (from db_ in db.tb_cattalog
 
@@ -191,6 +193,39 @@ namespace LMS_002.Admin
 
 
             Response.Write(@"<script>window.open('../Report_pdf/slip_lend_pdf.aspx?user=" + profile + "&cus=" + account_cus + "&id_iss=" + id + "' , '_blank');</script>");
+        }
+
+        protected void txt_keyword_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string select = $@"SELECT int_id_catalog_book , st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  tb_books_type.Type_book as Type_book
+                            , MD_status_book_type.status_book as status_book 
+                            FROM MD_catralog_book
+                            LEFT JOIN MD_status_book_type ON MD_catralog_book.int_cheeckin_out = MD_status_book_type.self_id
+                            INNER JOIN dbo.tb_books_type ON MD_catralog_book.st_type_book = tb_books_type.self_id  
+                                                                   WHERE barcode LIKE  '{txt_keyword.Text}' AND MD_status_book_type.self_id = 0
+                                                                 ";
+
+
+                dt = Conncetions_db.Instance.Connection_command(@"" + select + "");
+                if (dt.Rows == null)
+                {
+                    Response.Write(@"<script>alert('ไม่มีหนังสือ อยู่ในระบบ')</script>");
+                }
+                else
+                {
+                    GridView1.DataSource = dt;
+                    GridView1.DataBind();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+            }
         }
     }
 }

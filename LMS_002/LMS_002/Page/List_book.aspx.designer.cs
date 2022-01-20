@@ -24,13 +24,13 @@ namespace LMS_002.Page
         protected global::System.Web.UI.HtmlControls.HtmlSelect Types;
 
         /// <summary>
-        /// txt_ketword control.
+        /// txt_ketword2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_ketword;
+        protected global::System.Web.UI.WebControls.TextBox txt_ketword2;
 
         /// <summary>
         /// searchCatalog control.

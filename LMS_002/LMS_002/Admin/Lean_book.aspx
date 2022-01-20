@@ -11,6 +11,10 @@
         <div class="row">
             <h2>การยืม</h2>
             <div>
+                <div class="card">
+                    Barcode
+                    <asp:TextBox runat="server" ID="txt_keyword" OnTextChanged="txt_keyword_TextChanged" AutoPostBack="true" CssClass="w-100"></asp:TextBox>
+                </div>
                 <div class="wrapper fadeInDown">
                     <div class="text-center">
                         <asp:GridView ID="GridView1" CssClass="table" runat="server" AutoGenerateColumns="False" OnRowEditing="GridView1_RowEditing"  OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" DataKeyNames="int_id_catalog_book">
@@ -30,9 +34,7 @@
                                 <asp:BoundField DataField="st_ISBN_ISSN" HeaderText="ISBN_ISSN" SortExpression="st_ISBN_ISSN" />
                                 <asp:BoundField DataField="st_detail_book" HeaderText="รายละเอียด หนังสือ" SortExpression="st_detail_book" />
                                 <asp:BoundField DataField="dt_DATE_modify" HeaderText="วันที่มีหนังสือเล่มนี้" SortExpression="dt_DATE_modify" />
-                                <asp:BoundField DataField="st_type_book_name" HeaderText="ประเภทหนังสือ" SortExpression="st_type_book_name" />
-                                <asp:BoundField DataField="dt_checkout_date" HeaderText="วันที่ถูยืม" SortExpression="dt_checkout_date" />
-                                <asp:BoundField DataField="dt_checkin_date" HeaderText="วันที่ถูกคืน" SortExpression="dt_checkin_date" />
+                                <asp:BoundField DataField="Type_book" HeaderText="ประเภทหนังสือ" SortExpression="Type_book" />
                                 <asp:BoundField DataField="status_book" HeaderText="สถานะ" SortExpression="status_book" />
                                 <%-- <asp:BoundField DataField="count_ISBN" HeaderText="จำนวนหนังสือที่เหลืออยู่" SortExpression="st_type_book_name" />--%>
                             </Columns>
