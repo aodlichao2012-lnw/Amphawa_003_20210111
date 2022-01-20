@@ -39,9 +39,10 @@ namespace LMS_002.DbContext_db
 
             using (SqlConnection cl_con = new SqlConnection(ConfigurationManager.ConnectionStrings["amphawacontect"].ConnectionString))
             {
+                DataTable dt = new DataTable();
                 SqlCommand command = new SqlCommand(cmd, cl_con);
                 SqlDataAdapter da = new SqlDataAdapter(command);
-                DataTable dt = new DataTable();
+ 
                 da.Fill(dt);
                 cl_con.Close();
                 if (dt.Rows.Count > 0)

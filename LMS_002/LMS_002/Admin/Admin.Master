@@ -129,22 +129,23 @@
             background-color: #dd9933;
             border: none;
             color: white;
-            padding: 15px 80px;
+            height:16%;
+            padding: 15px 30px;
             text-align: center;
-            text-decoration: none;
+            text-decoration:none;
             display: inline-block;
             text-transform: uppercase;
-            font-size: 13px;
-            -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-            box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-            -webkit-border-radius: 5px 5px 5px 5px;
-            border-radius: 5px 5px 5px 5px;
+            font-size: 20px;
+           /* -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);*/
+       /*     box-shadow: 0 6px 20px 0 rgba(95,186,233,0.4);*/
+         /*   -webkit-border-radius: 5px 5px 5px 5px;*/
+        /*    border-radius: 5px 5px 5px 5px;*/
             margin: 5px 20px 40px 20px;
-            -webkit-transition: all 0.3s ease-in-out;
-            -moz-transition: all 0.3s ease-in-out;
-            -ms-transition: all 0.3s ease-in-out;
-            -o-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
+            /*-webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;*/
+        /*    -ms-transition: all 0.3s ease-in-out;*/
+            /*-o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;*/
         }
 
         /*    input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
@@ -516,10 +517,20 @@
                     </a>
                 </div>
                 <div class="nav navbar-nav">
-                    <a class="navbar-brand" id="Circulation" href="~/Admin/Circulation.aspx"  runat="server">
+                    <a class="navbar-brand" id="Circulation" href="~/Admin/Circulation.aspx" data-toggle="dropdown" runat="server">
                        Circulation
   <span class="caret"></span>
                     </a>
+                      <ul class="dropdown-menu ">
+                         <li>
+                            <a class="nav-link"  onserverclick="lend_Click" runat="server" id="lend">การยืม
+                            </a>
+                        </li>
+                         <li>
+                            <a class="nav-link" onserverclick="return2_Click" runat="server" id="return">การคืน
+                            </a>
+                        </li>
+                          </ul>
                 </div>
           
                 <div class=" nav navbar-nav">
@@ -545,6 +556,9 @@
                      Report 
   <span class="caret"></span>
                     </a>
+                </div>
+                <div class=" nav navbar-nav">
+                    <asp:Button  id="logout" runat="server" Text="admin" OnClick="logout_Click" OnClientClick=" return confirm('คุณ ต้องการจะออกจากระบบ หรือไม่?');" />
                 </div>
 
             </nav>

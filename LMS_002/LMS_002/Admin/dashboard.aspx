@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="LMS_002.Admin.dashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
-    <div style="margin-top:80px;" id="mainContent"></div>
+    <div style="margin-top:100px;" id="mainContent"></div>
     <div class="menuBox adminHome">
     <div class="menuBoxInner">
         <div class="per_title">

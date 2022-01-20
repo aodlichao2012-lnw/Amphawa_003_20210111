@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Role_Admin.aspx.cs" Inherits="LMS_002.Page.Role_Admin"  EnableEventValidation="false"%>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master"  AutoEventWireup="true" CodeBehind="Role_Admin.aspx.cs" Inherits="LMS_002.Admin.Role_Admin"  EnableEventValidation="false"%>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
     <script>
 
 </script>

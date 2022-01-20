@@ -18,7 +18,7 @@
                             <option value="st_ISBN_ISSN">ISBN-ISSN</option>
                             <option value="st_type_book_name">ประเภทหนังสือ</option>
                             <option value="st_author">ชื่อผู้แต่ง</option>
-                            <option value="st_call_number">บาร์โค้ด</option>
+                            <option value="barcode">บาร์โค้ด</option>
                             <option value="count_print">จำนวนที่พิมพ์</option>
                         </select>
                     </div>
@@ -52,7 +52,7 @@
     <div>
         <div class="wrapper fadeInDown">
             <div class="text-center">
-                <asp:GridView ID="GridView1"  runat="server" AutoGenerateColumns="False" DataKeyNames="st_ISBN_ISSN" OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowCommand="GridView1_RowCommand">
+                <asp:GridView ID="GridView1"  CssClass=" table" runat="server" AutoGenerateColumns="False" DataKeyNames="st_ISBN_ISSN" OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowCommand="GridView1_RowCommand">
                     <Columns>
                         <asp:TemplateField>
                             <ItemTemplate>

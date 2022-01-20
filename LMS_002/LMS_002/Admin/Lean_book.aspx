@@ -1,13 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Lean_book.aspx.cs" Inherits="LMS_002.Page.Lean_book" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master"  AutoEventWireup="true" CodeBehind="Lean_book.aspx.cs" Inherits="LMS_002.Admin.Lean_book" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
     </style>
     <script>
 
 </script>
 
-    <div class="container">
+    <div class="container" style="margin-top:100px;">
         <div class="row">
             <h2>การยืม</h2>
             <div>

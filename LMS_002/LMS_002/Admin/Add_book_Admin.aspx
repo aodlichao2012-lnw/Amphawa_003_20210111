@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Add_book_Admin.aspx.cs" Inherits="LMS_002.Page.Add_book_Admin" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master"   AutoEventWireup="true" CodeBehind="Add_book_Admin.aspx.cs" Inherits="LMS_002.Admin.Add_book_Admin" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
        <style>
 
     </style>
@@ -7,8 +7,10 @@
 
     </script>
 
-    <div class="container">
-        <div class="row">
+  <div id="mainContent" style="margin-top:80px;" >    
+        <div class="menuBox">
+        <div class="menuBoxInner biblioIcon">
+            <div class="per_title">
                <h2>เพิ่มหนังสือ</h2>
             <div class=" card-body mt-2 col-1 w-100">
                 <div class=" col-1 w-25 d-inline-block">
@@ -126,4 +128,7 @@
                         <a class="btn btn-secondary btn-lg " runat="server" id="clear" href="#"><i class="fa fa-eraser "></i>ยกเลิก</a>
                     </div>
     </div>
+        </div>
+            </div>
+      </div>
 </asp:Content>

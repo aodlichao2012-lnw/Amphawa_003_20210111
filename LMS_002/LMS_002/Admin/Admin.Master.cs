@@ -22,5 +22,29 @@ namespace LMS_002.Admin
         {
             Response.Redirect(@"~/Page/Login.aspx");
         }
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            if (Session["roleid"] != null)
+            {
+                Session["user"] = null;
+                Response.Redirect(@"~/Page/Login.aspx");
+
+            }
+            else
+            {
+                Response.Redirect(@"~/Page/Login.aspx");
+            }
+        }
+
+        protected void lend_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(@"~/Admin/Lean_book.aspx");
+        }
+
+        protected void return2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(@"~/Admin/return_detail.aspx");
+        }
     }
 }

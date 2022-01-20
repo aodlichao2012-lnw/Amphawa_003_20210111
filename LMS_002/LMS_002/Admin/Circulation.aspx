@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Circulation.aspx.cs" Inherits="LMS_002.Admin.Circulation" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
 
-     <h2 style="margin-top:80px;">ค้นหาหนังสือ</h2>
+     <h2 style="margin-top:100px;">ค้นหาหนังสือ</h2>
     <div class="card text-center">
         <div class="card-body">
             <div class="row">
@@ -13,7 +13,7 @@
                             <option value="st_ISBN_ISSN">ISBN-ISSN</option>
                             <option value="st_type_book_name">ประเภทหนังสือ</option>
                             <option value="st_author">ชื่อผู้แต่ง</option>
-                            <option value="st_call_number">บาร์โค้ด</option>
+                            <option value="barcode">บาร์โค้ด</option>
                             <option value="count_print">จำนวนที่พิมพ์</option>
                         </select>
                     </div>

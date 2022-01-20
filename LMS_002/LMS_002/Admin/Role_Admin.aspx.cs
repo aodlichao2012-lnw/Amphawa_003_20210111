@@ -10,7 +10,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace LMS_002.Page
+namespace LMS_002.Admin
 {
     public partial class Role_Admin : System.Web.UI.Page
     {

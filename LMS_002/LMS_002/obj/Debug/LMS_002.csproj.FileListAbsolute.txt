@@ -598,6 +598,12 @@ D:\Suparat\Amphawa_003_20210112\LMS_002\LMS_002\obj\Debug\LMS_002.dll
 D:\Suparat\Amphawa_003_20210112\LMS_002\LMS_002\obj\Debug\LMS_002.pdb
 D:\Suparat\Amphawa_003_20210112\LMS_002\LMS_002\obj\Debug\RdlCompile.cache
 D:\Suparat\Amphawa_003_20210112\LMS_002\LMS_002\obj\Debug\RdlCompile.compiled
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Net.Http.Formatting.dll
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.dll
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHost.dll
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Net.Http.Formatting.xml
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.xml
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHost.xml
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\SqlServerTypes\x64\msvcr120.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\SqlServerTypes\x86\msvcr120.dll
@@ -671,36 +677,27 @@ D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.ScriptManage
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.SqlServer.Types.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.Web.Infrastructure.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Newtonsoft.Json.dll
+D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Net.Http.Formatting.dll
+D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.dll
+D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHost.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Optimization.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\WebGrease.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.Shared.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportSource.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.Controllers.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.CrystalReports.Engine.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.ReportViewer.DataVisualization.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\EnvDTE.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.VisualStudio.Shell.Interop.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.ReportViewer.WinForms.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.Prompting.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\stdole.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.VisualStudio.OLE.Interop.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.VisualStudio.TextManager.Interop.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.MSXML.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.xml
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.SqlServer.xml
+D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Net.Http.Formatting.xml
+D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.xml
+D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHost.xml
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Optimization.xml
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Newtonsoft.Json.xml
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\Antlr3.Runtime.pdb
@@ -766,22 +763,10 @@ D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\pt\Microsoft.ReportVie
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.csproj.AssemblyReference.cache
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\RdlCompile.cache
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\RdlCompile.compiled
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.csproj.CoreCompileInputs.cache
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.csproj.CopyComplete
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.pdb
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Net.Http.Formatting.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHost.dll
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Net.Http.Formatting.xml
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.xml
-D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHost.xml
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Net.Http.Formatting.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHost.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Net.Http.Formatting.xml
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.xml
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Http.WebHost.xml
+D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.csproj.AssemblyReference.cache

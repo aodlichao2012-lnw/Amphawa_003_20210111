@@ -46,7 +46,7 @@ namespace LMS_002.Models
         public string video_path { get; set; }
         public string ebook_path { get; set; }
         public string st_author { get; set; }
-        public string st_call_number { get; set; }
+        public string barcode { get; set; }
         public string count_print { get; set; }
         public string plate_print { get; set; }
         public string company_print { get; set; }

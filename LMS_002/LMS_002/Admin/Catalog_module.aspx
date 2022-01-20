@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Catalog_module.aspx.cs" Inherits="LMS_002.Admin.Catalog_module" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div id="mainContent" style="margin-top:80px;" >    
+    <div id="mainContent" style="margin-top:100px;" >    
         <div class="menuBox">
         <div class="menuBoxInner biblioIcon">
             <div class="per_title">
@@ -10,23 +10,47 @@
             <div class="sub_section">
                 <div class="btn-group">
                   
-                </div><input type="text" name="keywords" id="keywords" class="form-control col-md-3">
-                    <select name="field" class="form-control col-md-2">
-                        <option value="0">ทั้งหมด</option>
-                        <option value="title">ชื่อเรื่อง/ชื่อวารสาร </option>
-                        <option value="subject">หัวเรื่อง</option>
-                        <option value="author">ผู้แต่ง</option>
-                        <option value="isbn">ISBN/ISSN</option>
-                        <option value="publisher">ผู้จัดทำ</option>
+            <%--    </div><input type="text" runat="server" name="keywords" id="keywords" class="form-control col-md-3">
+                    <select name="field" id="Types" runat="server" class="form-control col-md-2">
+                         <option value="st_name_book">ชื่อหนังสือ</option>
+                            <option value="st_ISBN_ISSN">ISBN-ISSN</option>
+                            <option value="st_type_book_name">ประเภทหนังสือ</option>
+                            <option value="st_author">ชื่อผู้แต่ง</option>
+                            <option value="st_call_number">บาร์โค้ด</option>
+                            <option value="count_print">จำนวนที่พิมพ์</option>
                     </select>
-                    <input type="submit" id="doSearch" value="สืบค้น" class="s-btn btn btn-default">
-                     <a href="/senayan/admin/modules/bibliography/index.php" class="btn btn-info">รายการบรรณานุกรม</a>
-                    <a runat="server" id="add_book" href="~/Page/Add_book_Admin.aspxl" class="btn btn-info">เพิ่มรายการบรรณานุกรม</a>
-                
+                    <input type="submit" id="doSearch" value="สืบค้น" runat="server" onserverclick="doSearch_ServerClick" class="s-btn btn btn-default">
+                     <a class="btn btn-info" runat="server" id="list" onserverclick="list_ServerClick">รายการบรรณานุกรม</a>
+                    <a runat="server" id="add_book" onserverclick="add_book_ServerClick" class="btn btn-info">เพิ่มรายการบรรณานุกรม</a>--%>
+                    <div class="row">
+                      <div class="text-center">
+                    <div class="form-group w-100" >
+                        <label>ค้นหาตาม</label>
+                        <select name="JobID" runat="server" id="Types" class=" w-100 ddl">
+                            <option value="st_name_book">ชื่อหนังสือ</option>
+                            <option value="st_ISBN_ISSN">ISBN-ISSN</option>
+                            <option value="st_type_book_name">ประเภทหนังสือ</option>
+                            <option value="st_author">ชื่อผู้แต่ง</option>
+                            <option value="barcode">บาร์โค้ด</option>
+                            <option value="count_print">จำนวนที่พิมพ์</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group w-100 text-center">
+                    <div class="form-group w-100">
+                        <label>คำค้น</label>
+                        <input runat="server" type="text" id="keywords" name="Age" class="w-100" placeholder="รหัสหนังสือ">
+                    </div>
+                </div>
+                </div>
+                                         
             </div>
+                      <input type="submit" id="doSearch" value="สืบค้น" runat="server" onserverclick="doSearch_ServerClick" class="s-btn btn btn-default">
+                     <a class="btn btn-info" runat="server" id="list" onserverclick="list_ServerClick">รายการบรรณานุกรม</a>
+                    <a runat="server" id="add_book" onserverclick="add_book_ServerClick" class="btn btn-info">เพิ่มรายการบรรณานุกรม</a>
         </div>
     </div>
-    <input type="hidden" name="csrf_token" value="95b84d303fe86c6484c983e4cb39ca94dd1a840c6c1d2d74c281f0c38f85e2d6"><input type="hidden" name="form_name" value="datagrid"><table cellspacing="0" cellpadding="5" class="datagrid-action-bar" style="width: 100%;"><tbody><tr><td><input type="button" onclick="chboxFormSubmit('datagrid', 'ยืนยันการลบข้อมูล')" value="ลบข้อมูล" class="s-btn btn btn-danger"> <input type="button" value="เลือกรายการทั้งหมด" class="check-all button btn btn-default"> <input type="button" value="ยกเลิกรายการทั้งหมด" class="uncheck-all button btn btn-default"> </td></tr></tbody></table>
+    <input type="hidden" name="csrf_token" value="95b84d303fe86c6484c983e4cb39ca94dd1a840c6c1d2d74c281f0c38f85e2d6"><input type="hidden" name="form_name" value="datagrid"><table cellspacing="0" cellpadding="5" class="datagrid-action-bar" style="width: 100%;"><tbody><tr><td><asp:Button runat="server" ID="Button1"  CssClass="btn btn-danger" Text="ลบ"  AlternateText="Delete" OnClick="delete_Click" OnClientClick="return confirm('Are you sure you want to delete this item?');"/>  <input type="button" value="เลือกรายการทั้งหมด" id="seleclall" runat="server" onserverclick="seleclall_ServerClick" class="check-all button btn btn-default"> <input type="button" id="unselect1"  runat="server" onserverclick="unselect1_ServerClick" value="ยกเลิกรายการทั้งหมด" class="uncheck-all button btn btn-default"> </td></tr></tbody></table>
 <%--<table id="dataList" class="s-table table">
 <tbody><tr class="dataListHeader" style="font-weight: bold; cursor: pointer;" row="0"><td>ลบ</td><td>แก้ไข</td><td><a href="/senayan/admin/modules/bibliography/index.php?datatablefld=%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87&amp;dir=DESC" title="เรียงรายการโดย ชื่อเรื่อง เรียงจากบนลงล่าง">ชื่อเรื่อง</a></td><td><a href="/senayan/admin/modules/bibliography/index.php?datatablefld=ISBN%2FISSN&amp;dir=DESC" title="เรียงรายการโดย ISBN/ISSN เรียงจากบนลงล่าง">ISBN/ISSN</a></td><td><a href="/senayan/admin/modules/bibliography/index.php?datatablefld=%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%A1&amp;dir=DESC" title="เรียงรายการโดย เล่ม เรียงจากบนลงล่าง">เล่ม</a></td><td><a href="/senayan/admin/modules/bibliography/index.php?datatablefld=%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%A5%E0%B9%88%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%94&amp;dir=DESC" title="เรียงรายการโดย ปรับปรุงล่าสุด เรียงจากบนลงล่าง">ปรับปรุงล่าสุด</a></td></tr>
 <tr class="alterCell2" row="1" style="cursor: pointer;"><td align="center" valign="top" style="width: 5%;"><input class="selected-row" type="checkbox" name="itemID[]" value="3" id="cbRow1"></td><td align="center" valign="top" style="width: 5%;"><a class="editLink" href="/senayan/admin/modules/bibliography/index.php?itemID=3&amp;detail=true&amp;" postdata="itemID=3&amp;detail=true" title="Edit">&nbsp;</a></td><td valign="top"><div class="media">
@@ -88,10 +112,12 @@
 
                     </Columns>
                 </asp:GridView>
-<table cellspacing="0" cellpadding="5" class="datagrid-action-bar" style="width: 100%;"><tbody><tr><td><input type="button" onclick="chboxFormSubmit('datagrid', 'ยืนยันการลบข้อมูล')" value="ลบข้อมูล" class="s-btn btn btn-danger"> <input type="button" value="เลือกรายการทั้งหมด" class="check-all button btn btn-default"> <input type="button" value="ยกเลิกรายการทั้งหมด" class="uncheck-all button btn btn-default"> </td></tr></tbody></table>
+<table cellspacing="0" cellpadding="5" class="datagrid-action-bar" style="width: 100%;"><tbody><tr><td><asp:Button runat="server" ID="delete"  CssClass="btn btn-danger" Text="ลบ"  AlternateText="Delete" OnClick="delete_Click" OnClientClick="return confirm('Are you sure you want to delete this item?');"/> <input type="button" id="seleclall2" runat="server" onserverclick="seleclall_ServerClick"  value="เลือกรายการทั้งหมด" class="check-all button btn btn-default"> <input type="button" value="ยกเลิกรายการทั้งหมด" id="unselect2"  runat="server" onserverclick="unselect1_ServerClick" class="uncheck-all button btn btn-default"> </td></tr></tbody></table>
 <input type="hidden" name="itemAction" value="true"><input type="hidden" name="lastQueryStr" value="">
 
 <iframe name="submitExec" style="display: none; visibility: hidden; width: 100%; height: 0;"></iframe>
 </div>
-        
+        <script>
+
+        </script>
 </asp:Content>

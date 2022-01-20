@@ -11,52 +11,70 @@ namespace LMS_002.Admin
 {
 
 
-    public partial class Member_module
+    public partial class Lean_book
     {
 
         /// <summary>
-        /// Types control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect Types;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// keywords control.
+        /// min_date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText keywords;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText min_date;
 
         /// <summary>
-        /// doSearch control.
+        /// max_date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputSubmit doSearch;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText max_date;
 
         /// <summary>
-        /// gdv_Role_admin control.
+        /// ddl_account control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gdv_Role_admin;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_account;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// count_book control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText count_book;
+
+        /// <summary>
+        /// searchCatalog control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor searchCatalog;
+
+        /// <summary>
+        /// clear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor clear;
     }
 }

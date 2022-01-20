@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Report.aspx.cs" Inherits="LMS_002.Admin.Report" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
 
-    <div style="margin-top:80px;" id="mainContent" ><div class="menuBox">
+    <div style="margin-top:100px;" id="mainContent" ><div class="menuBox">
     <div class="menuBoxInner statisticIcon">
         <div class="per_title">
         <h2>สรุปสถิติทรัพยากรสารสนเทศ</h2>

@@ -11,106 +11,97 @@ namespace LMS_002.Admin
 {
 
 
-    public partial class Admin
+    public partial class return_detail
     {
 
         /// <summary>
-        /// form1 control.
+        /// return_main control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Panel return_main;
 
         /// <summary>
-        /// Home control.
+        /// txt_barcode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Home;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_barcode;
 
         /// <summary>
-        /// Circulation control.
+        /// search control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Circulation;
+        protected global::System.Web.UI.HtmlControls.HtmlInputSubmit search;
 
         /// <summary>
-        /// lend control.
+        /// ddl_account control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor lend;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_account;
 
         /// <summary>
-        /// return control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor @return;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// Cataloging control.
+        /// sendto_lend control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Cataloging;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor sendto_lend;
 
         /// <summary>
-        /// Member control.
+        /// clear_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Member;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor clear_list;
 
         /// <summary>
-        /// SystemsManagement control.
+        /// detail_return control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor SystemsManagement;
+        protected global::System.Web.UI.WebControls.Panel detail_return;
 
         /// <summary>
-        /// Report control.
+        /// lb_list_book control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Report;
+        protected global::System.Web.UI.WebControls.Label lb_list_book;
 
         /// <summary>
-        /// logout control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logout;
-
-        /// <summary>
-        /// ContentPlaceHolder1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

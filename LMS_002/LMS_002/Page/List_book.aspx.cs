@@ -149,7 +149,7 @@ namespace LMS_002.Page
                                 case "st_author":
                                     select += $" '%{ txt_ketword.Value }%' ";
                                     break;  
-                                case "st_call_number":
+                                case "barcode":
                                     select += $" '%{ txt_ketword.Value }%' ";
                                     break;  
                                 case "count_print":

@@ -9,7 +9,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
-namespace LMS_002.Page
+namespace LMS_002.Admin
 {
     public partial class Add_book_Admin : System.Web.UI.Page
     {
@@ -67,7 +67,7 @@ namespace LMS_002.Page
                            ,[ebook_path]
                            ,[st_lend_name]
                            ,[st_author]
-                           ,[st_call_number]
+                           ,[barcode]
                            ,[count_print]
                            ,[plate_print]
                            ,[company_print]
