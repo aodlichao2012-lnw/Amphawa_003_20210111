@@ -133,7 +133,7 @@ namespace LMS_002.Admin
                     CheckBox chk = (CheckBox)gvrow.FindControl("chkrows");
                     if (chk != null & chk.Checked)
                     {
-                         id += Convert.ToInt32(gvrow.Cells[0].Text);
+                         id += Convert.ToInt32(gvrow.Cells[1].Text);
 
                         //                           var update = (from db_ in db.tb_cattalog
 
@@ -174,9 +174,10 @@ namespace LMS_002.Admin
                             //    File.Copy(path, HttpContext.Current.Server.MapPath("~/"));
                             //    count++;
                             //}
-                                
-                        
-                            id += gvrow.Cells[3].Text;
+
+                            count = 0;
+
+
 
                         }
                         catch(Exception ex)
@@ -189,10 +190,7 @@ namespace LMS_002.Admin
                     }
                 }
             }
-            GridView1.DataBind();
-
-
-            Response.Write(@"<script>window.open('../Report_pdf/slip_lend_pdf.aspx?user=" + profile + "&cus=" + account_cus + "&id_iss=" + id + "' , '_blank');</script>");
+                Response.Redirect(@"../Report_pdf/slip_lend_pdf.aspx?user=" + profile + "&cus=" + account_cus + ")");
         }
 
         protected void txt_keyword_TextChanged(object sender, EventArgs e)
@@ -216,6 +214,8 @@ namespace LMS_002.Admin
                 }
                 else
                 {
+                    //DataRow dr = dt.NewRow();
+                    //dt.Rows.Add(dr);
                     GridView1.DataSource = dt;
                     GridView1.DataBind();
                 }
