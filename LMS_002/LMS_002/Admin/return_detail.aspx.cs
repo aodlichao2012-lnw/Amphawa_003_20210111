@@ -83,7 +83,7 @@ namespace LMS_002.Admin
 
 
                 dt = Conncetions_db.Instance.Connection_command(@"" + select + "");
-                if(dt.Rows == null)
+                if(dt == null)
                 {
                     Response.Write(@"<script>alert('หนังสือเล่มที่คุณค้นหา ยังไม่ถูกยืม')</script>");
                     sendto_lend.Visible = false;
