@@ -11,11 +11,11 @@ namespace LMS_002.Page
 {
     public partial class Edit_profile : System.Web.UI.Page
     {
-        MD_Account  md_account = new MD_Account();
-            string user_  = "";
+        MD_Account md_account = new MD_Account();
+        string user_ = "";
         protected void Page_Load(object sender, EventArgs e)
         {
- 
+
             if (!Page.IsPostBack)
             {
                 if (Session["user"] != null)
@@ -49,8 +49,8 @@ namespace LMS_002.Page
                     string st_email = txt_Email.Value;
                     Session["user"] = user;
                     var cs = Conncetions_db.Instance.Connection_command(@" UPDATE [dbo].[MD_Account] SET st_user = '" + user + "' , " +
-                          "st_password = '" + st_password + "' , st_email = '" + st_email + "' , st_cus_name = '"+st_cus_name+"' , st_post_address" +
-                          " = '"+st_post_address+"'   where int_id = " + Session["id_Accont"].ToString() + " ");
+                          "st_password = '" + st_password + "' , st_email = '" + st_email + "' , st_cus_name = '" + st_cus_name + "' , st_post_address" +
+                          " = '" + st_post_address + "'   where int_id = " + Session["id_Accont"].ToString() + " ");
                     Response.Write(@"<script>alert('บันทึกเรียบร้อย')</script>");
                     Response.Redirect(@"~/Page/Role_Admin.aspx");
                 }
@@ -64,7 +64,7 @@ namespace LMS_002.Page
 
         protected void btn_back_ServerClick(object sender, EventArgs e)
         {
-               Response.Redirect("~/Page/List_book.aspx");
+            Response.Redirect("~/Page/List_book.aspx");
         }
     }
 }

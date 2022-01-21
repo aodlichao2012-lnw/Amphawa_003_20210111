@@ -24,9 +24,9 @@ namespace LMS_002.Page
             SqlDataSource1.SelectCommand = "select * from [dbo].[MD_catralog_book]";
             SqlDataSource1.DataBind();
             DataView data = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
-            foreach(DataRowView item in data)
+            foreach (DataRowView item in data)
             {
-                lb_list_book.Text = "\n"+item["st_name_book"].ToString() +": รหัสหนังสือ =  "+item["st_ISBN_ISSN"].ToString() +"\n" ;
+                lb_list_book.Text = "\n" + item["st_name_book"].ToString() + ": รหัสหนังสือ =  " + item["st_ISBN_ISSN"].ToString() + "\n";
             }
         }
 

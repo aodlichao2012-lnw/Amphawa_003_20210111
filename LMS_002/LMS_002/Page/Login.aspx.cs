@@ -12,48 +12,45 @@ namespace LMS_002.Page
 {
     public partial class Login : System.Web.UI.Page
     {
-          MD_Account  md_account = new MD_Account();
+        MD_Account md_account = new MD_Account();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
             using (var db = new Dbcon_wan())
             {
                 var cs = db.tb_account.ToList();
             }
 
-                if (Session["user"] == null   )
+            if (Session["user"] == null)
             {
-                  formContent.Visible = true;
-              
+                formContent.Visible = true;
+
             }
-           else if(Session["roleid"] != null)
+            else if (Session["roleid"] != null)
             {
                 formContent.Visible = false;
             }
-       }
-
-            protected void btn_save_ServerClick1(object sender, EventArgs e)
+        }
+        protected void btn_save_ServerClick1(object sender, EventArgs e)
         {
-            if (txt_login.Value != "" )
+            if (txt_login.Value != "")
             {
                 using (var db = new Dbcon_wan())
                 {
 
-                   var result = db.tb_account.Any(s => s.st_user == txt_login.Value && s.st_password == txt_password.Value);
-                    if(result)
+                    var result = db.tb_account.Any(s => s.st_user == txt_login.Value && s.st_password == txt_password.Value);
+                    if (result)
                     {
                         Session["user"] = txt_login.Value;
-                        Session["roleid"] = db.tb_account.Where( c => c.st_user == txt_login.Value).Select(a => a.int_type_cus).FirstOrDefault();
+                        Session["roleid"] = db.tb_account.Where(c => c.st_user == txt_login.Value).Select(a => a.int_type_cus).FirstOrDefault();
                         Response.Redirect(@"~/Page/List_book.aspx");
                     }
                     else
                     {
-                          Session["role"] = 3;
+                        Session["role"] = 3;
                         Response.Redirect(@"~/Page/Login.aspx");
                     }
-                    
-
 
                 }
 

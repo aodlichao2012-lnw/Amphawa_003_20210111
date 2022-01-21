@@ -13,14 +13,14 @@
             <div>
                 <div class="wrapper fadeInDown">
                     <div class="text-center">
-                        <asp:GridView ID="GridView1" CssClass="table" runat="server" AutoGenerateColumns="False" OnRowEditing="GridView1_RowEditing"  OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" DataKeyNames="int_id_catalog_book">
+                        <asp:GridView ID="GridView1" CssClass="table" runat="server" AutoGenerateColumns="False" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" DataKeyNames="int_id_catalog_book">
                             <Columns>
 
 
                                 <%--   <asp:CheckBoxField DataField="bool_current" HeaderText="เลือก"  />--%>
                                 <asp:TemplateField>
                                     <ItemTemplate>
-                                        <asp:CheckBox ID="chkrows" AutoPostBack="true" Visible="true"  OnCheckedChanged="chkrows_CheckedChanged" runat="server" />
+                                        <asp:CheckBox ID="chkrows" AutoPostBack="true" Visible="true" OnCheckedChanged="chkrows_CheckedChanged" runat="server" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
 
@@ -50,14 +50,16 @@
                                 <div class="form-group">
                                     <label>ยืม จากวันที่</label>
                                     <div>
-                                        <input type="text" id="min_date" runat="server" class="form-control date-range-filter datepicker w-100" autocomplete="off" placeholder="From:"></div>
+                                        <input type="text" id="min_date" runat="server" class="form-control date-range-filter datepicker w-100" autocomplete="off" placeholder="From:">
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-2 pl-1">
                                 <div class="form-group">
                                     <label>ยืม ถึงวันที่</label>
                                     <div>
-                                        <input type="text" id="max_date" runat="server" class="form-control date-range-filter datepicker w-100" autocomplete="off" placeholder="To:"></div>
+                                        <input type="text" id="max_date" runat="server" class="form-control date-range-filter datepicker w-100" autocomplete="off" placeholder="To:">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +75,8 @@
                                 <div class="form-group">
                                     <label>จำนวน</label>
                                     <div>
-                                        <input type="text" id="count_book" runat="server" class="form-control  w-100" readonly="readonly" autocomplete="off" placeholder="จำนวน:"></div>
+                                        <input type="text" id="count_book" runat="server" class="form-control  w-100" readonly="readonly" autocomplete="off" placeholder="จำนวน:">
+                                    </div>
                                 </div>
                             </div>
                         </div>

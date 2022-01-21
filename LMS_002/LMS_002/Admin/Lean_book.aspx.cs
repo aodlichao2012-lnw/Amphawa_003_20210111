@@ -11,10 +11,10 @@ using System.Web.UI.WebControls;
 
 namespace LMS_002.Admin
 {
-   
+
     public partial class Lean_book : System.Web.UI.Page
     {
-          static  int  count  =  0 ;
+        static int count = 0;
         DataTable dt = new DataTable();
         string profile = "";
         protected void Page_Load(object sender, EventArgs e)
@@ -30,14 +30,14 @@ namespace LMS_002.Admin
                         "[dbo].[MD_catralog_book].int_cheeckin_out = MD_status_book_type.self_id   where  st_process_name_user = '" + profile + "' AND int_cheeckin_out = 3 ");
                     GridView1.DataBind();
                     ddl_account.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_Account]");
-                    ddl_account.DataTextField = "st_user"; 
+                    ddl_account.DataTextField = "st_user";
                     ddl_account.DataValueField = "int_id";
                     ddl_account.SelectedIndex = 1;
                     ddl_account.DataBind();
                 }
             }
-        
-        
+
+
 
         }
 
@@ -61,29 +61,10 @@ namespace LMS_002.Admin
             {
                 using (var db = new Dbcon_wan())
                 {
-                    //                GridView1.DataSource = (from db_ in db.tb_cattalog
-                    //                                        where db_.int_cheeckin_out != 3
-                    //                                        join status in db.tb_statusbooks_type on db_.int_cheeckin_out equals status.self_id
-                    //                                        select new
-                    //                                        {
-                    //                                            status.status_book,
-                    //                                            db_.bool_current
-                    //,
-                    //                                            db_.dt_DATE_modify,
-                    //                                            db_.st_ISBN_ISSN,
-                    //                                            db_.st_name_book,
-                    //                                            db_.st_detail_book,
-                    //                                            db_.st_type_book_name,
-                    //                                            db_.int_id_catalog_book,
-                    //                                            db_.st_type_book,
-                    //                                            db_.img_book,
-                    //                                            db_.img_path
-                    //                                        }).ToList();
-                    //                GridView1.DataBind();
+
                     GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_status_book_type on " +
                                        "[dbo].[MD_catralog_book].int_cheeckin_out = MD_status_book_type.self_id   where  st_process_name_user = '" + profile + "' AND int_cheeckin_out = 3 ");
                     GridView1.DataBind();
-                    //            }
                 }
             }
             catch
@@ -94,11 +75,7 @@ namespace LMS_002.Admin
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            //if (e.Row.RowType == DataControlRowType.DataRow)
-            //{
-            //    CheckBox checkBox = e.Row.Cells[0].Controls[0] as CheckBox;
-            //    checkBox.Enabled = true;
-            //}
+
         }
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -123,8 +100,8 @@ namespace LMS_002.Admin
 
         protected void searchCatalog_ServerClick(object sender, EventArgs e)
         {
-              string account_cus = ddl_account.SelectedItem.Text;
-            var id  ="";
+            string account_cus = ddl_account.SelectedItem.Text;
+            var id = "";
             foreach (GridViewRow gvrow in GridView1.Rows)
             {
                 using (var db = new Dbcon_wan())
@@ -133,54 +110,20 @@ namespace LMS_002.Admin
                     CheckBox chk = (CheckBox)gvrow.FindControl("chkrows");
                     if (chk != null & chk.Checked)
                     {
-                         id += Convert.ToInt32(gvrow.Cells[1].Text);
+                        id += Convert.ToInt32(gvrow.Cells[1].Text);
 
-                        //                           var update = (from db_ in db.tb_cattalog
-
-                        //                                                    where db_.int_id_catalog_book == id
-                        //                                                    join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
-                        //                                                    select new
-                        //                                                    {
-                        //                                                        status.status_book,
-                        //                                                        db_.bool_current
-                        //,
-                        //                                                        db_.dt_DATE_modify,
-                        //                                                        db_.st_ISBN_ISSN,
-                        //                                                        db_.st_name_book,
-                        //                                                        db_.st_detail_book,
-                        //                                                        db_.st_type_book_name,
-                        //                                                        db_.int_id_catalog_book,
-                        //                                                        db_.st_type_book
-                        //                                                    }
-
-                        //
-                        //   ).FirstOrDefault();
                         try
                         {
                             profile = Session["user"].ToString();
-                            string min = Convert.ToDateTime(min_date.Value).ToString("yyyy/MM/dd" , new CultureInfo("en-EN"));
+                            string min = Convert.ToDateTime(min_date.Value).ToString("yyyy/MM/dd", new CultureInfo("en-EN"));
                             string max = Convert.ToDateTime(max_date.Value).ToString("yyyy/MM/dd", new CultureInfo("en-EN"));
-                            var update = Conncetions_db.Instance.Connection_command(@"UPDATE [dbo].[MD_catralog_book] SET  [int_cheeckin_out] = 1 ,[st_cheeckin_out] = 'ถูกยืม' , [dt_checkout_date] = "+min+", " +
-                                " [dt_checkin_date] = "+max+" , st_process_name_user = '" + profile + "' , st_lend_name = '"+account_cus+"'  WHERE int_id_catalog_book = " + id + "");
-                            var update_cus = Conncetions_db.Instance.Connection_command(@"UPDATE [dbo].[MD_Account] SET [st_count] = "+count+", [decimal_cus_from_least] = 0.00  WHERE st_user = " +
-                                " '"+account_cus+"'");
-
-                            //var savefile = Conncetions_db.Instance.Connection_command(@"select  video_path , ebook_path from  [dbo].[MD_catralog_book] where int_id_catalog_book = " + id + " AND " +
-                            //    "st_lend_name = '"+account_cus+"'");
-                            //while (savefile.Rows.Count > 0)
-                            //{ int count = 0;
-                            //    string path = savefile.Rows[count]["ebook_path"].ToString();
-                            //    string path_video = savefile.Rows[count]["video_path"].ToString();
-                            //    File.Copy(path, HttpContext.Current.Server.MapPath("~/"));
-                            //    count++;
-                            //}
-
+                            var update = Conncetions_db.Instance.Connection_command(@"UPDATE [dbo].[MD_catralog_book] SET  [int_cheeckin_out] = 1 ,[st_cheeckin_out] = 'ถูกยืม' , [dt_checkout_date] = " + min + ", " +
+                                " [dt_checkin_date] = " + max + " , st_process_name_user = '" + profile + "' , st_lend_name = '" + account_cus + "'  WHERE int_id_catalog_book = " + id + "");
+                            var update_cus = Conncetions_db.Instance.Connection_command(@"UPDATE [dbo].[MD_Account] SET [st_count] = " + count + ", [decimal_cus_from_least] = 0.00  WHERE st_user = " +
+                                " '" + account_cus + "'");
                             count = 0;
-
-
-
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             ex.Message.ToString();
                         }
@@ -190,7 +133,7 @@ namespace LMS_002.Admin
                     }
                 }
             }
-                Response.Redirect(@"../Report_pdf/slip_lend_pdf.aspx?user=" + profile + "&cus=" + account_cus + ")");
+            Response.Redirect(@"../Report_pdf/slip_lend_pdf.aspx?user=" + profile + "&cus=" + account_cus + ")");
         }
 
         protected void txt_keyword_TextChanged(object sender, EventArgs e)
@@ -214,8 +157,6 @@ namespace LMS_002.Admin
                 }
                 else
                 {
-                    //DataRow dr = dt.NewRow();
-                    //dt.Rows.Add(dr);
                     GridView1.DataSource = dt;
                     GridView1.DataBind();
                 }

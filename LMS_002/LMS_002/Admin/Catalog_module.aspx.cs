@@ -95,11 +95,6 @@ namespace LMS_002.Admin
                 using (var db = new Dbcon_wan())
                 {
 
-                    //string select = "select * from  [dbo].[MD_catralog_book] Left join dbo.MD_status_book_type on MD_catralog_book.int_cheeckin_out = MD_status_book_type.self_id " +
-                    //                                "inner join dbo.tb_books_type on MD_catralog_book.st_type_book = tb_books_type.self_id  where " + Types.Value + "" +
-                    //                                " like ";
-
-
                     string select = $@"SELECT st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  tb_books_type.Type_book  , COUNT(st_ISBN_ISSN) as count_
                             FROM MD_catralog_book
                             LEFT JOIN MD_status_book_type ON MD_catralog_book.int_cheeckin_out = MD_status_book_type.self_id
@@ -165,27 +160,7 @@ namespace LMS_002.Admin
                         var id = gvrow.Cells[3].Text;
                         id_book = id.ToString();
 
-                        //                           var update = (from db_ in db.tb_cattalog
-
-                        //                                                    where db_.int_id_catalog_book == id
-                        //                                                    join status in db.tb_statusbooks on db_.int_cheeckin_out equals status.self_id
-                        //                                                    select new
-                        //                                                    {
-                        //                                                        status.status_book,
-                        //                                                        db_.bool_current
-                        //,
-                        //                                                        db_.dt_DATE_modify,
-                        //                                                        db_.st_ISBN_ISSN,
-                        //                                                        db_.st_name_book,
-                        //                                                        db_.st_detail_book,
-                        //                                                        db_.st_type_book_name,
-                        //                                                        db_.int_id_catalog_book,
-                        //                                                        db_.st_type_book
-                        //                                                    }
-
-                        //
-                        //   ).FirstOrDefault();
-                        dt = Conncetions_db.Instance.Connection_command(@"select int_id_catalog_book from MD_catralog_book where " + Types.Value + " LIKE '%" + keywords.Value + "%' AND  st_ISBN_ISSN ='"+id_book+"'");
+                        dt = Conncetions_db.Instance.Connection_command(@"select int_id_catalog_book from MD_catralog_book where " + Types.Value + " LIKE '%" + keywords.Value + "%' AND  st_ISBN_ISSN ='" + id_book + "'");
                         string id_pk_book = dt.Rows[0]["int_id_catalog_book"].ToString();
                         try
                         {

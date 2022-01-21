@@ -20,12 +20,12 @@
 </td></tr>
 <tr row="3" style="cursor: pointer;"><td width="20%" valign="top" class="alterCell font-weight-bold">Logo Image</td><td width="1%" valign="top" class="alterCell font-weight-bold">:</td><td width="79%" class="alterCell2"><div style="padding:10px;"><img src="../lib/minigalnano/createthumb.php?filename=images/default/logo.png&amp;width=130" class="img-fluid rounded" alt="Image cover"><a href="/senayan/admin/modules/system/index.php" postdata="removeImage=true&amp;limg=logo.png" class="btn btn-sm btn-danger">Remove Image</a></div><div class="custom-file col-3"><input type="file" name="image" id="image" value="" class="custom-file-input">
 <label class="custom-file-label" for="customFile">Choose file</label></div> <div class="mt-2 ml-2">Maximum 500 KB</div><script>
-$('.custom-file input').on('change',function(){
-    //get the file name
-    const fileName = $(this).val();
-    //replace the "Choose a file" label
-    $(this).next('.custom-file-label').html(fileName);
-});
+                                                                                                                           $('.custom-file input').on('change', function () {
+                                                                                                                               //get the file name
+                                                                                                                               const fileName = $(this).val();
+                                                                                                                               //replace the "Choose a file" label
+                                                                                                                               $(this).next('.custom-file-label').html(fileName);
+                                                                                                                           });
 </script></td></tr>
 <tr id="simbioFormRowdefault_lang" row="4" style="cursor: pointer;"><td width="20%" valign="top" class="alterCell font-weight-bold">เลือกภาษา</td><td width="1%" valign="top" class="alterCell font-weight-bold">:</td><td width="79%" class="alterCell2"><select name="default_lang" id="default_lang" class="form-control col-3">
 <option value="ar_SA">Arabic</option>

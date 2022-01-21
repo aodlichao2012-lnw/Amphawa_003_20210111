@@ -14,11 +14,10 @@ namespace LMS_002.Admin
 {
     public partial class Role_Admin : System.Web.UI.Page
     {
-            MD_Account  md_account = new MD_Account();
-        string user_  = "";
+        MD_Account md_account = new MD_Account();
+        string user_ = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-
 
             if (!Page.IsPostBack)
             {
@@ -26,13 +25,13 @@ namespace LMS_002.Admin
                 gdv_Role_admin.DataBind();
             }
 
-            }
+        }
 
         protected void gdv_Role_admin_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument);
             int id = int.Parse(gdv_Role_admin.DataKeys[index].Value.ToString());
-            if(e.CommandName == "edit")
+            if (e.CommandName == "edit")
             {
                 pn_edit_role.Visible = true;
                 gdv_Role_admin.Visible = false;
@@ -49,9 +48,8 @@ namespace LMS_002.Admin
                     txt_Email.Value = md_account.st_email;
                     ddl_role.SelectedValue = md_account.int_type_cus.ToString();
                 }
-                 //Response.Redirect("~/Page/Role_Admin.aspx");
             }
-            else if(e.CommandName =="delete")
+            else if (e.CommandName == "delete")
             {
                 try
                 {
@@ -61,8 +59,8 @@ namespace LMS_002.Admin
                         var update = Conncetions_db.Instance.Connection_command(@"UPDATE [dbo].[MD_catralog_book] SET  [int_cheeckin_out] = 0 ,[st_cheeckin_out] = 'พร้อมยืม' , st_process_name_user
                            = '' WHERE st_process_name_user = '" + ids + "'");
                         var result = Conncetions_db.Instance.Connection_command("delete from [dbo].[MD_Account] where int_id = " + id + "");
-                         Response.Redirect("~/Page/Role_Admin.aspx");
-             
+                        Response.Redirect("~/Page/Role_Admin.aspx");
+
                     }
                 }
                 catch
@@ -70,7 +68,7 @@ namespace LMS_002.Admin
                     Response.Write(@"<script>alert('ลบเรียบร้อย')</script>");
                     Response.Redirect("~/Page/Role_Admin.aspx");
                 }
-               
+
             }
         }
 
@@ -99,18 +97,18 @@ namespace LMS_002.Admin
                         string st_password = txt_password.Value;
                         string st_email = txt_Email.Value;
                         string st_type_cus = ddl_role.SelectedItem.Text;
-                        if(Session["user"].ToString() == user)
+                        if (Session["user"].ToString() == user)
                         {
                             Session["user"] = user;
                         }
-                        
+
                         int int_type_cus = ddl_role.SelectedValue.ToString().Equals("") ? 3 : Convert.ToInt32(ddl_role.SelectedValue.ToString());
-                      var cs =   Conncetions_db.Instance.Connection_command(@" UPDATE [dbo].[MD_Account] SET st_user = '"+user+"' , " +
-                            "st_password = '"+st_password+"' , st_email = '"+st_email+"' ,int_type_cus = "+int_type_cus+" , st_type_cus = '"+st_type_cus+"' where int_id = "+Session["id_Accont"].ToString()+" ");
+                        var cs = Conncetions_db.Instance.Connection_command(@" UPDATE [dbo].[MD_Account] SET st_user = '" + user + "' , " +
+                              "st_password = '" + st_password + "' , st_email = '" + st_email + "' ,int_type_cus = " + int_type_cus + " , st_type_cus = '" + st_type_cus + "' where int_id = " + Session["id_Accont"].ToString() + " ");
                         Response.Write(@"<script>alert('บันทึกเรียบร้อย')</script>");
                         Response.Redirect(@"~/Page/Role_Admin.aspx");
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         Response.Write(@"<script>alert('บันทึกเรียบร้อย')</script>");
                         Response.Redirect("~/Page/List_book.aspx");
@@ -118,9 +116,9 @@ namespace LMS_002.Admin
                 }
 
 
-                }
+            }
 
-            
+
             else
             {
                 Response.Write(@"<script>alert('กรุณากรอกข้อมูลให้ครบ')</script>");
@@ -138,29 +136,5 @@ namespace LMS_002.Admin
             gdv_Role_admin.EditIndex = e.RowIndex;
             this.DataBind();
         }
-
-        //protected void btn_edit_Click(object sender, EventArgs e)
-        //{
-        //    pn_edit_role.Visible = true;
-        //    gdv_Role_admin.Visible = false;
-        //    var  datarow = gdv_Role_admin.SelectedRow.FindControl("int_id");
-        //}
-
-        //protected void btn_delete_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //protected void btn_edit_Click1(object sender, ImageClickEventArgs e)
-        //{
-        //    pn_edit_role.Visible = true;
-        //    gdv_Role_admin.Visible = false;
-        //    var selectrow = gdv_Role_admin.SelectedRow.Cells[0];
-        //}
-
-        //protected void btn_delete_Click1(object sender, ImageClickEventArgs e)
-        //{
-
-        //}
     }
 }

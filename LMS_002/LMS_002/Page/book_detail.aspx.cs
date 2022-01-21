@@ -15,13 +15,13 @@ namespace LMS_002.Page
         string issn = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.QueryString["issn"] != null)
+            if (Request.QueryString["issn"] != null)
             {
                 issn = Request.QueryString["issn"].ToString();
                 DataTable dt = new DataTable();
-                dt = Conncetions_db.Instance.Connection_command("select *   FROM [dbo].[MD_catralog_book] where st_ISBN_ISSN = '"+issn+"'");
+                dt = Conncetions_db.Instance.Connection_command("select *   FROM [dbo].[MD_catralog_book] where st_ISBN_ISSN = '" + issn + "'");
                 StringBuilder text = new StringBuilder();
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
                     text.Append($"<p> ชื่อหนังสือ : { dt.Rows[0]["st_name_book"].ToString() }</p>");
                     text.Append($"<p> ISSN : { dt.Rows[0]["st_ISBN_ISSN"].ToString() }</p>");
@@ -37,9 +37,9 @@ namespace LMS_002.Page
                     text.Append($"<p> จำนวนครั้งที่ ดู  : { dt.Rows[0]["int_count_view_book"].ToString() }</p>");
 
                     detail.Text = text.ToString();
-                    int count = Convert.ToInt32( dt.Rows[0]["int_count_view_book"].ToString()) + 1;
+                    int count = Convert.ToInt32(dt.Rows[0]["int_count_view_book"].ToString()) + 1;
 
-                    dt = Conncetions_db.Instance.Connection_command("update  [dbo].[MD_catralog_book] set int_count_view_book = "+count+" where st_ISBN_ISSN = '" + issn + "'");
+                    dt = Conncetions_db.Instance.Connection_command("update  [dbo].[MD_catralog_book] set int_count_view_book = " + count + " where st_ISBN_ISSN = '" + issn + "'");
                 }
             }
         }

@@ -27,9 +27,9 @@ namespace LMS_002.Admin
             SqlDataSource1.SelectCommand = "select * from [dbo].[MD_catralog_book]";
             SqlDataSource1.DataBind();
             DataView data = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
-            foreach(DataRowView item in data)
+            foreach (DataRowView item in data)
             {
-                lb_list_book.Text = "\n"+item["st_name_book"].ToString() +": รหัสหนังสือ =  "+item["st_ISBN_ISSN"].ToString() +"\n" ;
+                lb_list_book.Text = "\n" + item["st_name_book"].ToString() + ": รหัสหนังสือ =  " + item["st_ISBN_ISSN"].ToString() + "\n";
             }
         }
 
@@ -64,8 +64,8 @@ namespace LMS_002.Admin
         }
 
         protected void txt_barcode_ServerChange(object sender, EventArgs e)
-        {        
-         
+        {
+
         }
 
         protected void search_ServerClick(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace LMS_002.Admin
 
 
                 dt = Conncetions_db.Instance.Connection_command(@"" + select + "");
-                if(dt == null)
+                if (dt == null)
                 {
                     Response.Write(@"<script>alert('หนังสือเล่มที่คุณค้นหา ยังไม่ถูกยืม')</script>");
                     sendto_lend.Visible = false;
@@ -94,7 +94,7 @@ namespace LMS_002.Admin
                     GridView1.DataBind();
                     sendto_lend.Visible = true;
                 }
-           
+
 
             }
             catch (Exception ex)
