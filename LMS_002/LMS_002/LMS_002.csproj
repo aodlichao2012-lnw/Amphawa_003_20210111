@@ -44,12 +44,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -179,10 +185,13 @@
     <Content Include="Image\icons\i con map\.DS_Store" />
     <Content Include="Image\icons\i con map\24pixel\.DS_Store" />
     <Content Include="Image\icons\i con map\64pixel\.DS_Store" />
+    <Content Include="Admin\Admin.Master" />
+    <Content Include="Amphawan_LMS_db_2DataSet3.xsc">
+      <DependentUpon>Amphawan_LMS_db_2DataSet3.xsd</DependentUpon>
+    </Content>
     <Content Include="Amphawan_LMS_db_2DataSet.xsc">
       <DependentUpon>Amphawan_LMS_db_2DataSet.xsd</DependentUpon>
     </Content>
-    <Content Include="Admin\Admin.Master" />
     <None Include="Amphawan_LMS_db_2DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Amphawan_LMS_db_2DataSet.Designer.cs</LastGenOutput>
@@ -191,16 +200,24 @@
     <Content Include="Amphawan_LMS_db_2DataSet.xss">
       <DependentUpon>Amphawan_LMS_db_2DataSet.xsd</DependentUpon>
     </Content>
-    <Content Include="Amphawan_LMS_db_2DataSet_.xsc">
-      <DependentUpon>Amphawan_LMS_db_2DataSet_.xsd</DependentUpon>
-    </Content>
-    <None Include="Amphawan_LMS_db_2DataSet_.xsd">
+    <None Include="Amphawan_LMS_db_2DataSet3.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Amphawan_LMS_db_2DataSet_.Designer.cs</LastGenOutput>
+      <LastGenOutput>Amphawan_LMS_db_2DataSet3.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Amphawan_LMS_db_2DataSet_.xss">
-      <DependentUpon>Amphawan_LMS_db_2DataSet_.xsd</DependentUpon>
+    <Content Include="Amphawan_LMS_db_2DataSet3.xss">
+      <DependentUpon>Amphawan_LMS_db_2DataSet3.xsd</DependentUpon>
+    </Content>
+    <Content Include="Amphawan_LMS_db_2DataSet4.xsc">
+      <DependentUpon>Amphawan_LMS_db_2DataSet4.xsd</DependentUpon>
+    </Content>
+    <None Include="Amphawan_LMS_db_2DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Amphawan_LMS_db_2DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Amphawan_LMS_db_2DataSet4.xss">
+      <DependentUpon>Amphawan_LMS_db_2DataSet4.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Image\icons\128pixel\add_128.png" />
@@ -462,15 +479,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Amphawan_LMS_db_2DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Amphawan_LMS_db_2DataSet_.Designer.cs">
+    <Compile Include="Amphawan_LMS_db_2DataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Amphawan_LMS_db_2DataSet_.xsd</DependentUpon>
+      <DependentUpon>Amphawan_LMS_db_2DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Amphawan_LMS_db_2DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Amphawan_LMS_db_2DataSet4.xsd</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="DbContext_db\Conncetions_db.cs" />
     <Compile Include="DbContext_db\Dbcon_wan.cs" />
+    <Compile Include="DbContext_db\Gen_Document.cs" />
     <Compile Include="DbContext_db\pathFile_.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -480,13 +503,14 @@
     <Compile Include="Models\MD_Account.cs" />
     <Compile Include="Models\MD_catralog_book.cs" />
     <Compile Include="Models\MD_customer.cs" />
+    <Compile Include="Models\MD_Dictionary.cs" />
     <Compile Include="Models\MD_Ebook.cs" />
     <Compile Include="Models\MD_GMDGeneral_Material_Designation.cs" />
     <Compile Include="Models\MD_history.cs" />
     <Compile Include="Models\MD_Role.cs" />
     <Compile Include="Models\MD_search.cs" />
     <Compile Include="Models\MD_statusbook.cs" />
-    <Compile Include="Models\MD_status_book_type.cs" />
+    <Compile Include="Models\MD_status_user.cs" />
     <Compile Include="Models\MD_type_book.cs" />
     <Compile Include="Models\MD_type_Laguage.cs" />
     <Compile Include="Admin\Add_book_Admin.aspx.cs">
@@ -645,6 +669,7 @@
     <Folder Include="Doc_all_type\ebook\" />
     <Folder Include="Doc_all_type\topic\" />
     <Folder Include="Doc_all_type\video\" />
+    <Folder Include="Gen_book\" />
     <Folder Include="Mobile_page\" />
   </ItemGroup>
   <ItemGroup>

@@ -24,6 +24,15 @@ namespace LMS_002.Page
         protected global::System.Web.UI.HtmlControls.HtmlSelect Types;
 
         /// <summary>
+        /// ddl_dictionnary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_dictionnary;
+
+        /// <summary>
         /// txt_ketword2 control.
         /// </summary>
         /// <remarks>

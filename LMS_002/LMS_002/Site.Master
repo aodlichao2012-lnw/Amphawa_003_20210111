@@ -534,7 +534,7 @@
   <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu ">
-                        <li><a class="nav-link " runat="server" href="~/Page/List_book.aspx">ค้นหาข้อมูล</a></li>
+                        <li><a class="nav-link " runat="server" id="list" onserverclick="list_ServerClick">ค้นหาข้อมูล</a></li>
 
                     </ul>
                 </div>

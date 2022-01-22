@@ -17,8 +17,8 @@ namespace LMS_002.Page
             if (Session["user"] != null)
             {
                 profile = Session["user"].ToString();
-                GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_status_book_type on" +
-               " [dbo].[MD_catralog_book].int_cheeckin_out = MD_status_book_type.self_id  where  st_process_name_user = '" + profile + "' ");
+                GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_statusbook on" +
+               " [dbo].[MD_catralog_book].int_cheeckin_out = MD_statusbook.self_id  where  st_process_name_user = '" + profile + "' ");
                 GridView1.DataBind();
             }
         }
@@ -27,8 +27,8 @@ namespace LMS_002.Page
         {
             string min = min_date.Value.Equals("") ? DateTime.Now.ToString("yyyy/MM/dd") : min_date.Value;
             string max = max_date.Value.Equals("") ? DateTime.Now.ToString("yyyy/MM/dd") : max_date.Value;
-            GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] inner join MD_status_book_type on [dbo]." +
-                "[MD_catralog_book].int_cheeckin_out = MD_status_book_type.self_id where st_process_name_user = '" + profile + "' AND  st_type_book = 0  AND st_name_book LIKE " +
+            GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] inner join MD_statusbook on [dbo]." +
+                "[MD_catralog_book].int_cheeckin_out = MD_statusbook.self_id where st_process_name_user = '" + profile + "' AND  st_type_book = 0  AND st_name_book LIKE " +
                 "'%" + txt_name_book.Value + "%' AND st_ISBN_ISSN LIKE  '%" + txt_iss_num.Value + "%' OR  dt_checkin_date BETWEEN " +
                 "" + min + " AND " + max + "  order by st_ISBN_ISSN ASC");
             GridView1.DataBind();

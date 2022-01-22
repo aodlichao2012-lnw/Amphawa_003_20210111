@@ -23,6 +23,14 @@
                         </select>
                     </div>
                 </div>
+                 <div class="form-group w-100 text-center">
+                                    <div class="form-group w-100">
+                                        <label>หมวดหมู่
+                                        </label>
+                                        <asp:DropDownList runat="server" CssClass="ddl" ID="ddl_dictionnary" >
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
                 <div class="form-group w-100 text-center">
                     <div class="form-group w-100">
                         <label>คำค้น</label>

@@ -12,6 +12,15 @@
                     <div class="btn-group">
 
                         <div class="row">
+                            <div class="form-group w-100 text-center">
+                                <div class="form-group w-100">
+                                    <label>
+                                        หมวดหมู่
+                                    </label>
+                                    <asp:DropDownList runat="server" CssClass="ddl" ID="ddl_dictionnary">
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
                             <div class="text-center">
                                 <div class="form-group w-100">
                                     <label>ค้นหาตาม</label>
@@ -31,12 +40,20 @@
                                     <input runat="server" type="text" id="keywords" name="Age" class="w-100" placeholder="รหัสหนังสือ">
                                 </div>
                             </div>
+                               <div class="form-group w-100 text-center">
+                                <div class="form-group w-100">
+                            <input type="submit" id="doSearch" value="สืบค้น" runat="server" onserverclick="doSearch_ServerClick" class="btn form-group w-50 text-center">
+                                    </div>
+                                   </div>
                         </div>
 
                     </div>
-                    <input type="submit" id="doSearch" value="สืบค้น" runat="server" onserverclick="doSearch_ServerClick" class="s-btn btn btn-default">
-                    <a class="btn btn-info" runat="server" id="list" onserverclick="list_ServerClick">รายการบรรณานุกรม</a>
-                    <a runat="server" id="add_book" onserverclick="add_book_ServerClick" class="btn btn-info">เพิ่มรายการบรรณานุกรม</a>
+                    <div class="card container text-center">
+                        
+                        <a class="btn btn-secondary form-group w-100 text-center" runat="server" id="list" onserverclick="list_ServerClick">รายการบรรณานุกรม</a>
+                        <a runat="server" id="add_book" onserverclick="add_book_ServerClick" class="btn form-group btn-secondary w-100 text-center">เพิ่มรายการบรรณานุกรม</a>
+                    </div>
+
                 </div>
             </div>
             <input type="hidden" name="csrf_token" value="95b84d303fe86c6484c983e4cb39ca94dd1a840c6c1d2d74c281f0c38f85e2d6"><input type="hidden" name="form_name" value="datagrid"><table cellspacing="0" cellpadding="5" class="datagrid-action-bar" style="width: 100%;">

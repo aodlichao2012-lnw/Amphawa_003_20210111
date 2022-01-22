@@ -37,7 +37,7 @@ namespace LMS_002.DbContext_db
         public  DataTable Connection_command(string cmd)
         {
 
-            using (SqlConnection cl_con = new SqlConnection(ConfigurationManager.ConnectionStrings["amphawacontect"].ConnectionString))
+            using (SqlConnection cl_con = new SqlConnection(ConfigurationManager.ConnectionStrings["amphawacontect2"].ConnectionString))
             {
                 DataTable dt = new DataTable();
                 SqlCommand command = new SqlCommand(cmd, cl_con);

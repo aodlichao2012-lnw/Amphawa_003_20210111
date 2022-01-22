@@ -17,8 +17,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>0.47307cm</Top>
-        <Left>6.13516cm</Left>
+        <Top>1.36137cm</Top>
+        <Left>8.54349cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <Style>
@@ -46,8 +46,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>1.63146cm</Top>
-        <Left>1.02542cm</Left>
+        <Top>2.51976cm</Top>
+        <Left>3.43375cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>1</ZIndex>
@@ -76,8 +76,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>1.63146cm</Top>
-        <Left>6.13516cm</Left>
+        <Top>2.51976cm</Top>
+        <Left>8.54349cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>2</ZIndex>
@@ -106,8 +106,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>1.63146cm</Top>
-        <Left>11.31771cm</Left>
+        <Top>2.51976cm</Top>
+        <Left>13.72604cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>3</ZIndex>
@@ -136,8 +136,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>7.29292cm</Top>
-        <Left>1.02542cm</Left>
+        <Top>13.89622cm</Top>
+        <Left>3.43374cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>4</ZIndex>
@@ -167,8 +167,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>7.29292cm</Top>
-        <Left>4.27979cm</Left>
+        <Top>13.89622cm</Top>
+        <Left>6.68811cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>5</ZIndex>
@@ -197,8 +197,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>7.29292cm</Top>
-        <Left>7.37542cm</Left>
+        <Top>13.89622cm</Top>
+        <Left>9.78374cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>6</ZIndex>
@@ -213,8 +213,8 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>2.40785cm</Top>
-        <Left>1.02542cm</Left>
+        <Top>3.29615cm</Top>
+        <Left>3.43375cm</Left>
         <Height>0cm</Height>
         <Width>13.37438cm</Width>
         <ZIndex>7</ZIndex>
@@ -225,8 +225,8 @@
         </Style>
       </Line>
       <Line Name="Line2">
-        <Top>7.11653cm</Top>
-        <Left>1.02541cm</Left>
+        <Top>13.50816cm</Top>
+        <Left>3.43374cm</Left>
         <Height>0cm</Height>
         <Width>13.37438cm</Width>
         <ZIndex>8</ZIndex>
@@ -237,8 +237,8 @@
         </Style>
       </Line>
       <Line Name="Line3">
-        <Top>8.06931cm</Top>
-        <Left>1.02541cm</Left>
+        <Top>14.67261cm</Top>
+        <Left>3.43373cm</Left>
         <Height>0cm</Height>
         <Width>13.37438cm</Width>
         <ZIndex>9</ZIndex>
@@ -249,9 +249,9 @@
         </Style>
       </Line>
       <Line Name="Line4">
-        <Top>1.5075cm</Top>
-        <Left>4.63698cm</Left>
-        <Height>5.60903cm</Height>
+        <Top>3.29615cm</Top>
+        <Left>7.04531cm</Left>
+        <Height>10.21201cm</Height>
         <Width>0cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
@@ -261,9 +261,9 @@
         </Style>
       </Line>
       <Line Name="Line5">
-        <Top>1.5075cm</Top>
-        <Left>9.87542cm</Left>
-        <Height>5.60903cm</Height>
+        <Top>3.29615cm</Top>
+        <Left>12.28375cm</Left>
+        <Height>10.21201cm</Height>
         <Width>0cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
@@ -276,10 +276,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.31208cm</Width>
+              <Width>3.61156cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.01354cm</Width>
+              <Width>5.96604cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -315,6 +315,16 @@
                           </TextRuns>
                           <Style />
                         </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Label>บาร์โค้ด</Label>
+                              <Value>=Fields!barcode.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>st_name_book</rd:DefaultName>
                       <Style>
@@ -323,8 +333,8 @@
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>0.5pt</PaddingTop>
+                        <PaddingBottom>0.5pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -343,7 +353,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>dt_checkout_date</rd:DefaultName>
@@ -353,8 +365,8 @@
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>0.5pt</PaddingTop>
+                        <PaddingBottom>0.5pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -373,7 +385,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>dt_checkin_date</rd:DefaultName>
@@ -383,8 +397,8 @@
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingTop>0.5pt</PaddingTop>
+                        <PaddingBottom>0.5pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -408,10 +422,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet2</DataSetName>
-        <Top>2.85433cm</Top>
-        <Left>1.02542cm</Left>
+        <Top>3.74263cm</Top>
+        <Left>3.43375cm</Left>
         <Height>2.5cm</Height>
-        <Width>11.82562cm</Width>
+        <Width>12.0776cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -426,6 +440,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
+                <Label>ผู้ให้เช่า</Label>
                 <Value>=First(Fields!st_process_name_user.Value, "DataSet2")</Value>
                 <Style />
               </TextRun>
@@ -433,8 +448,8 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <Top>8.21042cm</Top>
-        <Left>9.87542cm</Left>
+        <Top>14.81372cm</Top>
+        <Left>12.28374cm</Left>
         <Height>0.6cm</Height>
         <Width>3.94229cm</Width>
         <ZIndex>13</ZIndex>
@@ -463,8 +478,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>9.02208cm</Top>
-        <Left>11.31771cm</Left>
+        <Top>15.62538cm</Top>
+        <Left>13.72603cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>14</ZIndex>
@@ -479,10 +494,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>10cm</Height>
+    <Height>30cm</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>20in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -495,18 +510,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="Amphawan_LMS_db_2DataSet">
+    <DataSource Name="Amphawan_LMS_db_2DataSet4">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>3a8aea12-0ed2-4fd3-8e5e-5e5b79375fcc</rd:DataSourceID>
+      <rd:DataSourceID>924a9f37-195f-4637-8482-2b3abc3f1b5d</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>Amphawan_LMS_db_2DataSet</DataSourceName>
+        <DataSourceName>Amphawan_LMS_db_2DataSet4</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -584,8 +599,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>Amphawan_LMS_db_2DataSet_</rd:DataSetName>
-        <rd:SchemaPath>D:\Suparat\Amphawa_003_20210112\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet_.xsd</rd:SchemaPath>
+        <rd:DataSetName>Amphawan_LMS_db_2DataSet4</rd:DataSetName>
+        <rd:SchemaPath>C:\work\Amphawa_003_20210111\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet4.xsd</rd:SchemaPath>
         <rd:TableName>MD_Account</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -594,7 +609,7 @@
     </DataSet>
     <DataSet Name="DataSet2">
       <Query>
-        <DataSourceName>Amphawan_LMS_db_2DataSet</DataSourceName>
+        <DataSourceName>Amphawan_LMS_db_2DataSet4</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -674,10 +689,50 @@
           <DataField>st_lend_name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="video_path">
+          <DataField>video_path</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ebook_path">
+          <DataField>ebook_path</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="st_author">
+          <DataField>st_author</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="barcode">
+          <DataField>barcode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="count_print">
+          <DataField>count_print</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="plate_print">
+          <DataField>plate_print</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="company_print">
+          <DataField>company_print</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="st_lang">
+          <DataField>st_lang</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="int_lang">
+          <DataField>int_lang</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="int_count_view_book">
+          <DataField>int_count_view_book</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>Amphawan_LMS_db_2DataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\Suparat\Amphawa_003_20210112\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>Amphawan_LMS_db_2DataSet4</rd:DataSetName>
+        <rd:SchemaPath>C:\work\Amphawa_003_20210111\LMS_002\LMS_002\Amphawan_LMS_db_2DataSet4.xsd</rd:SchemaPath>
         <rd:TableName>MD_catralog_book</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

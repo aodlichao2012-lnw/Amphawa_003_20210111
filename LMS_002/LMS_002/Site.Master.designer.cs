@@ -33,6 +33,15 @@ namespace LMS_002
         protected global::System.Web.UI.HtmlControls.HtmlAnchor sugguest_book;
 
         /// <summary>
+        /// list control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor list;
+
+        /// <summary>
         /// admin_page control.
         /// </summary>
         /// <remarks>

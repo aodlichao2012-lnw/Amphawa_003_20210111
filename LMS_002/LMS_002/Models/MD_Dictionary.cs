@@ -6,10 +6,10 @@ using System.Web;
 
 namespace LMS_002.Models
 {
-    public class MD_status_book_type
+    public class MD_Dictionary
     {
         [Key]
-        public int self_id { get; set; }
-        public string status_book { get; set; }
+        public int int_id_type_Dictionary { get; set; }
+        public string st_type_Dictionary { get; set; }
     }
 }

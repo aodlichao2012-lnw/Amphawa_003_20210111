@@ -36,7 +36,11 @@ namespace LMS_002 {
         
         private MD_searchDataTable tableMD_search;
         
+        private MD_status_userDataTable tableMD_status_user;
+        
         private MD_statusbookDataTable tableMD_statusbook;
+        
+        private MD_type_bookDataTable tableMD_type_book;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -84,8 +88,14 @@ namespace LMS_002 {
                 if ((ds.Tables["MD_search"] != null)) {
                     base.Tables.Add(new MD_searchDataTable(ds.Tables["MD_search"]));
                 }
+                if ((ds.Tables["MD_status_user"] != null)) {
+                    base.Tables.Add(new MD_status_userDataTable(ds.Tables["MD_status_user"]));
+                }
                 if ((ds.Tables["MD_statusbook"] != null)) {
                     base.Tables.Add(new MD_statusbookDataTable(ds.Tables["MD_statusbook"]));
+                }
+                if ((ds.Tables["MD_type_book"] != null)) {
+                    base.Tables.Add(new MD_type_bookDataTable(ds.Tables["MD_type_book"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -169,9 +179,29 @@ namespace LMS_002 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public MD_status_userDataTable MD_status_user {
+            get {
+                return this.tableMD_status_user;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public MD_statusbookDataTable MD_statusbook {
             get {
                 return this.tableMD_statusbook;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public MD_type_bookDataTable MD_type_book {
+            get {
+                return this.tableMD_type_book;
             }
         }
         
@@ -260,8 +290,14 @@ namespace LMS_002 {
                 if ((ds.Tables["MD_search"] != null)) {
                     base.Tables.Add(new MD_searchDataTable(ds.Tables["MD_search"]));
                 }
+                if ((ds.Tables["MD_status_user"] != null)) {
+                    base.Tables.Add(new MD_status_userDataTable(ds.Tables["MD_status_user"]));
+                }
                 if ((ds.Tables["MD_statusbook"] != null)) {
                     base.Tables.Add(new MD_statusbookDataTable(ds.Tables["MD_statusbook"]));
+                }
+                if ((ds.Tables["MD_type_book"] != null)) {
+                    base.Tables.Add(new MD_type_bookDataTable(ds.Tables["MD_type_book"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -332,10 +368,22 @@ namespace LMS_002 {
                     this.tableMD_search.InitVars();
                 }
             }
+            this.tableMD_status_user = ((MD_status_userDataTable)(base.Tables["MD_status_user"]));
+            if ((initTable == true)) {
+                if ((this.tableMD_status_user != null)) {
+                    this.tableMD_status_user.InitVars();
+                }
+            }
             this.tableMD_statusbook = ((MD_statusbookDataTable)(base.Tables["MD_statusbook"]));
             if ((initTable == true)) {
                 if ((this.tableMD_statusbook != null)) {
                     this.tableMD_statusbook.InitVars();
+                }
+            }
+            this.tableMD_type_book = ((MD_type_bookDataTable)(base.Tables["MD_type_book"]));
+            if ((initTable == true)) {
+                if ((this.tableMD_type_book != null)) {
+                    this.tableMD_type_book.InitVars();
                 }
             }
         }
@@ -360,8 +408,12 @@ namespace LMS_002 {
             base.Tables.Add(this.tableMD_history);
             this.tableMD_search = new MD_searchDataTable();
             base.Tables.Add(this.tableMD_search);
+            this.tableMD_status_user = new MD_status_userDataTable();
+            base.Tables.Add(this.tableMD_status_user);
             this.tableMD_statusbook = new MD_statusbookDataTable();
             base.Tables.Add(this.tableMD_statusbook);
+            this.tableMD_type_book = new MD_type_bookDataTable();
+            base.Tables.Add(this.tableMD_type_book);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -402,7 +454,19 @@ namespace LMS_002 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeMD_status_user() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeMD_statusbook() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeMD_type_book() {
             return false;
         }
         
@@ -480,7 +544,13 @@ namespace LMS_002 {
         public delegate void MD_searchRowChangeEventHandler(object sender, MD_searchRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void MD_status_userRowChangeEventHandler(object sender, MD_status_userRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void MD_statusbookRowChangeEventHandler(object sender, MD_statusbookRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void MD_type_bookRowChangeEventHandler(object sender, MD_type_bookRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1368,6 +1438,26 @@ namespace LMS_002 {
             
             private global::System.Data.DataColumn columnst_lend_name;
             
+            private global::System.Data.DataColumn columnvideo_path;
+            
+            private global::System.Data.DataColumn columnebook_path;
+            
+            private global::System.Data.DataColumn columnst_author;
+            
+            private global::System.Data.DataColumn columnbarcode;
+            
+            private global::System.Data.DataColumn columncount_print;
+            
+            private global::System.Data.DataColumn columnplate_print;
+            
+            private global::System.Data.DataColumn columncompany_print;
+            
+            private global::System.Data.DataColumn columnst_lang;
+            
+            private global::System.Data.DataColumn columnint_lang;
+            
+            private global::System.Data.DataColumn columnint_count_view_book;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MD_catralog_bookDataTable() {
@@ -1555,6 +1645,86 @@ namespace LMS_002 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn video_pathColumn {
+                get {
+                    return this.columnvideo_path;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ebook_pathColumn {
+                get {
+                    return this.columnebook_path;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn st_authorColumn {
+                get {
+                    return this.columnst_author;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn barcodeColumn {
+                get {
+                    return this.columnbarcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn count_printColumn {
+                get {
+                    return this.columncount_print;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn plate_printColumn {
+                get {
+                    return this.columnplate_print;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn company_printColumn {
+                get {
+                    return this.columncompany_print;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn st_langColumn {
+                get {
+                    return this.columnst_lang;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn int_langColumn {
+                get {
+                    return this.columnint_lang;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn int_count_view_bookColumn {
+                get {
+                    return this.columnint_count_view_book;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1608,7 +1778,17 @@ namespace LMS_002 {
                         int int_status_yet, 
                         string st_status_yet, 
                         string img_path, 
-                        string st_lend_name) {
+                        string st_lend_name, 
+                        string video_path, 
+                        string ebook_path, 
+                        string st_author, 
+                        string barcode, 
+                        string count_print, 
+                        string plate_print, 
+                        string company_print, 
+                        string st_lang, 
+                        int int_lang, 
+                        int int_count_view_book) {
                 MD_catralog_bookRow rowMD_catralog_bookRow = ((MD_catralog_bookRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1629,7 +1809,17 @@ namespace LMS_002 {
                         int_status_yet,
                         st_status_yet,
                         img_path,
-                        st_lend_name};
+                        st_lend_name,
+                        video_path,
+                        ebook_path,
+                        st_author,
+                        barcode,
+                        count_print,
+                        plate_print,
+                        company_print,
+                        st_lang,
+                        int_lang,
+                        int_count_view_book};
                 rowMD_catralog_bookRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMD_catralog_bookRow);
                 return rowMD_catralog_bookRow;
@@ -1678,6 +1868,16 @@ namespace LMS_002 {
                 this.columnst_status_yet = base.Columns["st_status_yet"];
                 this.columnimg_path = base.Columns["img_path"];
                 this.columnst_lend_name = base.Columns["st_lend_name"];
+                this.columnvideo_path = base.Columns["video_path"];
+                this.columnebook_path = base.Columns["ebook_path"];
+                this.columnst_author = base.Columns["st_author"];
+                this.columnbarcode = base.Columns["barcode"];
+                this.columncount_print = base.Columns["count_print"];
+                this.columnplate_print = base.Columns["plate_print"];
+                this.columncompany_print = base.Columns["company_print"];
+                this.columnst_lang = base.Columns["st_lang"];
+                this.columnint_lang = base.Columns["int_lang"];
+                this.columnint_count_view_book = base.Columns["int_count_view_book"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1721,6 +1921,26 @@ namespace LMS_002 {
                 base.Columns.Add(this.columnimg_path);
                 this.columnst_lend_name = new global::System.Data.DataColumn("st_lend_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnst_lend_name);
+                this.columnvideo_path = new global::System.Data.DataColumn("video_path", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvideo_path);
+                this.columnebook_path = new global::System.Data.DataColumn("ebook_path", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnebook_path);
+                this.columnst_author = new global::System.Data.DataColumn("st_author", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnst_author);
+                this.columnbarcode = new global::System.Data.DataColumn("barcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbarcode);
+                this.columncount_print = new global::System.Data.DataColumn("count_print", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncount_print);
+                this.columnplate_print = new global::System.Data.DataColumn("plate_print", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnplate_print);
+                this.columncompany_print = new global::System.Data.DataColumn("company_print", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncompany_print);
+                this.columnst_lang = new global::System.Data.DataColumn("st_lang", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnst_lang);
+                this.columnint_lang = new global::System.Data.DataColumn("int_lang", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnint_lang);
+                this.columnint_count_view_book = new global::System.Data.DataColumn("int_count_view_book", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnint_count_view_book);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnint_id_catalog_book}, true));
                 this.columnint_id_catalog_book.AutoIncrement = true;
@@ -1732,20 +1952,20 @@ namespace LMS_002 {
                 this.columnst_name_book.MaxLength = 2147483647;
                 this.columnst_ISBN_ISSN.MaxLength = 2147483647;
                 this.columnst_detail_book.MaxLength = 2147483647;
-                this.columndt_DATE_modify.AllowDBNull = false;
-                this.columnst_type_book.AllowDBNull = false;
                 this.columnst_type_book_name.MaxLength = 2147483647;
-                this.columnbool_current.AllowDBNull = false;
-                this.columnint_cheeckin_out.AllowDBNull = false;
                 this.columnst_cheeckin_out.MaxLength = 2147483647;
-                this.columndt_checkout_date.AllowDBNull = false;
-                this.columndt_checkin_date.AllowDBNull = false;
-                this.columndt_checkin_due.AllowDBNull = false;
                 this.columnst_process_name_user.MaxLength = 2147483647;
-                this.columnint_status_yet.AllowDBNull = false;
                 this.columnst_status_yet.MaxLength = 2147483647;
                 this.columnimg_path.MaxLength = 2147483647;
                 this.columnst_lend_name.MaxLength = 2147483647;
+                this.columnvideo_path.MaxLength = 2147483647;
+                this.columnebook_path.MaxLength = 2147483647;
+                this.columnst_author.MaxLength = 2147483647;
+                this.columnbarcode.MaxLength = 2147483647;
+                this.columncount_print.MaxLength = 2147483647;
+                this.columnplate_print.MaxLength = 2147483647;
+                this.columncompany_print.MaxLength = 2147483647;
+                this.columnst_lang.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2723,6 +2943,273 @@ namespace LMS_002 {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class MD_status_userDataTable : global::System.Data.TypedTableBase<MD_status_userRow> {
+            
+            private global::System.Data.DataColumn columnself_id;
+            
+            private global::System.Data.DataColumn columnstatus_user;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_status_userDataTable() {
+                this.TableName = "MD_status_user";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal MD_status_userDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected MD_status_userDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn self_idColumn {
+                get {
+                    return this.columnself_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn status_userColumn {
+                get {
+                    return this.columnstatus_user;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_status_userRow this[int index] {
+                get {
+                    return ((MD_status_userRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MD_status_userRowChangeEventHandler MD_status_userRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MD_status_userRowChangeEventHandler MD_status_userRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MD_status_userRowChangeEventHandler MD_status_userRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MD_status_userRowChangeEventHandler MD_status_userRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddMD_status_userRow(MD_status_userRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_status_userRow AddMD_status_userRow(string status_user) {
+                MD_status_userRow rowMD_status_userRow = ((MD_status_userRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        status_user};
+                rowMD_status_userRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMD_status_userRow);
+                return rowMD_status_userRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                MD_status_userDataTable cln = ((MD_status_userDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new MD_status_userDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnself_id = base.Columns["self_id"];
+                this.columnstatus_user = base.Columns["status_user"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnself_id = new global::System.Data.DataColumn("self_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnself_id);
+                this.columnstatus_user = new global::System.Data.DataColumn("status_user", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus_user);
+                this.columnself_id.AutoIncrement = true;
+                this.columnself_id.AutoIncrementSeed = -1;
+                this.columnself_id.AutoIncrementStep = -1;
+                this.columnself_id.AllowDBNull = false;
+                this.columnself_id.ReadOnly = true;
+                this.columnstatus_user.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_status_userRow NewMD_status_userRow() {
+                return ((MD_status_userRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new MD_status_userRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(MD_status_userRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.MD_status_userRowChanged != null)) {
+                    this.MD_status_userRowChanged(this, new MD_status_userRowChangeEvent(((MD_status_userRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.MD_status_userRowChanging != null)) {
+                    this.MD_status_userRowChanging(this, new MD_status_userRowChangeEvent(((MD_status_userRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.MD_status_userRowDeleted != null)) {
+                    this.MD_status_userRowDeleted(this, new MD_status_userRowChangeEvent(((MD_status_userRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.MD_status_userRowDeleting != null)) {
+                    this.MD_status_userRowDeleting(this, new MD_status_userRowChangeEvent(((MD_status_userRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveMD_status_userRow(MD_status_userRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Amphawan_LMS_db_2DataSet ds = new Amphawan_LMS_db_2DataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "MD_status_userDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class MD_statusbookDataTable : global::System.Data.TypedTableBase<MD_statusbookRow> {
             
             private global::System.Data.DataColumn columnself_id;
@@ -2853,7 +3340,6 @@ namespace LMS_002 {
                 base.Columns.Add(this.columnself_id);
                 this.columnstatus_book = new global::System.Data.DataColumn("status_book", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstatus_book);
-                this.columnself_id.AllowDBNull = false;
                 this.columnstatus_book.MaxLength = 2147483647;
             }
             
@@ -2941,6 +3427,268 @@ namespace LMS_002 {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "MD_statusbookDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class MD_type_bookDataTable : global::System.Data.TypedTableBase<MD_type_bookRow> {
+            
+            private global::System.Data.DataColumn columnself_id;
+            
+            private global::System.Data.DataColumn columnType_book;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_type_bookDataTable() {
+                this.TableName = "MD_type_book";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal MD_type_bookDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected MD_type_bookDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn self_idColumn {
+                get {
+                    return this.columnself_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Type_bookColumn {
+                get {
+                    return this.columnType_book;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_type_bookRow this[int index] {
+                get {
+                    return ((MD_type_bookRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MD_type_bookRowChangeEventHandler MD_type_bookRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MD_type_bookRowChangeEventHandler MD_type_bookRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MD_type_bookRowChangeEventHandler MD_type_bookRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MD_type_bookRowChangeEventHandler MD_type_bookRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddMD_type_bookRow(MD_type_bookRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_type_bookRow AddMD_type_bookRow(int self_id, string Type_book) {
+                MD_type_bookRow rowMD_type_bookRow = ((MD_type_bookRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        self_id,
+                        Type_book};
+                rowMD_type_bookRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMD_type_bookRow);
+                return rowMD_type_bookRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                MD_type_bookDataTable cln = ((MD_type_bookDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new MD_type_bookDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnself_id = base.Columns["self_id"];
+                this.columnType_book = base.Columns["Type_book"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnself_id = new global::System.Data.DataColumn("self_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnself_id);
+                this.columnType_book = new global::System.Data.DataColumn("Type_book", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnType_book);
+                this.columnType_book.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_type_bookRow NewMD_type_bookRow() {
+                return ((MD_type_bookRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new MD_type_bookRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(MD_type_bookRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.MD_type_bookRowChanged != null)) {
+                    this.MD_type_bookRowChanged(this, new MD_type_bookRowChangeEvent(((MD_type_bookRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.MD_type_bookRowChanging != null)) {
+                    this.MD_type_bookRowChanging(this, new MD_type_bookRowChangeEvent(((MD_type_bookRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.MD_type_bookRowDeleted != null)) {
+                    this.MD_type_bookRowDeleted(this, new MD_type_bookRowChangeEvent(((MD_type_bookRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.MD_type_bookRowDeleting != null)) {
+                    this.MD_type_bookRowDeleting(this, new MD_type_bookRowChangeEvent(((MD_type_bookRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveMD_type_bookRow(MD_type_bookRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Amphawan_LMS_db_2DataSet ds = new Amphawan_LMS_db_2DataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "MD_type_bookDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3466,7 +4214,12 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime dt_DATE_modify {
                 get {
-                    return ((global::System.DateTime)(this[this.tableMD_catralog_book.dt_DATE_modifyColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableMD_catralog_book.dt_DATE_modifyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dt_DATE_modify\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableMD_catralog_book.dt_DATE_modifyColumn] = value;
@@ -3477,7 +4230,12 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int st_type_book {
                 get {
-                    return ((int)(this[this.tableMD_catralog_book.st_type_bookColumn]));
+                    try {
+                        return ((int)(this[this.tableMD_catralog_book.st_type_bookColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'st_type_book\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableMD_catralog_book.st_type_bookColumn] = value;
@@ -3504,7 +4262,12 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool bool_current {
                 get {
-                    return ((bool)(this[this.tableMD_catralog_book.bool_currentColumn]));
+                    try {
+                        return ((bool)(this[this.tableMD_catralog_book.bool_currentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'bool_current\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableMD_catralog_book.bool_currentColumn] = value;
@@ -3515,7 +4278,12 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int int_cheeckin_out {
                 get {
-                    return ((int)(this[this.tableMD_catralog_book.int_cheeckin_outColumn]));
+                    try {
+                        return ((int)(this[this.tableMD_catralog_book.int_cheeckin_outColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'int_cheeckin_out\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableMD_catralog_book.int_cheeckin_outColumn] = value;
@@ -3542,7 +4310,12 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime dt_checkout_date {
                 get {
-                    return ((global::System.DateTime)(this[this.tableMD_catralog_book.dt_checkout_dateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableMD_catralog_book.dt_checkout_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dt_checkout_date\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableMD_catralog_book.dt_checkout_dateColumn] = value;
@@ -3553,7 +4326,12 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime dt_checkin_date {
                 get {
-                    return ((global::System.DateTime)(this[this.tableMD_catralog_book.dt_checkin_dateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableMD_catralog_book.dt_checkin_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dt_checkin_date\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableMD_catralog_book.dt_checkin_dateColumn] = value;
@@ -3564,7 +4342,12 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime dt_checkin_due {
                 get {
-                    return ((global::System.DateTime)(this[this.tableMD_catralog_book.dt_checkin_dueColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableMD_catralog_book.dt_checkin_dueColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dt_checkin_due\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableMD_catralog_book.dt_checkin_dueColumn] = value;
@@ -3608,7 +4391,12 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int int_status_yet {
                 get {
-                    return ((int)(this[this.tableMD_catralog_book.int_status_yetColumn]));
+                    try {
+                        return ((int)(this[this.tableMD_catralog_book.int_status_yetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'int_status_yet\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableMD_catralog_book.int_status_yetColumn] = value;
@@ -3665,6 +4453,167 @@ namespace LMS_002 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string video_path {
+                get {
+                    try {
+                        return ((string)(this[this.tableMD_catralog_book.video_pathColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'video_path\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_catralog_book.video_pathColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ebook_path {
+                get {
+                    try {
+                        return ((string)(this[this.tableMD_catralog_book.ebook_pathColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ebook_path\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_catralog_book.ebook_pathColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string st_author {
+                get {
+                    try {
+                        return ((string)(this[this.tableMD_catralog_book.st_authorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'st_author\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_catralog_book.st_authorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string barcode {
+                get {
+                    try {
+                        return ((string)(this[this.tableMD_catralog_book.barcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'barcode\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_catralog_book.barcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string count_print {
+                get {
+                    try {
+                        return ((string)(this[this.tableMD_catralog_book.count_printColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'count_print\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_catralog_book.count_printColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string plate_print {
+                get {
+                    try {
+                        return ((string)(this[this.tableMD_catralog_book.plate_printColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'plate_print\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_catralog_book.plate_printColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string company_print {
+                get {
+                    try {
+                        return ((string)(this[this.tableMD_catralog_book.company_printColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'company_print\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_catralog_book.company_printColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string st_lang {
+                get {
+                    try {
+                        return ((string)(this[this.tableMD_catralog_book.st_langColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'st_lang\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_catralog_book.st_langColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int int_lang {
+                get {
+                    try {
+                        return ((int)(this[this.tableMD_catralog_book.int_langColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'int_lang\' in table \'MD_catralog_book\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_catralog_book.int_langColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int int_count_view_book {
+                get {
+                    try {
+                        return ((int)(this[this.tableMD_catralog_book.int_count_view_bookColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'int_count_view_book\' in table \'MD_catralog_book\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_catralog_book.int_count_view_bookColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isst_name_bookNull() {
                 return this.IsNull(this.tableMD_catralog_book.st_name_bookColumn);
             }
@@ -3701,6 +4650,30 @@ namespace LMS_002 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdt_DATE_modifyNull() {
+                return this.IsNull(this.tableMD_catralog_book.dt_DATE_modifyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdt_DATE_modifyNull() {
+                this[this.tableMD_catralog_book.dt_DATE_modifyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isst_type_bookNull() {
+                return this.IsNull(this.tableMD_catralog_book.st_type_bookColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setst_type_bookNull() {
+                this[this.tableMD_catralog_book.st_type_bookColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isst_type_book_nameNull() {
                 return this.IsNull(this.tableMD_catralog_book.st_type_book_nameColumn);
             }
@@ -3713,6 +4686,30 @@ namespace LMS_002 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isbool_currentNull() {
+                return this.IsNull(this.tableMD_catralog_book.bool_currentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setbool_currentNull() {
+                this[this.tableMD_catralog_book.bool_currentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isint_cheeckin_outNull() {
+                return this.IsNull(this.tableMD_catralog_book.int_cheeckin_outColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setint_cheeckin_outNull() {
+                this[this.tableMD_catralog_book.int_cheeckin_outColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isst_cheeckin_outNull() {
                 return this.IsNull(this.tableMD_catralog_book.st_cheeckin_outColumn);
             }
@@ -3721,6 +4718,42 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setst_cheeckin_outNull() {
                 this[this.tableMD_catralog_book.st_cheeckin_outColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdt_checkout_dateNull() {
+                return this.IsNull(this.tableMD_catralog_book.dt_checkout_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdt_checkout_dateNull() {
+                this[this.tableMD_catralog_book.dt_checkout_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdt_checkin_dateNull() {
+                return this.IsNull(this.tableMD_catralog_book.dt_checkin_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdt_checkin_dateNull() {
+                this[this.tableMD_catralog_book.dt_checkin_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdt_checkin_dueNull() {
+                return this.IsNull(this.tableMD_catralog_book.dt_checkin_dueColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdt_checkin_dueNull() {
+                this[this.tableMD_catralog_book.dt_checkin_dueColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3745,6 +4778,18 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setst_process_name_userNull() {
                 this[this.tableMD_catralog_book.st_process_name_userColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isint_status_yetNull() {
+                return this.IsNull(this.tableMD_catralog_book.int_status_yetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setint_status_yetNull() {
+                this[this.tableMD_catralog_book.int_status_yetColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3781,6 +4826,126 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setst_lend_nameNull() {
                 this[this.tableMD_catralog_book.st_lend_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isvideo_pathNull() {
+                return this.IsNull(this.tableMD_catralog_book.video_pathColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setvideo_pathNull() {
+                this[this.tableMD_catralog_book.video_pathColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isebook_pathNull() {
+                return this.IsNull(this.tableMD_catralog_book.ebook_pathColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setebook_pathNull() {
+                this[this.tableMD_catralog_book.ebook_pathColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isst_authorNull() {
+                return this.IsNull(this.tableMD_catralog_book.st_authorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setst_authorNull() {
+                this[this.tableMD_catralog_book.st_authorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsbarcodeNull() {
+                return this.IsNull(this.tableMD_catralog_book.barcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetbarcodeNull() {
+                this[this.tableMD_catralog_book.barcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscount_printNull() {
+                return this.IsNull(this.tableMD_catralog_book.count_printColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcount_printNull() {
+                this[this.tableMD_catralog_book.count_printColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isplate_printNull() {
+                return this.IsNull(this.tableMD_catralog_book.plate_printColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setplate_printNull() {
+                this[this.tableMD_catralog_book.plate_printColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscompany_printNull() {
+                return this.IsNull(this.tableMD_catralog_book.company_printColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcompany_printNull() {
+                this[this.tableMD_catralog_book.company_printColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isst_langNull() {
+                return this.IsNull(this.tableMD_catralog_book.st_langColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setst_langNull() {
+                this[this.tableMD_catralog_book.st_langColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isint_langNull() {
+                return this.IsNull(this.tableMD_catralog_book.int_langColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setint_langNull() {
+                this[this.tableMD_catralog_book.int_langColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isint_count_view_bookNull() {
+                return this.IsNull(this.tableMD_catralog_book.int_count_view_bookColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setint_count_view_bookNull() {
+                this[this.tableMD_catralog_book.int_count_view_bookColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3943,6 +5108,60 @@ namespace LMS_002 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class MD_status_userRow : global::System.Data.DataRow {
+            
+            private MD_status_userDataTable tableMD_status_user;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal MD_status_userRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableMD_status_user = ((MD_status_userDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int self_id {
+                get {
+                    return ((int)(this[this.tableMD_status_user.self_idColumn]));
+                }
+                set {
+                    this[this.tableMD_status_user.self_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string status_user {
+                get {
+                    try {
+                        return ((string)(this[this.tableMD_status_user.status_userColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'status_user\' in table \'MD_status_user\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_status_user.status_userColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isstatus_userNull() {
+                return this.IsNull(this.tableMD_status_user.status_userColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setstatus_userNull() {
+                this[this.tableMD_status_user.status_userColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class MD_statusbookRow : global::System.Data.DataRow {
             
             private MD_statusbookDataTable tableMD_statusbook;
@@ -3958,7 +5177,12 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int self_id {
                 get {
-                    return ((int)(this[this.tableMD_statusbook.self_idColumn]));
+                    try {
+                        return ((int)(this[this.tableMD_statusbook.self_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'self_id\' in table \'MD_statusbook\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableMD_statusbook.self_idColumn] = value;
@@ -3983,6 +5207,18 @@ namespace LMS_002 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isself_idNull() {
+                return this.IsNull(this.tableMD_statusbook.self_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setself_idNull() {
+                this[this.tableMD_statusbook.self_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isstatus_bookNull() {
                 return this.IsNull(this.tableMD_statusbook.status_bookColumn);
             }
@@ -3991,6 +5227,77 @@ namespace LMS_002 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setstatus_bookNull() {
                 this[this.tableMD_statusbook.status_bookColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class MD_type_bookRow : global::System.Data.DataRow {
+            
+            private MD_type_bookDataTable tableMD_type_book;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal MD_type_bookRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableMD_type_book = ((MD_type_bookDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int self_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableMD_type_book.self_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'self_id\' in table \'MD_type_book\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_type_book.self_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Type_book {
+                get {
+                    try {
+                        return ((string)(this[this.tableMD_type_book.Type_bookColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Type_book\' in table \'MD_type_book\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMD_type_book.Type_bookColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isself_idNull() {
+                return this.IsNull(this.tableMD_type_book.self_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setself_idNull() {
+                this[this.tableMD_type_book.self_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsType_bookNull() {
+                return this.IsNull(this.tableMD_type_book.Type_bookColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetType_bookNull() {
+                this[this.tableMD_type_book.Type_bookColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4202,6 +5509,40 @@ namespace LMS_002 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class MD_status_userRowChangeEvent : global::System.EventArgs {
+            
+            private MD_status_userRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_status_userRowChangeEvent(MD_status_userRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_status_userRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public class MD_statusbookRowChangeEvent : global::System.EventArgs {
             
             private MD_statusbookRow eventRow;
@@ -4218,6 +5559,40 @@ namespace LMS_002 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MD_statusbookRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class MD_type_bookRowChangeEvent : global::System.EventArgs {
+            
+            private MD_type_bookRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_type_bookRowChangeEvent(MD_type_bookRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MD_type_bookRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5222,6 +6597,16 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("st_status_yet", "st_status_yet");
             tableMapping.ColumnMappings.Add("img_path", "img_path");
             tableMapping.ColumnMappings.Add("st_lend_name", "st_lend_name");
+            tableMapping.ColumnMappings.Add("video_path", "video_path");
+            tableMapping.ColumnMappings.Add("ebook_path", "ebook_path");
+            tableMapping.ColumnMappings.Add("st_author", "st_author");
+            tableMapping.ColumnMappings.Add("barcode", "barcode");
+            tableMapping.ColumnMappings.Add("count_print", "count_print");
+            tableMapping.ColumnMappings.Add("plate_print", "plate_print");
+            tableMapping.ColumnMappings.Add("company_print", "company_print");
+            tableMapping.ColumnMappings.Add("st_lang", "st_lang");
+            tableMapping.ColumnMappings.Add("int_lang", "int_lang");
+            tableMapping.ColumnMappings.Add("int_count_view_book", "int_count_view_book");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -5231,7 +6616,7 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_int_id_catalog_book", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "int_id_catalog_book", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[MD_catralog_book] ([st_name_book], [st_ISBN_ISSN], [st_detail_book], [dt_DATE_modify], [st_type_book], [st_type_book_name], [bool_current], [int_cheeckin_out], [st_cheeckin_out], [dt_checkout_date], [dt_checkin_date], [dt_checkin_due], [img_book], [st_process_name_user], [int_status_yet], [st_status_yet], [img_path], [st_lend_name]) VALUES (@st_name_book, @st_ISBN_ISSN, @st_detail_book, @dt_DATE_modify, @st_type_book, @st_type_book_name, @bool_current, @int_cheeckin_out, @st_cheeckin_out, @dt_checkout_date, @dt_checkin_date, @dt_checkin_due, @img_book, @st_process_name_user, @int_status_yet, @st_status_yet, @img_path, @st_lend_name)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[MD_catralog_book] ([st_name_book], [st_ISBN_ISSN], [st_detail_book], [dt_DATE_modify], [st_type_book], [st_type_book_name], [bool_current], [int_cheeckin_out], [st_cheeckin_out], [dt_checkout_date], [dt_checkin_date], [dt_checkin_due], [img_book], [st_process_name_user], [int_status_yet], [st_status_yet], [img_path], [st_lend_name], [video_path], [ebook_path], [st_author], [barcode], [count_print], [plate_print], [company_print], [st_lang], [int_lang], [int_count_view_book]) VALUES (@st_name_book, @st_ISBN_ISSN, @st_detail_book, @dt_DATE_modify, @st_type_book, @st_type_book_name, @bool_current, @int_cheeckin_out, @st_cheeckin_out, @dt_checkout_date, @dt_checkin_date, @dt_checkin_due, @img_book, @st_process_name_user, @int_status_yet, @st_status_yet, @img_path, @st_lend_name, @video_path, @ebook_path, @st_author, @barcode, @count_print, @plate_print, @company_print, @st_lang, @int_lang, @int_count_view_book)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_name_book", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_name_book", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_ISBN_ISSN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_ISBN_ISSN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5251,9 +6636,19 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_status_yet", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_status_yet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@img_path", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "img_path", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_lend_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_lend_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@video_path", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "video_path", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ebook_path", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ebook_path", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_author", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_author", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "barcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@count_print", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "count_print", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@plate_print", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "plate_print", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@company_print", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "company_print", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_lang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_lang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@int_lang", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "int_lang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@int_count_view_book", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "int_count_view_book", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[MD_catralog_book] SET [st_name_book] = @st_name_book, [st_ISBN_ISSN] = @st_ISBN_ISSN, [st_detail_book] = @st_detail_book, [dt_DATE_modify] = @dt_DATE_modify, [st_type_book] = @st_type_book, [st_type_book_name] = @st_type_book_name, [bool_current] = @bool_current, [int_cheeckin_out] = @int_cheeckin_out, [st_cheeckin_out] = @st_cheeckin_out, [dt_checkout_date] = @dt_checkout_date, [dt_checkin_date] = @dt_checkin_date, [dt_checkin_due] = @dt_checkin_due, [img_book] = @img_book, [st_process_name_user] = @st_process_name_user, [int_status_yet] = @int_status_yet, [st_status_yet] = @st_status_yet, [img_path] = @img_path, [st_lend_name] = @st_lend_name WHERE (([int_id_catalog_book] = @Original_int_id_catalog_book))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[MD_catralog_book] SET [st_name_book] = @st_name_book, [st_ISBN_ISSN] = @st_ISBN_ISSN, [st_detail_book] = @st_detail_book, [dt_DATE_modify] = @dt_DATE_modify, [st_type_book] = @st_type_book, [st_type_book_name] = @st_type_book_name, [bool_current] = @bool_current, [int_cheeckin_out] = @int_cheeckin_out, [st_cheeckin_out] = @st_cheeckin_out, [dt_checkout_date] = @dt_checkout_date, [dt_checkin_date] = @dt_checkin_date, [dt_checkin_due] = @dt_checkin_due, [img_book] = @img_book, [st_process_name_user] = @st_process_name_user, [int_status_yet] = @int_status_yet, [st_status_yet] = @st_status_yet, [img_path] = @img_path, [st_lend_name] = @st_lend_name, [video_path] = @video_path, [ebook_path] = @ebook_path, [st_author] = @st_author, [barcode] = @barcode, [count_print] = @count_print, [plate_print] = @plate_print, [company_print] = @company_print, [st_lang] = @st_lang, [int_lang] = @int_lang, [int_count_view_book] = @int_count_view_book WHERE (([int_id_catalog_book] = @Original_int_id_catalog_book))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_name_book", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_name_book", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_ISBN_ISSN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_ISBN_ISSN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5273,6 +6668,16 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_status_yet", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_status_yet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@img_path", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "img_path", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_lend_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_lend_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@video_path", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "video_path", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ebook_path", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ebook_path", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_author", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_author", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "barcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@count_print", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "count_print", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@plate_print", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "plate_print", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@company_print", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "company_print", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@st_lang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "st_lang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@int_lang", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "int_lang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@int_count_view_book", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "int_count_view_book", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_int_id_catalog_book", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "int_id_catalog_book", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -5289,7 +6694,7 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT int_id_catalog_book, st_name_book, st_ISBN_ISSN, st_detail_book, dt_DATE_modify, st_type_book, st_type_book_name, bool_current, int_cheeckin_out, st_cheeckin_out, dt_checkout_date, dt_checkin_date, dt_checkin_due, img_book, st_process_name_user, int_status_yet, st_status_yet, img_path, st_lend_name FROM dbo.MD_catralog_book";
+            this._commandCollection[0].CommandText = @"SELECT int_id_catalog_book, st_name_book, st_ISBN_ISSN, st_detail_book, dt_DATE_modify, st_type_book, st_type_book_name, bool_current, int_cheeckin_out, st_cheeckin_out, dt_checkout_date, dt_checkin_date, dt_checkin_due, img_book, st_process_name_user, int_status_yet, st_status_yet, img_path, st_lend_name, video_path, ebook_path, st_author, barcode, count_print, plate_print, company_print, st_lang, int_lang, int_count_view_book FROM dbo.MD_catralog_book";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5376,21 +6781,31 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
                     string st_name_book, 
                     string st_ISBN_ISSN, 
                     string st_detail_book, 
-                    System.DateTime dt_DATE_modify, 
-                    int st_type_book, 
+                    global::System.Nullable<global::System.DateTime> dt_DATE_modify, 
+                    global::System.Nullable<int> st_type_book, 
                     string st_type_book_name, 
-                    bool bool_current, 
-                    int int_cheeckin_out, 
+                    global::System.Nullable<bool> bool_current, 
+                    global::System.Nullable<int> int_cheeckin_out, 
                     string st_cheeckin_out, 
-                    System.DateTime dt_checkout_date, 
-                    System.DateTime dt_checkin_date, 
-                    System.DateTime dt_checkin_due, 
+                    global::System.Nullable<global::System.DateTime> dt_checkout_date, 
+                    global::System.Nullable<global::System.DateTime> dt_checkin_date, 
+                    global::System.Nullable<global::System.DateTime> dt_checkin_due, 
                     byte[] img_book, 
                     string st_process_name_user, 
-                    int int_status_yet, 
+                    global::System.Nullable<int> int_status_yet, 
                     string st_status_yet, 
                     string img_path, 
-                    string st_lend_name) {
+                    string st_lend_name, 
+                    string video_path, 
+                    string ebook_path, 
+                    string st_author, 
+                    string barcode, 
+                    string count_print, 
+                    string plate_print, 
+                    string company_print, 
+                    string st_lang, 
+                    global::System.Nullable<int> int_lang, 
+                    global::System.Nullable<int> int_count_view_book) {
             if ((st_name_book == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5409,25 +6824,60 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(st_detail_book));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(dt_DATE_modify));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(st_type_book));
+            if ((dt_DATE_modify.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(dt_DATE_modify.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((st_type_book.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(st_type_book.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((st_type_book_name == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(st_type_book_name));
             }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(bool_current));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(int_cheeckin_out));
+            if ((bool_current.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(bool_current.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((int_cheeckin_out.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(int_cheeckin_out.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             if ((st_cheeckin_out == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(st_cheeckin_out));
             }
-            this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(dt_checkout_date));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(dt_checkin_date));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((System.DateTime)(dt_checkin_due));
+            if ((dt_checkout_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(dt_checkout_date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((dt_checkin_date.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(dt_checkin_date.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((dt_checkin_due.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((System.DateTime)(dt_checkin_due.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
             if ((img_book == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
@@ -5440,7 +6890,12 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = ((string)(st_process_name_user));
             }
-            this.Adapter.InsertCommand.Parameters[14].Value = ((int)(int_status_yet));
+            if ((int_status_yet.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((int)(int_status_yet.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
             if ((st_status_yet == null)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
@@ -5458,6 +6913,66 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[17].Value = ((string)(st_lend_name));
+            }
+            if ((video_path == null)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(video_path));
+            }
+            if ((ebook_path == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(ebook_path));
+            }
+            if ((st_author == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(st_author));
+            }
+            if ((barcode == null)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(barcode));
+            }
+            if ((count_print == null)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(count_print));
+            }
+            if ((plate_print == null)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(plate_print));
+            }
+            if ((company_print == null)) {
+                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(company_print));
+            }
+            if ((st_lang == null)) {
+                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(st_lang));
+            }
+            if ((int_lang.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((int)(int_lang.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((int_count_view_book.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[27].Value = ((int)(int_count_view_book.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5483,21 +6998,31 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
                     string st_name_book, 
                     string st_ISBN_ISSN, 
                     string st_detail_book, 
-                    System.DateTime dt_DATE_modify, 
-                    int st_type_book, 
+                    global::System.Nullable<global::System.DateTime> dt_DATE_modify, 
+                    global::System.Nullable<int> st_type_book, 
                     string st_type_book_name, 
-                    bool bool_current, 
-                    int int_cheeckin_out, 
+                    global::System.Nullable<bool> bool_current, 
+                    global::System.Nullable<int> int_cheeckin_out, 
                     string st_cheeckin_out, 
-                    System.DateTime dt_checkout_date, 
-                    System.DateTime dt_checkin_date, 
-                    System.DateTime dt_checkin_due, 
+                    global::System.Nullable<global::System.DateTime> dt_checkout_date, 
+                    global::System.Nullable<global::System.DateTime> dt_checkin_date, 
+                    global::System.Nullable<global::System.DateTime> dt_checkin_due, 
                     byte[] img_book, 
                     string st_process_name_user, 
-                    int int_status_yet, 
+                    global::System.Nullable<int> int_status_yet, 
                     string st_status_yet, 
                     string img_path, 
                     string st_lend_name, 
+                    string video_path, 
+                    string ebook_path, 
+                    string st_author, 
+                    string barcode, 
+                    string count_print, 
+                    string plate_print, 
+                    string company_print, 
+                    string st_lang, 
+                    global::System.Nullable<int> int_lang, 
+                    global::System.Nullable<int> int_count_view_book, 
                     int Original_int_id_catalog_book) {
             if ((st_name_book == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -5517,25 +7042,60 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(st_detail_book));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(dt_DATE_modify));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(st_type_book));
+            if ((dt_DATE_modify.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(dt_DATE_modify.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((st_type_book.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(st_type_book.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((st_type_book_name == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(st_type_book_name));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(bool_current));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(int_cheeckin_out));
+            if ((bool_current.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(bool_current.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((int_cheeckin_out.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(int_cheeckin_out.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             if ((st_cheeckin_out == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(st_cheeckin_out));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(dt_checkout_date));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(dt_checkin_date));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(dt_checkin_due));
+            if ((dt_checkout_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(dt_checkout_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((dt_checkin_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(dt_checkin_date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((dt_checkin_due.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(dt_checkin_due.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
             if ((img_book == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
@@ -5548,7 +7108,12 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(st_process_name_user));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(int_status_yet));
+            if ((int_status_yet.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(int_status_yet.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
             if ((st_status_yet == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
@@ -5567,7 +7132,67 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(st_lend_name));
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_int_id_catalog_book));
+            if ((video_path == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(video_path));
+            }
+            if ((ebook_path == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(ebook_path));
+            }
+            if ((st_author == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(st_author));
+            }
+            if ((barcode == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(barcode));
+            }
+            if ((count_print == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(count_print));
+            }
+            if ((plate_print == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(plate_print));
+            }
+            if ((company_print == null)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(company_print));
+            }
+            if ((st_lang == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(st_lang));
+            }
+            if ((int_lang.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(int_lang.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((int_count_view_book.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(int_count_view_book.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_int_id_catalog_book));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6437,6 +8062,235 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class MD_status_userTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public MD_status_userTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "MD_status_user";
+            tableMapping.ColumnMappings.Add("self_id", "self_id");
+            tableMapping.ColumnMappings.Add("status_user", "status_user");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[MD_status_user] ([status_user]) VALUES (@status_user)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@status_user", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "status_user", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["amphawacontect2"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT self_id, status_user FROM dbo.MD_status_user";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Amphawan_LMS_db_2DataSet.MD_status_userDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Amphawan_LMS_db_2DataSet.MD_status_userDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Amphawan_LMS_db_2DataSet.MD_status_userDataTable dataTable = new Amphawan_LMS_db_2DataSet.MD_status_userDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Amphawan_LMS_db_2DataSet.MD_status_userDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Amphawan_LMS_db_2DataSet dataSet) {
+            return this.Adapter.Update(dataSet, "MD_status_user");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string status_user) {
+            if ((status_user == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(status_user));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class MD_statusbookTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -6635,13 +8489,255 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int self_id, string status_book) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(self_id));
+        public virtual int Insert(global::System.Nullable<int> self_id, string status_book) {
+            if ((self_id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(self_id.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((status_book == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(status_book));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class MD_type_bookTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public MD_type_bookTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "MD_type_book";
+            tableMapping.ColumnMappings.Add("self_id", "self_id");
+            tableMapping.ColumnMappings.Add("Type_book", "Type_book");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[MD_type_book] ([self_id], [Type_book]) VALUES (@self_id, @Type" +
+                "_book)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@self_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "self_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type_book", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type_book", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["amphawacontect2"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT self_id, Type_book FROM dbo.MD_type_book";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Amphawan_LMS_db_2DataSet.MD_type_bookDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Amphawan_LMS_db_2DataSet.MD_type_bookDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Amphawan_LMS_db_2DataSet.MD_type_bookDataTable dataTable = new Amphawan_LMS_db_2DataSet.MD_type_bookDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Amphawan_LMS_db_2DataSet.MD_type_bookDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Amphawan_LMS_db_2DataSet dataSet) {
+            return this.Adapter.Update(dataSet, "MD_type_book");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<int> self_id, string Type_book) {
+            if ((self_id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(self_id.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Type_book == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Type_book));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6684,7 +8780,11 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
         
         private MD_searchTableAdapter _mD_searchTableAdapter;
         
+        private MD_status_userTableAdapter _mD_status_userTableAdapter;
+        
         private MD_statusbookTableAdapter _mD_statusbookTableAdapter;
+        
+        private MD_type_bookTableAdapter _mD_type_bookTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -6790,12 +8890,40 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
+        public MD_status_userTableAdapter MD_status_userTableAdapter {
+            get {
+                return this._mD_status_userTableAdapter;
+            }
+            set {
+                this._mD_status_userTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public MD_statusbookTableAdapter MD_statusbookTableAdapter {
             get {
                 return this._mD_statusbookTableAdapter;
             }
             set {
                 this._mD_statusbookTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public MD_type_bookTableAdapter MD_type_bookTableAdapter {
+            get {
+                return this._mD_type_bookTableAdapter;
+            }
+            set {
+                this._mD_type_bookTableAdapter = value;
             }
         }
         
@@ -6842,9 +8970,17 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
                             && (this._mD_searchTableAdapter.Connection != null))) {
                     return this._mD_searchTableAdapter.Connection;
                 }
+                if (((this._mD_status_userTableAdapter != null) 
+                            && (this._mD_status_userTableAdapter.Connection != null))) {
+                    return this._mD_status_userTableAdapter.Connection;
+                }
                 if (((this._mD_statusbookTableAdapter != null) 
                             && (this._mD_statusbookTableAdapter.Connection != null))) {
                     return this._mD_statusbookTableAdapter.Connection;
+                }
+                if (((this._mD_type_bookTableAdapter != null) 
+                            && (this._mD_type_bookTableAdapter.Connection != null))) {
+                    return this._mD_type_bookTableAdapter.Connection;
                 }
                 return null;
             }
@@ -6877,7 +9013,13 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
                 if ((this._mD_searchTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._mD_status_userTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._mD_statusbookTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._mD_type_bookTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -6945,12 +9087,30 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._mD_status_userTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MD_status_user.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._mD_status_userTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._mD_statusbookTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.MD_statusbook.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._mD_statusbookTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._mD_type_bookTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MD_type_book.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._mD_type_bookTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -7012,11 +9172,27 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._mD_status_userTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MD_status_user.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._mD_status_userTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._mD_statusbookTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.MD_statusbook.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._mD_statusbookTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._mD_type_bookTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MD_type_book.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._mD_type_bookTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -7030,11 +9206,27 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(Amphawan_LMS_db_2DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._mD_type_bookTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MD_type_book.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._mD_type_bookTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._mD_statusbookTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.MD_statusbook.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._mD_statusbookTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._mD_status_userTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MD_status_user.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._mD_status_userTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -7155,8 +9347,18 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._mD_status_userTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._mD_status_userTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             if (((this._mD_statusbookTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._mD_statusbookTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._mD_type_bookTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._mD_type_bookTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -7246,6 +9448,15 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._mD_searchTableAdapter.Adapter);
                     }
                 }
+                if ((this._mD_status_userTableAdapter != null)) {
+                    revertConnections.Add(this._mD_status_userTableAdapter, this._mD_status_userTableAdapter.Connection);
+                    this._mD_status_userTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._mD_status_userTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._mD_status_userTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._mD_status_userTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._mD_status_userTableAdapter.Adapter);
+                    }
+                }
                 if ((this._mD_statusbookTableAdapter != null)) {
                     revertConnections.Add(this._mD_statusbookTableAdapter, this._mD_statusbookTableAdapter.Connection);
                     this._mD_statusbookTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -7253,6 +9464,15 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
                     if (this._mD_statusbookTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._mD_statusbookTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._mD_statusbookTableAdapter.Adapter);
+                    }
+                }
+                if ((this._mD_type_bookTableAdapter != null)) {
+                    revertConnections.Add(this._mD_type_bookTableAdapter, this._mD_type_bookTableAdapter.Connection);
+                    this._mD_type_bookTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._mD_type_bookTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._mD_type_bookTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._mD_type_bookTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._mD_type_bookTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -7337,9 +9557,17 @@ namespace LMS_002.Amphawan_LMS_db_2DataSetTableAdapters {
                     this._mD_searchTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._mD_searchTableAdapter]));
                     this._mD_searchTableAdapter.Transaction = null;
                 }
+                if ((this._mD_status_userTableAdapter != null)) {
+                    this._mD_status_userTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._mD_status_userTableAdapter]));
+                    this._mD_status_userTableAdapter.Transaction = null;
+                }
                 if ((this._mD_statusbookTableAdapter != null)) {
                     this._mD_statusbookTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._mD_statusbookTableAdapter]));
                     this._mD_statusbookTableAdapter.Transaction = null;
+                }
+                if ((this._mD_type_bookTableAdapter != null)) {
+                    this._mD_type_bookTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._mD_type_bookTableAdapter]));
+                    this._mD_type_bookTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

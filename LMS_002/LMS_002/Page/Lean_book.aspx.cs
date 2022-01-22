@@ -24,8 +24,8 @@ namespace LMS_002.Page
                 if (Session["user"] != null)
                 {
                     profile = Session["user"].ToString();
-                    GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_status_book_type on " +
-                        "[dbo].[MD_catralog_book].int_cheeckin_out = MD_status_book_type.self_id   where  st_process_name_user = '" + profile + "' AND int_cheeckin_out = 3 ");
+                    GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_statusbook on " +
+                        "[dbo].[MD_catralog_book].int_cheeckin_out = MD_statusbook.self_id   where  st_process_name_user = '" + profile + "' AND int_cheeckin_out = 3 ");
                     GridView1.DataBind();
                     ddl_account.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_Account]");
                     ddl_account.DataTextField = "st_user";
@@ -59,8 +59,8 @@ namespace LMS_002.Page
             {
                 using (var db = new Dbcon_wan())
                 {
-                    GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_status_book_type on " +
-                                       "[dbo].[MD_catralog_book].int_cheeckin_out = MD_status_book_type.self_id   where  st_process_name_user = '" + profile + "' AND int_cheeckin_out = 3 ");
+                    GridView1.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_catralog_book] left join MD_statusbook on " +
+                                       "[dbo].[MD_catralog_book].int_cheeckin_out = MD_statusbook.self_id   where  st_process_name_user = '" + profile + "' AND int_cheeckin_out = 3 ");
                     GridView1.DataBind();
                 }
             }

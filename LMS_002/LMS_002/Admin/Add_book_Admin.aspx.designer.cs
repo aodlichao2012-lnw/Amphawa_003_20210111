@@ -51,6 +51,24 @@ namespace LMS_002.Admin
         protected global::System.Web.UI.WebControls.FileUpload f_ebook;
 
         /// <summary>
+        /// f_gen_ebook control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload f_gen_ebook;
+
+        /// <summary>
+        /// btn_upload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_upload;
+
+        /// <summary>
         /// txt_bar_code control.
         /// </summary>
         /// <remarks>
@@ -58,6 +76,15 @@ namespace LMS_002.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txt_bar_code;
+
+        /// <summary>
+        /// ddl_dictionnary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_dictionnary;
 
         /// <summary>
         /// txt_iss_num control.

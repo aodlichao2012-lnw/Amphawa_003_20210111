@@ -28,11 +28,14 @@ namespace LMS_002.Admin
             if (Session["roleid"] != null)
             {
                 Session["user"] = null;
+                Session["roleid"] = null;
                 Response.Redirect(@"~/Page/Login.aspx");
 
             }
             else
             {
+                Session["user"] = null;
+                Session["roleid"] = null;
                 Response.Redirect(@"~/Page/Login.aspx");
             }
         }

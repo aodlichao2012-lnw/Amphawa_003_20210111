@@ -41,6 +41,14 @@
                     <asp:FileUpload ID="f_ebook" CssClass="ddl" runat="server" />
                             </div>
                         </div>
+                        <div class=" col-1 w-25 d-inline-block">
+                                เอกสารหลายๆหน้า รวมเป็น E-bbok
+                    <asp:FileUpload ID="f_gen_ebook" CssClass="ddl" AllowMultiple="true"  runat="server" />
+                             <asp:Button runat="server" ID="btn_upload" Text="อัพโหลด" OnClientClick="return confirm('ต้องการจะอัพโหลดเอกสารทั้งหมดหรือไม่ ? ');" OnClick="btn_upload_Click" />
+                            </div>
+
+                            
+                        </div>
 
                         <div class="  card-body mt-2 col-1 w-100">
                             <div class=" card-header"></div>
@@ -49,6 +57,14 @@
                                     <div class="form-group w-100">
                                         <label>บาร์โค้ด</label>
                                         <input runat="server" type="text" id="txt_bar_code" name="Age" class="w-100 ddl" placeholder="รหัสหนังสือ">
+                                    </div>
+                                </div>
+                                <div class="form-group w-100 text-center">
+                                    <div class="form-group w-100">
+                                        <label>หมวดหมู่
+                                        </label>
+                                        <asp:DropDownList runat="server" CssClass="ddl" ID="ddl_dictionnary" >
+                                        </asp:DropDownList>
                                     </div>
                                 </div>
 

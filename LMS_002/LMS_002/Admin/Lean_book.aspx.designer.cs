@@ -69,6 +69,24 @@ namespace LMS_002.Admin
         protected global::System.Web.UI.HtmlControls.HtmlInputText count_book;
 
         /// <summary>
+        /// GridView2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView2;
+
+        /// <summary>
+        /// ld_count control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ld_count;
+
+        /// <summary>
         /// searchCatalog control.
         /// </summary>
         /// <remarks>
@@ -78,12 +96,12 @@ namespace LMS_002.Admin
         protected global::System.Web.UI.HtmlControls.HtmlAnchor searchCatalog;
 
         /// <summary>
-        /// clear control.
+        /// btn_cancle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor clear;
+        protected global::System.Web.UI.WebControls.Button btn_cancle;
     }
 }

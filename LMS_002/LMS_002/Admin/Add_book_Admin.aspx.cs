@@ -15,6 +15,14 @@ namespace LMS_002.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                ddl_dictionnary.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_Dictionary]");
+                ddl_dictionnary.DataValueField = "int_id_type_Dictionary";
+                ddl_dictionnary.DataTextField = "st_type_Dictionary";
+                ddl_dictionnary.SelectedIndex = 1;
+                ddl_dictionnary.DataBind();
+            }
 
         }
 
@@ -73,7 +81,9 @@ namespace LMS_002.Admin
                            ,[company_print]
                            ,[int_lang]
                            ,[st_lang]
-                           , int_count_view_book )
+                           , int_count_view_book
+                            , int_type_Dictionary
+                            , st_type_Dictionary)
                      VALUES
                            ('{ Convert.ToString(txt_book_name.Value, new CultureInfo("th-TH")) }' ,
                                '{ txt_iss_num.Value }',
@@ -97,7 +107,7 @@ namespace LMS_002.Admin
                                '{plate_print.Value}',
                                '{ company_print.Value }',
                                {0},
-                               '{"ภาษาไทย"}' , 0)";
+                               '{"ภาษาไทย"}' , 0 , {ddl_dictionnary.SelectedValue} , '{ddl_dictionnary.SelectedItem.Text}')";
 
                 var result = Conncetions_db.Instance.Connection_command(sql);
 
@@ -106,5 +116,14 @@ namespace LMS_002.Admin
 
         }
 
+        protected void btn_upload_Click(object sender, EventArgs e)
+        {
+            if (f_gen_ebook.HasFiles)
+            {
+                Gen_Document.Instance.MergePDF(f_gen_ebook.PostedFiles);
+                Response.Write(@"<script>alert('ได้อัพโหลดไปที่ C:\\newpdf\\ เรียบร้อยแล้ว ')</script>");
+            }
+            
+        }
     }
 }

@@ -323,31 +323,16 @@ C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.Web.Infrastructure.dl
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\Newtonsoft.Json.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\System.Web.Optimization.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\WebGrease.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.Shared.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportSource.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.Controllers.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.CrystalReports.Engine.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.ReportViewer.DataVisualization.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\EnvDTE.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.VisualStudio.Shell.Interop.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.ReportViewer.WinForms.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.Prompting.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\stdole.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.VisualStudio.OLE.Interop.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.VisualStudio.TextManager.Interop.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
-C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\Microsoft.MSXML.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.xml
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\EntityFramework.SqlServer.xml
@@ -770,3 +755,6 @@ D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.csproj.C
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.dll
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.pdb
 D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.csproj.AssemblyReference.cache
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\BouncyCastle.Crypto.dll
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\itextsharp.dll
+C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\itextsharp.xml

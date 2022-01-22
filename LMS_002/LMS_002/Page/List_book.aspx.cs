@@ -29,13 +29,19 @@ namespace LMS_002.Page
                 using (var db = new Dbcon_wan())
                 {
 
-                    dt = Conncetions_db.Instance.Connection_command(@"SELECT st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  tb_books_type.Type_book  , COUNT(st_ISBN_ISSN) as count_
+                    dt = Conncetions_db.Instance.Connection_command(@"SELECT top 5  st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  MD_type_book.Type_book  , COUNT(st_ISBN_ISSN) as count_
                             FROM MD_catralog_book
-                            LEFT JOIN MD_status_book_type ON MD_catralog_book.int_cheeckin_out = MD_status_book_type.self_id
-                            INNER JOIN dbo.tb_books_type ON MD_catralog_book.st_type_book = tb_books_type.self_id
-                            where  int_cheeckin_out != 3 group by [st_ISBN_ISSN], img_path, st_detail_book, dt_DATE_modify, st_cheeckin_out  , st_name_book  ,  tb_books_type.Type_book");
+                            LEFT JOIN MD_type_book ON MD_catralog_book.int_cheeckin_out = MD_type_book.self_id
+                            INNER JOIN dbo.MD_statusbook ON MD_catralog_book.st_type_book = MD_statusbook.self_id 
+                            where  int_cheeckin_out != 3 group by [st_ISBN_ISSN], img_path, st_detail_book, dt_DATE_modify, st_cheeckin_out  , st_name_book  ,  MD_type_book.Type_book");
                     GridView1.DataSource = dt;
                     GridView1.DataBind();
+
+                    ddl_dictionnary.DataSource = Conncetions_db.Instance.Connection_command("select * from [dbo].[MD_Dictionary]");
+                    ddl_dictionnary.DataValueField = "int_id_type_Dictionary";
+                    ddl_dictionnary.DataTextField = "st_type_Dictionary";
+                    ddl_dictionnary.SelectedIndex = 1;
+                    ddl_dictionnary.DataBind();
 
                 }
             }
@@ -89,10 +95,10 @@ namespace LMS_002.Page
                 {
 
 
-                    string select = $@"SELECT st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  tb_books_type.Type_book  , COUNT(st_ISBN_ISSN) as count_
+                    string select = $@"SELECT top 5 st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  MD_type_book.Type_book  , COUNT(st_ISBN_ISSN) as count_
                             FROM MD_catralog_book
-                            LEFT JOIN MD_status_book_type ON MD_catralog_book.int_cheeckin_out = MD_status_book_type.self_id
-                            INNER JOIN dbo.tb_books_type ON MD_catralog_book.st_type_book = tb_books_type.self_id  
+                            LEFT JOIN MD_type_book ON MD_catralog_book.int_cheeckin_out = MD_type_book.self_id
+                            INNER JOIN dbo.MD_statusbook ON MD_catralog_book.st_type_book = MD_statusbook.self_id  
                                                                    WHERE {Types.Value} LIKE 
                                                                  ";
 
@@ -124,8 +130,8 @@ namespace LMS_002.Page
                                     select += $" '%{ txt_ketword2.Text }%' ";
                                     break;
                             }
-                            dt = Conncetions_db.Instance.Connection_command(@"" + select + " AND  int_cheeckin_out != 3" +
-                                " group by [st_ISBN_ISSN] , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out , st_name_book  ,  tb_books_type.Type_book");
+                            dt = Conncetions_db.Instance.Connection_command($@"" + select + $" AND  int_cheeckin_out != 3 AND int_type_Dictionary = {ddl_dictionnary.SelectedValue}" +
+                                " group by [st_ISBN_ISSN] , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out , st_name_book  ,  MD_type_book.Type_book");
                             GridView1.DataSource = dt;
                             GridView1.DataBind();
                         }
@@ -230,11 +236,11 @@ namespace LMS_002.Page
                 using (var db = new Dbcon_wan())
                 {
 
-                    dt = Conncetions_db.Instance.Connection_command(@"SELECT st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  tb_books_type.Type_book , COUNT(st_ISBN_ISSN) as count_
-                    FROM MD_catralog_book
-                    LEFT JOIN MD_status_book_type ON MD_catralog_book.int_cheeckin_out = MD_status_book_type.self_id
-                    INNER JOIN dbo.tb_books_type ON MD_catralog_book.st_type_book = tb_books_type.self_id  where  int_cheeckin_out != 3 AND st_type_book =" + Types.Value + " " +
-                      " group by[st_ISBN_ISSN], img_path, st_detail_book, dt_DATE_modify, st_cheeckin_out , st_name_book ,  tb_books_type.Type_book ");
+                    dt = Conncetions_db.Instance.Connection_command(@"SELECT st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  MD_type_book.Type_book  , COUNT(st_ISBN_ISSN) as count_
+                            FROM MD_catralog_book
+                            LEFT JOIN MD_type_book ON MD_catralog_book.int_cheeckin_out = MD_type_book.self_id
+                            INNER JOIN dbo.MD_statusbook ON MD_catralog_book.st_type_book = MD_statusbook.self_id   where  int_cheeckin_out != 3 AND st_type_book =" + Types.Value + " " +
+                      " group by[st_ISBN_ISSN], img_path, st_detail_book, dt_DATE_modify, st_cheeckin_out , st_name_book ,  MD_type_book.Type_book ");
                     GridView1.DataSource = dt;
                     GridView1.DataBind();
                 }

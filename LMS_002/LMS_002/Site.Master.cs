@@ -19,7 +19,7 @@ namespace LMS_002
                 {
                     Session["user"] = "ผู้ใช้ภายนอก โปรด Login เพื่อเข้าสู่ระบบ";
                     lb_user.Text = Session["user"].ToString();
-                    Session["role"] = 3;
+                    //Session["role"] = 3;
                     menu_role.Visible = false;
                     menu_lend.Visible = false;
                     menu_throw.Visible = false;
@@ -86,7 +86,7 @@ namespace LMS_002
                         {
                             Session["user"] = null;
                             lb_user.Text = "ผู้ใช้ภายนอก โปรด Login เพื่อเข้าสู่ระบบ";
-                            Session["role"] = 3;
+                            //Session["role"] = 3;
                             menu_role.Visible = false;
                             menu_lend.Visible = false;
                             menu_throw.Visible = false;
@@ -168,6 +168,11 @@ namespace LMS_002
         protected void login_other_people_ServerClick(object sender, EventArgs e)
         {
               Response.Redirect(@"~/Page/Login.aspx");
+        }
+
+        protected void list_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect(@"~/Page/List_book.aspx");
         }
     }
 }

@@ -81,9 +81,40 @@
                     </div>
                 </div>
                 <div>
+                    <div class="card">
+                        <div class=" card-header">จำนวนรายการที่จะยืม</div>
+                        <div class=" card-body">
+                            <asp:GridView ID="GridView2" CssClass="table" runat="server" AutoGenerateColumns="False" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" OnRowCancelingEdit="GridView1_RowCancelingEdit" DataKeyNames="int_id_catalog_book">
+                                <Columns>
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:CheckBox ID="chkrows" AutoPostBack="true" Visible="true" OnCheckedChanged="chkrows_CheckedChanged" runat="server" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+
+
+                                    <asp:BoundField DataField="int_id_catalog_book" HeaderText="ลำดับหนังสือ" InsertVisible="False" ReadOnly="True" SortExpression="int_id_catalog_book" />
+                                    <asp:BoundField DataField="st_name_book" HeaderText="ชื่อหนังสือ" SortExpression="st_name_book" />
+                                    <asp:BoundField DataField="st_ISBN_ISSN" HeaderText="ISBN_ISSN" SortExpression="st_ISBN_ISSN" />
+                                    <asp:BoundField DataField="st_detail_book" HeaderText="รายละเอียด หนังสือ" SortExpression="st_detail_book" />
+                                    <asp:BoundField DataField="dt_DATE_modify" HeaderText="วันที่มีหนังสือเล่มนี้" SortExpression="dt_DATE_modify" />
+                                    <asp:BoundField DataField="Type_book" HeaderText="ประเภทหนังสือ" SortExpression="Type_book" />
+                                    <asp:BoundField DataField="status_book" HeaderText="สถานะ" SortExpression="status_book" />
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                        <div class=" card-footer">
+                            <div>
+                               
+                                ท่านได้เลือกหนังสือจำนวน
+            <asp:Label ID="ld_count" runat="server">0</asp:Label>
+                                : เล่ม
+                            </div>
+                        </div>
+                    </div>
                     <div class="text-center">
                         <a class="btn btn-success btn-lg " runat="server" id="searchCatalog" onserverclick="searchCatalog_ServerClick" data-id="1" href="#"><i class="fa fa-filter "></i>ยืม </a>
-                        <a class="btn btn-secondary btn-lg " runat="server" id="clear" href="#"><i class="fa fa-eraser "></i>ยกเลิกการยืม</a>
+                        <asp:Button CssClass="btn btn-secondary btn-lg " ID="btn_cancle" runat="server" Text="ยกเลิกการยืม" OnClick="btn_cancle_Click"  OnClientClick="return confrim('คุณต้องการจะยกเลิก การยืมทั้งหมดหรือไม่ ?');" />
                     </div>
                 </div>
             </div>
