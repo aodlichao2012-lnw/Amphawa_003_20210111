@@ -56,7 +56,8 @@ namespace LMS_002.Models
         //ไฟล์เสียง
 
         //ไฟล์วิดีโอ
-
+        public int int_type_Dictionary { get; set; }
+        public string st_type_Dictionary { get; set; }
 
 
 

@@ -758,3 +758,6 @@ D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\obj\Debug\LMS_002.csproj.A
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\BouncyCastle.Crypto.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\itextsharp.dll
 C:\work\Amphawa_003_20210111\LMS_002\LMS_002\bin\itextsharp.xml
+D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\BouncyCastle.Crypto.dll
+D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\itextsharp.dll
+D:\Pen1 Projects\Amphawa_003_20210111\LMS_002\LMS_002\bin\itextsharp.xml

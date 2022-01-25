@@ -20,7 +20,7 @@ namespace LMS_002.Page
         {
             return_main.Visible = false;
             detail_return.Visible = true;
-            SqlDataSource1.ConnectionString = ConfigurationManager.ConnectionStrings["amphawacontect2"].ConnectionString;
+            SqlDataSource1.ConnectionString = ConfigurationManager.ConnectionStrings["amphawacontect"].ConnectionString;
             SqlDataSource1.SelectCommand = "select * from [dbo].[MD_catralog_book]";
             SqlDataSource1.DataBind();
             DataView data = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);

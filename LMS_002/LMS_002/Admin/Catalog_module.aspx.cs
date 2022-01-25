@@ -25,7 +25,7 @@ namespace LMS_002.Admin
                 dt = Conncetions_db.Instance.Connection_command(@"SELECT st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  MD_type_book.Type_book  , COUNT(st_ISBN_ISSN) as count_
                             FROM MD_catralog_book
                             LEFT JOIN MD_type_book ON MD_catralog_book.int_cheeckin_out = MD_type_book.self_id
-                            INNER JOIN dbo.MD_statusbook ON MD_catralog_book.st_type_book = MD_statusbook.self_id  
+                            LEFT JOIN dbo.MD_statusbook ON MD_catralog_book.st_type_book = MD_statusbook.self_id  
                             where  int_cheeckin_out != 3 group by [st_ISBN_ISSN], img_path, st_detail_book, dt_DATE_modify, st_cheeckin_out  , st_name_book  ,  MD_type_book.Type_book");
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
@@ -104,7 +104,7 @@ namespace LMS_002.Admin
                     string select = $@"SELECT st_name_book ,  st_ISBN_ISSN  , img_path , st_detail_book , dt_DATE_modify , st_cheeckin_out ,  MD_type_book.Type_book  , COUNT(st_ISBN_ISSN) as count_
                             FROM MD_catralog_book
                             LEFT JOIN MD_type_book ON MD_catralog_book.int_cheeckin_out = MD_type_book.self_id
-                            INNER JOIN dbo.MD_statusbook ON MD_catralog_book.st_type_book = MD_statusbook.self_id  
+                            LEFT JOIN dbo.MD_statusbook ON MD_catralog_book.st_type_book = MD_statusbook.self_id  
                                                                    WHERE {Types.Value} LIKE 
                                                                  ";
 
