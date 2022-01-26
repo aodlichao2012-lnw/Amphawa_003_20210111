@@ -166,11 +166,13 @@ namespace LMS_002.Admin
                         var id = gvrow.Cells[3].Text;
                         id_book = id.ToString();
 
-                        dt = Conncetions_db.Instance.Connection_command(@"select int_id_catalog_book from MD_catralog_book where " + Types.Value + " LIKE '%" + keywords.Value + "%' AND  st_ISBN_ISSN ='" + id_book + "'");
+                        dt = Conncetions_db.Instance.Connection_command(@"select int_id_catalog_book from MD_catralog_book where " + Types.Value + " LIKE '%" + keywords.Value + "%' AND  st_ISBN_ISSN ='" + id_book + "'" +
+                            " AND int_cheeckin_out != 1 ");
                         string id_pk_book = dt.Rows[0]["int_id_catalog_book"].ToString();
                         try
                         {
-                            var update = Conncetions_db.Instance.Connection_command(@"DELETE [dbo].[MD_catralog_book]  WHERE st_ISBN_ISSN = '" + id + "' AND int_id_catalog_book = " + id_pk_book + " ");
+                            var update = Conncetions_db.Instance.Connection_command(@"DELETE [dbo].[MD_catralog_book]  WHERE st_ISBN_ISSN = '" + id + "' AND int_id_catalog_book = " + id_pk_book + "  " +
+                                "");
 
 
                             Response.Redirect(@"~/Admin/Catalog_module.aspx");

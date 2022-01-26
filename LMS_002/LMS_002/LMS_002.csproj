@@ -200,6 +200,17 @@
     <Content Include="Amphawan_LMS_db_2DataSet.xss">
       <DependentUpon>Amphawan_LMS_db_2DataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Amphawan_LMS_db_2DataSet2.xsc">
+      <DependentUpon>Amphawan_LMS_db_2DataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="Amphawan_LMS_db_2DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Amphawan_LMS_db_2DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Amphawan_LMS_db_2DataSet2.xss">
+      <DependentUpon>Amphawan_LMS_db_2DataSet2.xsd</DependentUpon>
+    </Content>
     <None Include="Amphawan_LMS_db_2DataSet3.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Amphawan_LMS_db_2DataSet3.Designer.cs</LastGenOutput>
@@ -478,6 +489,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Amphawan_LMS_db_2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Amphawan_LMS_db_2DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Amphawan_LMS_db_2DataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Amphawan_LMS_db_2DataSet3.Designer.cs">
       <AutoGen>True</AutoGen>

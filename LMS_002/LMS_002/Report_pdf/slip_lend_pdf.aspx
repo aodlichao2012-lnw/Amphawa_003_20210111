@@ -24,8 +24,8 @@
                 </LocalReport>
 
             </rsweb:ReportViewer>
-            <asp:SqlDataSource ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:amphawacontect2 %>" runat="server"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource2" ConnectionString="<%$ ConnectionStrings:amphawacontect2 %>" runat="server"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:amphawacontect %>" runat="server"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" ConnectionString="<%$ ConnectionStrings:amphawacontect %>" runat="server"></asp:SqlDataSource>
         </div>
 
     </form>
